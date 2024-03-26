@@ -1,12 +1,13 @@
 {
-	"extends": ["next/core-web-vitals", "next"  , "eslint:recommended"],
+	"extends": ["next/core-web-vitals", "next", "eslint:recommended"],
 	"plugins": ["@typescript-eslint", "react-hooks", "import"],
 	"ignorePatterns": ["dist", ".eslintrc.cjs", "node_modules", ".next"],
 	"rules": {
-		"no-unused-vars": "off",
-		"@typescript-eslint/no-unused-vars": "warn",
-		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn",
-		"prefer-const": "warn"
+		"no-unused-vars": 0,
+		"@typescript-eslint/no-unused-vars": 1,
+		"react-hooks/rules-of-hooks": 2,
+		"react-hooks/exhaustive-deps": 1,
+		"prefer-const": 1,
+		"no-mixed-spaces-and-tabs": 1
 	}
 }

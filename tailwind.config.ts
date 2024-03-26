@@ -20,11 +20,12 @@ const config = {
 		extend: {
 			colors: {
 				main: {
-					100: "#d8e6f3",
-					200: "#e9f1f8",
-					300: "#3066ac",
-					400: "#1153a1",
-					500: "#217ceb",
+					100: "#f5fbff",
+					200: "#d8e6f3",
+					300: "#e9f1f8",
+					400: "#3066ac",
+					500: "#1153a1",
+					600: "#217ceb",
 				},
 				// shadCN/UI
 				border: "hsl(var(--border))",

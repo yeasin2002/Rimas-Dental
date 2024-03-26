@@ -74,3 +74,9 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer components {
+	.input-blue {
+		@apply bg-main-300 px-4 py-2 w-full rounded-2xl;
+	}
+}
