@@ -1,5 +1,5 @@
 {
-	"extends": ["next/core-web-vitals", "next"],
+	"extends": ["next/core-web-vitals", "next"  , "eslint:recommended"],
 	"plugins": ["@typescript-eslint", "react-hooks", "import"],
 	"ignorePatterns": ["dist", ".eslintrc.cjs", "node_modules", ".next"],
 	"rules": {

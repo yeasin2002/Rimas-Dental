@@ -1,9 +1,10 @@
 import { ClintProvider } from "@/components";
 import type { Metadata } from "next";
+import React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Next TypeScript Starter",
+	title: "Rima's Dental",
 	description: "By @yeasin2002",
 };
 

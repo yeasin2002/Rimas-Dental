@@ -1,5 +1,4 @@
-### Next-TS  Starter 
-
-This is a simple starter for a nextjs project with TypeScript. It includes a basic setup for a React project with TypeScript, ESLint, Prettier, and shadcn/ui.
-Don't forget to give a star if you like it. ✌️
-
+### Rima's Dental
+ 
+ ### Description
+    This is a website for a dental clinic. It has a home page, about us page, services page, and contact us page. The website is responsive and has a navigation bar that allows users to navigate between the pages. 
