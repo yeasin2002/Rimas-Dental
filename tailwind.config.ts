@@ -18,6 +18,12 @@ const config = {
 			},
 		},
 		extend: {
+			screens: {
+				mini: "450px",
+			},
+			fontFamily: {
+				grotesk: "'Cabinet Grotesk', sans-serif",
+			},
 			colors: {
 				main: {
 					100: "#f5fbff",

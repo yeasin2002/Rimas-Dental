@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/cabinet-grotesk");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,6 +79,6 @@
 
 @layer components {
 	.input-blue {
-		@apply bg-main-300 px-4 py-2 w-full rounded-2xl;
+		@apply w-full rounded-2xl bg-main-300 px-4 py-2;
 	}
 }
