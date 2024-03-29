@@ -4,7 +4,7 @@ import { Logo } from "../global";
 
 export const Footer = () => {
 	return (
-		<footer className="flex w-full flex-col items-start justify-between gap-y-5 rounded-t-3xl bg-[#e8f1f9] py-6 sm:flex-row sm:items-center ">
+		<footer className=" container flex w-full flex-col items-start justify-between gap-y-5 rounded-t-3xl bg-[#e8f1f9] py-6 sm:flex-row sm:items-center ">
 			<div className="grid w-full grid-cols-2  items-start justify-between md:w-fit	 md:grid-cols-1 	md:gap-y-2	">
 				<Logo />
 				<div className="flex w-full flex-col justify-end text-end md:text-start ">
@@ -19,7 +19,7 @@ export const Footer = () => {
 				<div className="hidden sm:block"></div>
 				{footerInfo.map((data) => (
 					<div key={data.context + data.info}>
-						<p className="mb-2 text-base font-bold text-main-400">
+						<p className="mb-2 font-grotesk text-base font-bold text-main-400">
 							{data.context}
 						</p>
 						{Array.isArray(data.info) ? (

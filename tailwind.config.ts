@@ -32,7 +32,16 @@ const config = {
 					400: "#3066ac",
 					500: "#1153a1",
 					600: "#217ceb",
+					700: "#d9e7f3",
 				},
+				deepBlue: {
+					100: `#0a3366`,
+				},
+
+				yellowOrange: {
+					100: "#f47623",
+				},
+
 				// shadCN/UI
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
