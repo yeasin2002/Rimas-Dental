@@ -11,7 +11,7 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const Services = (props: Props) => {
 	return (
-		<div {...props} className="mb-4 px-4">
+		<div {...props} className="mb-4 mt-10 px-4">
 			<p className="text-center text-main-400">ADVANCED TECHNOLOGY</p>
 			<h4 className="text-center font-grotesk text-3xl font-bold text-main-600">
 				Complete Dental Services
