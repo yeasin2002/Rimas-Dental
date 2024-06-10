@@ -41,10 +41,10 @@ export const AppointmentForm = (props: Props) => {
 			className={cn("h-full rounded-xl bg-white p-6", props.className)}
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<p className="font-grotesk text-2xl  font-bold text-main-500">
+			<p className="font-grotesk text-2xl font-bold text-main-500">
 				Book Appointment
 			</p>
-			<div className="mt-4 grid w-full  grid-cols-1 gap-4 md:grid-cols-2">
+			<div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
 				<Input
 					register={register("name", {
 						required: "Name is required",

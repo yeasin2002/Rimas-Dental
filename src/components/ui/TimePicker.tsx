@@ -57,12 +57,12 @@ export function TimePicker({ value, onValueChange }: TimePickerProps) {
 					{!value ? "Time" : `${value.from} - ${value.to}`}
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="w-full   bg-transparent p-0">
+			<PopoverContent className="w-full bg-transparent p-0">
 				<ol>
 					{times.map((time) => (
 						<li
 							key={time.from}
-							className="flex cursor-pointer items-center justify-between gap-x-2 bg-white px-2 py-1  hover:bg-gray-100"
+							className="flex cursor-pointer items-center justify-between gap-x-2 bg-white px-2 py-1 hover:bg-gray-100"
 							onClick={() => handleValueChange(time)}
 						>
 							<span>{time.from}</span>

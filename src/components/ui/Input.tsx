@@ -20,7 +20,7 @@ export const Input: FC<InputProps> = ({
 		<div className="mb-6">
 			<label
 				htmlFor={labelName}
-				className={cn("mb-2 block text-slate-900 dark:text-slate-100 ")}
+				className={cn("mb-2 block text-slate-900 dark:text-slate-100")}
 			>
 				{labelName}
 			</label>

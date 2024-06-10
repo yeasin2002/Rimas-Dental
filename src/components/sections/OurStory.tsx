@@ -30,7 +30,7 @@ export const OurStory = (props: Props) => {
 			className="grid grid-cols-1 gap-y-10 px-2 md:grid-cols-2"
 		>
 			<div className="mx-auto flex w-full justify-center">
-				<div className="relative flex  size-full w-full place-items-center md:size-2/3 ">
+				<div className="relative flex size-full w-full place-items-center md:size-2/3">
 					<Image
 						src={bannerImg}
 						alt="Dental tools"
@@ -38,12 +38,12 @@ export const OurStory = (props: Props) => {
 						height={500}
 						className="size-full rounded-lg object-cover object-center"
 					/>
-					<div className="  absolute bottom-5 left-0  right-0   mx-auto  w-4/5  space-y-3 rounded-xl bg-gray-50 p-4">
-						<div className="flex items-center  gap-x-2">
+					<div className="absolute bottom-5 left-0 right-0 mx-auto w-4/5 space-y-3 rounded-xl bg-gray-50 p-4">
+						<div className="flex items-center gap-x-2">
 							<CircleCheck />
 							<p>Expert Dental Care</p>
 						</div>
-						<div className="flex items-center  gap-x-2">
+						<div className="flex items-center gap-x-2">
 							<CircleCheck />
 							<p>Comfort and Convenience</p>
 						</div>
@@ -56,7 +56,7 @@ export const OurStory = (props: Props) => {
 				</h2>
 				<p
 					className={cn(
-						" my-5 text-lg text-main-500",
+						"my-5 text-lg text-main-500",
 						PlayfairDisplay.className,
 					)}
 				>
@@ -65,7 +65,7 @@ export const OurStory = (props: Props) => {
 					a happy smile – we help you achieve both!
 				</p>
 
-				<div className="space-y-2 ">
+				<div className="space-y-2">
 					{facilities.map((info) => (
 						<div key={info} className="flex items-center gap-x-2">
 							<Image src={theethImg} alt="Teeth" width={30} height={30} />

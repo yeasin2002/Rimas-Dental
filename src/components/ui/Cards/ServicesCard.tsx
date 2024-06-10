@@ -19,7 +19,7 @@ interface Props extends React.ComponentProps<"div"> {
 export const ServicesCard = ({ data, ...rest }: Props) => {
 	return (
 		<div {...rest} className="cursor-pointer rounded-2xl bg-[#fefbf4] p-4">
-			<div className="inline-block rounded-full bg-main-600/60  p-4">
+			<div className="inline-block rounded-full bg-main-600/60 p-4">
 				<Image
 					src={data.icon}
 					alt={`${data.title} icon`}
@@ -28,12 +28,12 @@ export const ServicesCard = ({ data, ...rest }: Props) => {
 					className="size-14 shadow-sm"
 				/>
 			</div>
-			<h5 className="font-grotesk text-2xl  font-bold">{data.title}</h5>
+			<h5 className="font-grotesk text-2xl font-bold">{data.title}</h5>
 			<p className={cn("text-md py-3", lato.className)}>{data.desc}</p>
 
 			<Link
 				href={`/services/${data?.id}`}
-				className="my-3 py-1 capitalize  text-main-600 "
+				className="my-3 py-1 capitalize text-main-600"
 			>
 				Learn More
 			</Link>
