@@ -1,0 +1,10 @@
+{
+    "*.{js,jsx,ts,tsx}": [
+        "lint",
+        "format:fix",
+        "eslint"
+    ],
+    "*.{json,md,yml}": [
+        "format:fix"
+    ]
+}
