@@ -13,7 +13,7 @@ export const Nav = (props: Props) => {
 			{...props}
 			className="flex items-center justify-between py-3 mini:container md:py-4"
 		>
-			<Logo />
+			<Logo href={"/"} />
 			<div className="flex items-center justify-between gap-x-2">
 				<Link
 					href="/about-us"

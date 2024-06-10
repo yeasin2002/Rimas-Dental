@@ -6,7 +6,7 @@ export const Footer = () => {
 	return (
 		<footer className="container flex w-full flex-col items-start justify-between gap-y-5 rounded-t-3xl bg-[#e8f1f9] py-6 sm:flex-row sm:items-center">
 			<div className="grid w-full grid-cols-2 items-start justify-between md:w-fit md:grid-cols-1 md:gap-y-2">
-				<Logo />
+				<Logo href={"/"} />
 				<div className="flex w-full flex-col justify-end text-end md:text-start">
 					<p>Working Hours</p>
 					<p className="space-x-1 mini:space-x-5">
