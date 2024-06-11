@@ -1,5 +1,7 @@
 import _404 from "@/assets/others/404.svg";
+import { GoBack } from "@/components/client";
 import Image from "next/image";
+import Link from "next/link";
 
 const RootNotFound = () => {
 	return (
@@ -18,8 +20,8 @@ const RootNotFound = () => {
 							some helpful links:
 						</p>
 
-						<div className="mt-6 flex items-center gap-x-3">
-							<button className="flex w-1/2 items-center justify-center gap-x-2 rounded-lg border bg-white px-5 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 sm:w-auto">
+						<div className="items-cent er mt-6 flex gap-x-3">
+							<GoBack className="flex w-1/2 items-center justify-center gap-x-2 rounded-lg border bg-white px-5 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 sm:w-auto">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
@@ -36,11 +38,14 @@ const RootNotFound = () => {
 								</svg>
 
 								<span>Go back</span>
-							</button>
+							</GoBack>
 
-							<button className="w-1/2 shrink-0 rounded-lg bg-blue-500 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 sm:w-auto">
+							<Link
+								href={"/"}
+								className="w-1/2 shrink-0 rounded-lg bg-blue-500 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 sm:w-auto"
+							>
 								Take me home
-							</button>
+							</Link>
 						</div>
 					</div>
 

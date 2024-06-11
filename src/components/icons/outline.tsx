@@ -1,0 +1,84 @@
+import { SVGProps } from "react";
+
+export const User = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		{...props}
+		xmlns="http://www.w3.org/2000/svg"
+		className="mx-3 h-6 w-6 text-gray-300 dark:text-gray-500"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke="currentColor"
+		strokeWidth="{2}"
+	>
+		<path
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+		/>
+	</svg>
+);
+
+export const UpArrow = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		{...props}
+		xmlns="http://www.w3.org/2000/svg"
+		className="h-6 w-6 text-gray-300 dark:text-gray-500"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke="currentColor"
+		strokeWidth={2}
+	>
+		<path
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+		/>
+	</svg>
+);
+
+export const Email = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		{...props}
+		xmlns="http://www.w3.org/2000/svg"
+		className="mx-3 h-6 w-6 text-gray-300 dark:text-gray-500"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke="currentColor"
+		strokeWidth={2}
+	>
+		<path
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+		/>
+	</svg>
+);
+
+export const Lock = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		{...props}
+		xmlns="http://www.w3.org/2000/svg"
+		className="mx-3 h-6 w-6 text-gray-300 dark:text-gray-500"
+		fill="none"
+		viewBox="0 0 24 24"
+		stroke="currentColor"
+		strokeWidth={2}
+	>
+		<path
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+		/>
+	</svg>
+);
+
+export const Home = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 32 32"
+		id="home"
+		{...props}
+	>
+		<path d="M23,30H9a3,3,0,0,1-3-3V17H5a1,1,0,0,1-.63-1.77l11-9a1,1,0,0,1,1.27,0l11,9A1,1,0,0,1,27,17H26V27A3,3,0,0,1,23,30ZM7.58,15.18A1,1,0,0,1,8,16V27a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V16a1,1,0,0,1,.42-.82L16,8.29Z" />
+	</svg>
+);

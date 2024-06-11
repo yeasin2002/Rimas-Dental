@@ -11,7 +11,7 @@ export const DeviceInfo = () => {
 		});
 
 	return (
-		<div className="fixed bottom-4 left-4 z-10 flex items-center gap-2">
+		<div className="pointer-events-none fixed bottom-4 left-4 z-10 flex items-center gap-2">
 			<div
 				className={
 					"flex size-7 items-center justify-center rounded-full border border-black bg-white p-2 lg:p-4"

@@ -1,14 +1,9 @@
 import { ClintProvider } from "@/components";
-import type { Metadata } from "next";
+import { baseMetaData } from "@/config";
 import React from "react";
 import "./globals.css";
 
-export const metadata: Metadata = {
-	title: "Rima's Dental",
-	description: "By @yeasin2002",
-};
-
-export default function RootLayout({
+function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
@@ -21,3 +16,6 @@ export default function RootLayout({
 		</html>
 	);
 }
+
+export default RootLayout;
+export { baseMetaData as metadata };

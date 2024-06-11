@@ -1,13 +1,18 @@
-import { Button, Logo } from "@/components";
+"use client";
+
+import { Logo } from "@/components";
 import { cn } from "@/utils";
-import { ChevronRight, MoveRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FacebookLogo } from "../icons";
 
 interface Props extends React.ComponentProps<"nav"> {}
 
 export const Nav = (props: Props) => {
+	const pathname = usePathname();
+
 	return (
 		<nav
 			{...props}
@@ -16,17 +21,24 @@ export const Nav = (props: Props) => {
 			<Logo href={"/"} />
 			<div className="flex items-center justify-between gap-x-2">
 				<Link
-					href="/about-us"
-					className={cn(
-						"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-						"rounded-full border border-main-500 text-main-400",
-						"flex items-center p-2",
-					)}
+					href={pathname === "/" ? "/about-us" : "/"}
+					className="flex items-center rounded-full border border-main-500 px-4 py-3 text-main-400"
 				>
-					About Us
-					<ChevronRight className="sm:ml-2" />
+					<ChevronRight
+						className={cn("transition-all sm:ml-2", {
+							"rotate-180": pathname !== "/",
+							"order-last": pathname === "/",
+						})}
+					/>
+					<span>{pathname === "/" ? "About Us" : "Home "}</span>
 				</Link>
-				<FacebookLogo className="size-10" />
+				<a
+					href="https://www.facebook.com/yeasin2002.dev"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<FacebookLogo className="size-10" />
+				</a>
 			</div>
 		</nav>
 	);

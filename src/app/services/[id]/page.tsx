@@ -1,6 +1,3 @@
-import { getSingleServerData } from "@/utils";
-import React from "react";
-
 interface SingleServicesProps {
 	params: {
 		id: string;
@@ -8,8 +5,6 @@ interface SingleServicesProps {
 }
 
 const SingleServices = ({ params }: SingleServicesProps) => {
-	const content = getSingleServerData(params.id);
-	console.log("🚀 ~ SingleServices ~ content:", content);
 	return (
 		<div>
 			SingleServices

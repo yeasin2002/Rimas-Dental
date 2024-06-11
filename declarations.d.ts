@@ -1,8 +1,7 @@
-import { SVGProps } from "react";
+import react, { SVGProps } from "react";
 
 declare global {
-	const React: typeof React;
-	const svgProp: SVGProps<SVGSVGElement>;
+	type React = typeof react;
 }
 
 export {};
