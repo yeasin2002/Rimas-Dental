@@ -24,6 +24,9 @@ const config = {
 			fontFamily: {
 				grotesk: "'Cabinet Grotesk', sans-serif",
 			},
+			fontSize: {
+				fitScreen: "clamp(50px, 7.5vw + 10px, 100px)",
+			},
 			colors: {
 				main: {
 					100: "#f5fbff",

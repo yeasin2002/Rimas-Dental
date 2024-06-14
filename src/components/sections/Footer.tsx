@@ -8,10 +8,10 @@ export const Footer = () => {
 			<div className="grid w-full grid-cols-2 items-start justify-between md:w-fit md:grid-cols-1 md:gap-y-2">
 				<Logo href={"/"} />
 				<div className="flex w-full flex-col justify-end text-end md:text-start">
-					<p>Working Hours</p>
+					<p>কাজের সময় </p>
 					<p className="space-x-1 mini:space-x-5">
-						<span>Wed -Mon</span>
-						<span>5PM-9PM</span>
+						<span>বুধ -সোম</span>
+						<span>বিকাল ৫-৯</span>
 					</p>
 				</div>
 			</div>

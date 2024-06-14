@@ -16,13 +16,13 @@ export const Nav = (props: Props) => {
 	return (
 		<nav
 			{...props}
-			className="flex items-center justify-between py-3 mini:container md:py-4"
+			className="sticky top-0 z-50 flex items-center justify-between bg-white py-3 mini:container"
 		>
 			<Logo href={"/"} />
 			<div className="flex items-center justify-between gap-x-2">
 				<Link
 					href={pathname === "/" ? "/about-us" : "/"}
-					className="flex items-center rounded-full border border-main-500 px-4 py-3 text-main-400"
+					className="flex items-center justify-start rounded-full border border-main-500 px-1 py-2 text-main-400 mini:px-4 mini:py-3"
 				>
 					<ChevronRight
 						className={cn("transition-all sm:ml-2", {
@@ -30,7 +30,7 @@ export const Nav = (props: Props) => {
 							"order-last": pathname === "/",
 						})}
 					/>
-					<span>{pathname === "/" ? "About Us" : "Home "}</span>
+					<span>{pathname === "/" ? "আমাদের সম্পর্কে" : "হোম"}</span>
 				</Link>
 				<a
 					href="https://www.facebook.com/yeasin2002.dev"

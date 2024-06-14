@@ -11,11 +11,11 @@ import { Roboto } from "next/font/google";
 interface Props extends React.ComponentProps<"div"> {}
 
 const facilities = [
-	"Expert Dentists",
-	"Modern Equipment",
-	"Comfortable Environment",
-	"Affordable Services",
-	"Emergency Appointments",
+	"দক্ষ ডেন্টিস্ট",
+	"আধুনিক যন্ত্রপাতি",
+	"সুবিধাজনক পরিবেশ",
+	"অধিকমত পরিষেবা",
+	"জরুরি অ্যাপয়েন্টমেন্ট",
 ];
 
 export const roboto = Roboto({
@@ -37,22 +37,23 @@ export const OurStory = (props: Props) => {
 						width={500}
 						height={500}
 						className="size-full rounded-lg object-cover object-center"
+						priority
 					/>
 					<div className="absolute bottom-5 left-0 right-0 mx-auto w-4/5 space-y-3 rounded-xl bg-gray-50 p-4">
 						<div className="flex items-center gap-x-2">
 							<CircleCheck />
-							<p>Expert Dental Care</p>
+							<p>দক্ষ ডেন্টাল সেবা </p>
 						</div>
 						<div className="flex items-center gap-x-2">
 							<CircleCheck />
-							<p>Comfort and Convenience</p>
+							<p>সুবিধা ও সহজতা</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div>
 				<h2 className="mb-4 font-grotesk text-5xl font-bold text-main-400">
-					Your Dental Dream Team
+					আপনার দক্ষ ডেন্টাল
 				</h2>
 				<p
 					className={cn(
@@ -60,9 +61,9 @@ export const OurStory = (props: Props) => {
 						PlayfairDisplay.className,
 					)}
 				>
-					From preventative care to restorative dentistry, our team is dedicated
-					to providing the best possible dental care for you. A healthy smile is
-					a happy smile – we help you achieve both!
+					প্রতিরক্ষামূলক চিকিৎসা থেকে পুনর্স্থাপন দন্তচিকিৎসা পর্যন্ত, আমাদের দল
+					সম্পূর্ণরূপে আপনার জন্য সেরা ডেন্টাল যত্ন প্রদানে মনোনিবেশ করে। একটি
+					সুস্থ হাসি একটি খুশির হাসি - আমরা আপনাকে উভয়ই অর্জন করতে সাহায্য করি!
 				</p>
 
 				<div className="space-y-2">

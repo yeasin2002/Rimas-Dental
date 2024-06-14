@@ -6,6 +6,7 @@ import {
 } from "@/components/ui";
 
 import { faqData } from "@/data";
+import { baloo } from "@/fonts";
 
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {}
@@ -13,8 +14,10 @@ interface Props extends React.ComponentProps<"div"> {}
 export const FAQ = (props: Props) => {
 	return (
 		<div {...props} className="container py-8">
-			<h4 className="mt-8 py-4 font-grotesk text-4xl font-bold text-main-400">
-				Find The Answer To Your Question
+			<h4
+				className={`mt-8 py-4 font-grotesk text-4xl font-bold text-main-400 ${baloo.className}`}
+			>
+				সচরাচর প্রশ্নের উত্তর
 			</h4>
 
 			<div className="grid grid-cols-1 gap-2 md:grid-cols-2">

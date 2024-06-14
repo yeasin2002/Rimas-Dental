@@ -42,7 +42,7 @@ export const AppointmentForm = (props: Props) => {
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<p className="font-grotesk text-2xl font-bold text-main-500">
-				Book Appointment
+				অ্যাপয়েন্টমেন্ট বুক করুণ
 			</p>
 			<div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
 				<Input
@@ -50,18 +50,18 @@ export const AppointmentForm = (props: Props) => {
 						required: "Name is required",
 					})}
 					errorMsg={errors.name?.message}
-					labelName="Full Name"
+					labelName="পুর্ণ নাম"
 					className="input-blue"
-					placeholder="Enter your full name"
+					placeholder="উদাঃ   ডা. শারমিন আকতার রিমা"
 				/>
 				<Input
 					register={register("phone", {
 						required: "Phone number  is required",
 					})}
 					errorMsg={errors.name?.message}
-					labelName="Contact Number"
+					labelName="ফোন নাম্বার"
 					className="input-blue"
-					placeholder="Enter your contact number"
+					placeholder="০১******"
 				/>
 				<Controller
 					control={control}
@@ -92,7 +92,7 @@ export const AppointmentForm = (props: Props) => {
 				type="submit"
 				className="mt-4 w-full rounded-lg"
 			>
-				Submit
+				নিশ্চিত করুণ
 			</Button>
 		</form>
 	);

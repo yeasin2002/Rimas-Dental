@@ -17,6 +17,7 @@ export const DeviceInfo = () => {
 					"flex size-7 items-center justify-center rounded-full border border-black bg-white p-2 lg:p-4"
 				}
 			>
+				<span className="hidden mini:inline-block sm:hidden">mini</span>
 				<span className="hidden sm:inline-block md:hidden">sm</span>
 				<span className="hidden md:inline-block lg:hidden">md</span>
 				<span className="hidden lg:inline-block xl:hidden">lg</span>

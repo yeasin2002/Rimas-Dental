@@ -10,7 +10,7 @@ function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className="bg-main-100">
+			<body className="overflow-x-hidden bg-main-100">
 				<ClintProvider>{children}</ClintProvider>
 			</body>
 		</html>

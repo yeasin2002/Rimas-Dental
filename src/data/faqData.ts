@@ -1,38 +1,22 @@
 export const faqData = [
 	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
+		question: `আপনাদের ক্লিনিকে কি ধরনের ডেন্টাল সেবা পাওয়া যায়?`,
+		answer: `আমরা সাধারণ ডেন্টাল চেকআপ, ডেন্টাল ক্লিনিং, রুট ক্যানাল চিকিৎসা, দাঁতের পুনর্নির্মাণ, ডেন্টাল ইমপ্ল্যান্ট, অর্থোডন্টিক্স (দাঁতের সম্পূর্ণ পরিমাণ সংশোধন), দাঁতের রিমোডেলিং এবং অ্যাসেটিক ডেন্টিস্ট্রি সহ বিভিন্ন ডেন্টাল সেবা প্রদান করি।`,
 	},
 	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
+		question: `আপনারা কি ধরনের পেমেন্ট অপশন গ্রহণ করেন?`,
+		answer: `আমরা বিভিন্ন পেমেন্ট অপশন গ্রহণ করি, যেমন ক্রেডিট কার্ড, ডেবিট কার্ড, নগদ, বিমা এবং ডেন্টাল লোন। আপনি আমাদের অফিসে আসতে পারেন এবং আপনার পছন্দসই অপশন নির্বাচন করতে পারেন।`,
 	},
 	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
+		question: `কীভাবে আপনি রোগীদের কমফোর্ট ও সুবিধার যত্ন নেন?`,
+		answer: `আমরা আমাদের রোগীদের জন্য একটি সহজ, সমৃদ্ধ এবং কমফোর্টাবল পরিবেশ সম্পর্কে খুব সতর্ক থাকি। আমরা দাঁতের চিকিৎসার সময়ে এবং পরের যথাযথ যত্ন নেওয়ার চেষ্টা করি যাতে রোগীরা সুখে চিকিৎসার সেবা পান।`,
 	},
 	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
+		question: `আপনারা কি আপনার ডেন্টাল ক্লিনিকের জন্য এমার্জেন্সি চিকিৎসা প্রদান করেন?`,
+		answer: `হ্যাঁ, আমরা ডেন্টাল ইমার্জেন্সি প্রদান করি। যদি কোনও অপ্রত্যাশিত সমস্যা হয় বা জরুরী চিকিৎসা প্রয়োজন হয়, তাহলে আপনি আমাদের অফিসে এসে অথবা আমাদের জরুরি লাইনে কল করতে পারেন।`,
 	},
 	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
-	},
-	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
-	},
-	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
-	},
-	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
-	},
-	{
-		question: `What types of dental procedures do you offer at your clinic?`,
-		answer: `If you have a dental emergency outside of our clinic's business hours, please call our emergency line. We have an on-call dentist who can provide you with advice and guidance.`,
+		question: `আপনারা কি নতুনদের জন্য কোনো প্রথম পরিদর্শন বা অফার প্রদান করেন?`,
+		answer: `হ্যাঁ, আমরা নতুন রোগীদের জন্য প্রথম পরিদর্শনে অফার প্রদান করি। আপনি অফিসে এসে এই অফারটি উপভোগ করতে পারেন।`,
 	},
 ];

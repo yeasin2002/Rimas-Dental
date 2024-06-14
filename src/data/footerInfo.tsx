@@ -1,14 +1,14 @@
 export const footerInfo = [
 	{
-		context: "Phone",
+		context: "যোগাযোগ",
 		info: ["01731-519025", "01533-881102", "01679-112725"],
 	},
 	{
-		context: "Address",
-		info: "Mirpur 14, Dhaka, Bangladesh",
+		context: "ঠিকানা",
+		info: "কচুক্ষেত, মিরপুর ১৪, ঢাকা, বাংলাদেশ",
 	},
 	{
-		context: "E-Mail",
-		info: "Mirpur 14, Dhaka, Bangladesh",
+		context: "সার্টিফিকেট নাঃ",
+		info: "৫৬১৬৫",
 	},
 ];
