@@ -81,4 +81,7 @@
 	.input-blue {
 		@apply w-full rounded-2xl bg-main-300 px-4 py-2;
 	}
+	.home_sections-container {
+		@apply px-4 mt-16
+	}
 }

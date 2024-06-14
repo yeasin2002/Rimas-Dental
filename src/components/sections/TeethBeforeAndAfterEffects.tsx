@@ -13,7 +13,7 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const TeethBeforeAndAfterEffects = (props: Props) => {
 	return (
-		<div {...props} className="container py-8">
+		<div {...props} className="home_sections-container container">
 			<h4
 				className={`my-5 font-grotesk text-2xl font-bold text-deepBlue-100 mini:text-3xl ${baloo.className}`}
 			>

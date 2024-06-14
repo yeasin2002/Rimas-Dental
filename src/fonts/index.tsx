@@ -1,24 +1,19 @@
 import {
+	Anek_Bangla,
 	Baloo_Da_2,
-	Lato,
-	Playfair_Display,
-	Roboto,
+	Hind_Siliguri,
 	Tiro_Bangla,
 } from "next/font/google";
 
 export const baloo = Baloo_Da_2({ subsets: ["latin"] });
 export const TiroBangla400 = Tiro_Bangla({ subsets: ["latin"], weight: "400" });
-
-export const PlayfairDisplay = Playfair_Display({
+export const anekBangla = Anek_Bangla({ subsets: ["latin"], weight: "400" });
+export const HindSiliguri = Hind_Siliguri({
 	subsets: ["latin"],
+	weight: "400",
 });
 
-export const lato = Lato({
+export const HindSiliguri600 = Hind_Siliguri({
 	subsets: ["latin"],
-	weight: "700",
-});
-
-export const roboto = Roboto({
-	subsets: ["latin"],
-	weight: "700",
+	weight: "600",
 });

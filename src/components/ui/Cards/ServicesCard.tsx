@@ -4,13 +4,8 @@ import React from "react";
 import { ServiceData } from "@/data";
 
 import { cn } from "@/utils";
-import { Lato } from "next/font/google";
-import Link from "next/link";
 
-export const lato = Lato({
-	subsets: ["latin"],
-	weight: "400",
-});
+import Link from "next/link";
 
 interface Props extends React.ComponentProps<"div"> {
 	data: ServiceData;
@@ -29,7 +24,7 @@ export const ServicesCard = ({ data, ...rest }: Props) => {
 				/>
 			</div>
 			<h5 className="font-grotesk text-2xl font-bold">{data.title}</h5>
-			<p className={cn("text-md py-3", lato.className)}>{data.desc}</p>
+			<p className={cn("text-md py-3")}>{data.desc}</p>
 
 			<Link
 				href={`/services/${data?.id}`}

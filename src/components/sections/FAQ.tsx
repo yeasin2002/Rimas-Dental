@@ -13,7 +13,7 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const FAQ = (props: Props) => {
 	return (
-		<div {...props} className="container py-8">
+		<div {...props} className="home_sections-container container">
 			<h4
 				className={`mt-8 py-4 font-grotesk text-4xl font-bold text-main-400 ${baloo.className}`}
 			>

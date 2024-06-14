@@ -4,9 +4,7 @@ import React from "react";
 
 import theethImg from "@/assets/icons/teeths/theeth-blue.svg";
 import bannerImg from "@/assets/images/tools.jpg";
-import { PlayfairDisplay } from "@/fonts";
 import { cn } from "@/utils";
-import { Roboto } from "next/font/google";
 
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -18,16 +16,11 @@ const facilities = [
 	"জরুরি অ্যাপয়েন্টমেন্ট",
 ];
 
-export const roboto = Roboto({
-	subsets: ["latin"],
-	weight: "400",
-});
-
 export const OurStory = (props: Props) => {
 	return (
 		<section
 			{...props}
-			className="grid grid-cols-1 gap-y-10 px-2 md:grid-cols-2"
+			className="home_sections-container mt-0 grid grid-cols-1 gap-y-10 md:grid-cols-2"
 		>
 			<div className="mx-auto flex w-full justify-center">
 				<div className="relative flex size-full w-full place-items-center md:size-2/3">
@@ -52,15 +45,10 @@ export const OurStory = (props: Props) => {
 				</div>
 			</div>
 			<div>
-				<h2 className="mb-4 font-grotesk text-5xl font-bold text-main-400">
+				<h2 className="mb-4 font-grotesk text-4xl font-bold text-main-400 mini:text-5xl">
 					আপনার দক্ষ ডেন্টাল
 				</h2>
-				<p
-					className={cn(
-						"my-5 text-lg text-main-500",
-						PlayfairDisplay.className,
-					)}
-				>
+				<p className={cn("my-5 text-lg text-main-500")}>
 					প্রতিরক্ষামূলক চিকিৎসা থেকে পুনর্স্থাপন দন্তচিকিৎসা পর্যন্ত, আমাদের দল
 					সম্পূর্ণরূপে আপনার জন্য সেরা ডেন্টাল যত্ন প্রদানে মনোনিবেশ করে। একটি
 					সুস্থ হাসি একটি খুশির হাসি - আমরা আপনাকে উভয়ই অর্জন করতে সাহায্য করি!
@@ -70,9 +58,7 @@ export const OurStory = (props: Props) => {
 					{facilities.map((info) => (
 						<div key={info} className="flex items-center gap-x-2">
 							<Image src={theethImg} alt="Teeth" width={30} height={30} />
-							<p className={cn("text-xl text-main-500", roboto.className)}>
-								{info}
-							</p>
+							<p className={cn("text-xl text-main-500")}>{info}</p>
 						</div>
 					))}
 				</div>

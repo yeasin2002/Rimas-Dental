@@ -5,11 +5,16 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const OurTeam = (props: Props) => {
 	return (
-		<section {...props} className="mt-10 md:container md:py-6">
+		<section
+			{...props}
+			className="home_sections-container mt-10 md:container md:py-6"
+		>
 			<div className="space-y-2 *:text-center">
 				<p className="font-semibold text-yellowOrange-100">দক্ষ এবং পেশাদার</p>
-				<h4 className={`font-grotesk text-3xl font-bold text-deepBlue-100`}>
-					আমাদের প্রতিশ্রুতিবদ্ধ ডেন্টাল দল
+				<h4
+					className={`font-grotesk text-2xl font-bold text-deepBlue-100 mini:text-3xl`}
+				>
+					আমাদের প্রতিশ্রুতিবদ্ধ ডেন্টাল টিম
 				</h4>
 				<p className="mx-auto mt-2 max-w-prose text-left font-grotesk text-lg text-deepBlue-100/80">
 					আমাদের প্রতিশ্রুতিবদ্ধ এবং দক্ষ ডেন্টাল দলটি আপনার ডেন্টাল স্বাস্থ্যের
@@ -19,7 +24,7 @@ export const OurTeam = (props: Props) => {
 				</p>
 			</div>
 
-			<div className="mt-5 grid grid-cols-1 gap-8 px-10 md:grid-cols-2">
+			<div className="min:px-5 mt-5 grid grid-cols-1 gap-8 px-3 md:grid-cols-2">
 				<TeamCard />
 				<TeamCard />
 			</div>
