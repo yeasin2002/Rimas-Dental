@@ -14,6 +14,7 @@ interface Props extends React.ComponentProps<"div"> {
 
 export const LargeNav = ({ menuItems, ...props }: Props) => {
 	const pathname = usePathname();
+
 	return (
 		<div className={cn(props.className)} {...props}>
 			{menuItems.map((item, index) => (
@@ -29,6 +30,15 @@ export const LargeNav = ({ menuItems, ...props }: Props) => {
 					{item.label}
 				</Link>
 			))}
+
+			<Link
+				className={cn(
+					`mx-3 flex items-center text-deepBlue-100 ${HindSiliguri.className}`,
+				)}
+				href={"/admin"}
+			>
+				ড্যাশবোর্ড
+			</Link>
 		</div>
 	);
 };

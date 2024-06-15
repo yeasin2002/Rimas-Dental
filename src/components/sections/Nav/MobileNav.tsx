@@ -24,7 +24,7 @@ export const MobileNav = ({ menuItems, ...props }: Props) => {
 	return (
 		<div className={cn(props.className)} {...props}>
 			<DropdownMenu>
-				<DropdownMenuTrigger className="outline-none">
+				<DropdownMenuTrigger className="outline-none" aria-label="Open menu">
 					<AlignJustify />
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className="-translate-x-8">

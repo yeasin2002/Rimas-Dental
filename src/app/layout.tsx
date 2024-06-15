@@ -1,4 +1,4 @@
-import { ClintProvider } from "@/components";
+import { ClintProvider, Nav } from "@/components";
 import { baseMetaData } from "@/config";
 import { TiroBangla400 } from "@/fonts";
 import React from "react";
@@ -14,7 +14,10 @@ function RootLayout({
 			<body
 				className={`overflow-x-hidden bg-main-100 ${TiroBangla400.className}`}
 			>
-				<ClintProvider>{children}</ClintProvider>
+				<ClintProvider>
+					<Nav />
+					{children}
+				</ClintProvider>
 			</body>
 		</html>
 	);
