@@ -29,7 +29,7 @@ export const OurStory = (props: Props) => {
 						alt="Dental tools"
 						width={500}
 						height={500}
-						className="size-full rounded-lg object-cover object-center"
+						className="aspect-square size-full rounded-lg object-cover object-center"
 						priority
 					/>
 					<div className="absolute bottom-5 left-0 right-0 mx-auto w-4/5 space-y-3 rounded-xl bg-gray-50 p-4">

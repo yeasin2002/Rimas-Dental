@@ -11,11 +11,11 @@ export const OurTeam = (props: Props) => {
 		>
 			<div className="space-y-2 *:text-center">
 				<p className="font-semibold text-yellowOrange-100">দক্ষ এবং পেশাদার</p>
-				<h4
+				<h2
 					className={`font-grotesk text-2xl font-bold text-deepBlue-100 mini:text-3xl`}
 				>
 					আমাদের প্রতিশ্রুতিবদ্ধ ডেন্টাল টিম
-				</h4>
+				</h2>
 				<p className="mx-auto mt-2 max-w-prose text-left font-grotesk text-lg text-deepBlue-100/80">
 					আমাদের প্রতিশ্রুতিবদ্ধ এবং দক্ষ ডেন্টাল দলটি আপনার ডেন্টাল স্বাস্থ্যের
 					প্রতি আমাদের অবদানকে পুনর্বিবেচনা করতে আন্তরিকভাবে প্রস্তুত। আমরা

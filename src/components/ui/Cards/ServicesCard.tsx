@@ -29,6 +29,7 @@ export const ServicesCard = ({ data, ...rest }: Props) => {
 			<Link
 				href={`/services/${data?.id}`}
 				className="my-3 py-1 capitalize text-main-600"
+				aria-label={`Learn more about  ${data.title}`}
 			>
 				Learn More
 			</Link>

@@ -12,3 +12,14 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Services {
+  id       Int      @id @unique
+  name     String
+  desc     String
+  price    Float
+  image    String
+  category String
+  yt_video String?
+  tags     String[]
+}

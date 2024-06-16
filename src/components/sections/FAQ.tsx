@@ -14,11 +14,11 @@ interface Props extends React.ComponentProps<"div"> {}
 export const FAQ = (props: Props) => {
 	return (
 		<div {...props} className="home_sections-container container">
-			<h4
+			<h2
 				className={`mt-8 py-4 font-grotesk text-4xl font-bold text-main-400 ${baloo.className}`}
 			>
 				সচরাচর প্রশ্নের উত্তর
-			</h4>
+			</h2>
 
 			<div className="grid grid-cols-1 gap-2 md:grid-cols-2">
 				{faqData.map((faq) => (
