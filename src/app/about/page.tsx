@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import demoImg from "@/assets/images/cembar-view.jpg";
+import demoImg from "@/assets/images/cembar-view.webp";
 
 const About = () => {
 	return (

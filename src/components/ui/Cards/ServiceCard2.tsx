@@ -1,4 +1,4 @@
-import demoImg from "@/assets/images/teeth-dirty .jpg";
+import demoImg from "@/assets/images/teeth-dirty .webp";
 import Image from "next/image";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {}

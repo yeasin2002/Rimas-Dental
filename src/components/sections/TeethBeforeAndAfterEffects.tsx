@@ -1,7 +1,7 @@
 "use client";
 
-import teethClean from "@/assets/images/teeth-clean.jpg";
-import teethDirty from "@/assets/images/teeth-dirty .jpg";
+import teethClean from "@/assets/images/teeth-clean.webp";
+import teethDirty from "@/assets/images/teeth-dirty .webp";
 import { baloo } from "@/fonts";
 import React from "react";
 import {

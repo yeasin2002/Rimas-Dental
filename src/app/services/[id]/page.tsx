@@ -1,3 +1,5 @@
+// export const generateStaticParams  = () => {  }
+
 interface SingleServicesProps {
 	params: {
 		id: string;

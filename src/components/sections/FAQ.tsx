@@ -27,7 +27,7 @@ export const FAQ = (props: Props) => {
 							<AccordionTrigger className="rounded-3xl text-xs sm:text-xs md:text-sm xl:text-lg 2xl:text-xl">
 								{faq.question}
 							</AccordionTrigger>
-							<AccordionContent>{faq.answer}</AccordionContent>
+							<AccordionContent className="px-4">{faq.answer}</AccordionContent>
 						</AccordionItem>
 					</Accordion>
 				))}

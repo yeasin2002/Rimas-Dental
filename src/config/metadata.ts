@@ -1,4 +1,4 @@
-import dentalView from "@/assets/images/cembar-view.jpg";
+import dentalView from "@/assets/images/cembar-view.webp";
 import { Metadata } from "next";
 
 export const baseMetaData: Metadata = {

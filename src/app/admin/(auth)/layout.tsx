@@ -3,7 +3,7 @@ import { Home as HomeIcon, UndoDot } from "lucide-react";
 import Image from "next/image";
 import { ReactNode } from "react";
 
-import OT from "@/assets/images/OT.jpg";
+import OT from "@/assets/images/OT.webp";
 import { Logo } from "@/components";
 import Link from "next/link";
 import { ShowMatchRoute } from "./ShowMatchRoute";

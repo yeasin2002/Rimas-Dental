@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 import theethImg from "@/assets/icons/teeths/theeth-blue.svg";
-import bannerImg from "@/assets/images/tools.jpg";
+import bannerImg from "@/assets/images/tools.webp";
 import { cn } from "@/utils";
 
 interface Props extends React.ComponentProps<"div"> {}

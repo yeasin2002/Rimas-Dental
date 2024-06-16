@@ -4,7 +4,7 @@ import { AppointmentForm, Nav } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AboutState } from "./AboutState";
 
-import doctorSupport from "@/assets/images/cembar-view.jpg";
+import doctorSupport from "@/assets/images/cembar-view.webp";
 import doctorImg from "@/assets/temp/doctor-3.jpg";
 import { convertEnglishToBengaliNumber } from "@/utils";
 import Link from "next/link";
@@ -27,8 +27,6 @@ const menuItems = [
 const AboutUs = () => {
 	return (
 		<div className="flex flex-col">
-			<Nav />
-
 			<main className="flex-1">
 				<section className="w-full py-6 xl:py-32">
 					<div className="container px-4 md:px-6">
