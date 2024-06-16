@@ -1,9 +1,13 @@
-export * from "./Cards";
-
 export * from "./accordion";
+export * from "./avatar";
+export * from "./badge";
 export * from "./button";
 export * from "./calendar";
+export * from "./card";
+export * from "./Cards";
 export * from "./DatePicker";
-export * from "./Input";
+export * from "./input";
 export * from "./popover";
+export * from "./sheet";
+export * from "./table";
 export * from "./TimePicker";

@@ -1,13 +1,18 @@
 import { redirect } from "next/navigation";
 import React from "react";
+import { Dashboard } from "./adminTemplates";
 
 const Admin = async () => {
-	const isAuth = false;
+	const isAuth = true;
 	if (!isAuth) {
 		redirect("/admin/login");
 	}
 
-	return <div>Admin</div>;
+	return (
+		<>
+			<Dashboard />
+		</>
+	);
 };
 
 export default Admin;
