@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.2.0",
+    "@prisma/client": "^5.15.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",

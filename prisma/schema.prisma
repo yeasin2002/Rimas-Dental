@@ -1,25 +1,85 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+enum Gender {
+  male
+  female
+}
+
+model Doctors {
+  id                String  @id @map("_id")
+  email             String  @unique
+  name              String
+  phone             String? @unique
+  specialization    String
+  bio               String?
+  profileImage      String?
+  yearsOfExperience Int
+  gender            Gender
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Clients {
+  id          String    @id @map("_id")
+  name        String
+  email       String    @unique
+  phone1      String
+  phone2      String?
+  dateOfBirth DateTime?
+  gender      Gender
+  address     String?
+  reference   String?
+
+  treatmentNotes      Json[]
+  appointmentHistory  Json[]
+  majorDisease        String[]
+  regularBrushingTime Int      @default(1)
+  brushingMaterials   String
+  sweetEatingLevel    String
+  examination         String
+
+  radiologicalInvestigation String?
+  laboratoryInvestigation   String?
+  treatmentPlan             String?
+  treatmentNote             String?
+  drugHistory               String?
+  treatmentDetails          TreatmentDetails[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TreatmentDetails {
+  id               String   @id @map("_id")
+  date             DateTime
+  treatmentNote    String
+  paidToday        Int
+  balanceRemaining Int
+  next_Rx_plan     String?
+
+  Clients   Clients? @relation(fields: [clientsId], references: [id])
+  clientsId String?
+}
+
 model Services {
-  id       Int      @id @unique
-  name     String
-  desc     String
-  price    Float
-  image    String
-  category String
-  yt_video String?
-  tags     String[]
+  id          String   @id @map("_id")
+  name        String
+  intoDisc    String
+  description String
+  coverImage  String
+  category    String
+  YT_VideoUrl String?
+  price_range String?
+  tags        String[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
