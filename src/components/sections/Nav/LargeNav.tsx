@@ -2,22 +2,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import { rootMenuItems } from "@/data/navItems";
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
 
-interface Props extends React.ComponentProps<"div"> {
-	menuItems: {
-		label: string;
-		href: string;
-	}[];
-}
+interface Props extends React.ComponentProps<"div"> {}
 
-export const LargeNav = ({ menuItems, ...props }: Props) => {
+export const LargeNav = ({ ...props }: Props) => {
 	const pathname = usePathname();
 
 	return (
 		<div className={cn(props.className)} {...props}>
-			{menuItems.map((item, index) => (
+			{rootMenuItems.map((item, index) => (
 				<Link
 					key={index}
 					className={cn(

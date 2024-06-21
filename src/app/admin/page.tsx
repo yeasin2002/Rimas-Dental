@@ -1,16 +1,13 @@
-import { redirect } from "next/navigation";
 import React from "react";
-import { Dashboard } from "./adminTemplates";
+import { DashboardNav, SalesCards } from "./_components";
 
 const Admin = async () => {
-	const isAuth = true;
-	if (!isAuth) {
-		redirect("/admin/login");
-	}
-
 	return (
 		<>
-			<Dashboard />
+			<DashboardNav />
+			<br />
+
+			<SalesCards className="px-4" />
 		</>
 	);
 };

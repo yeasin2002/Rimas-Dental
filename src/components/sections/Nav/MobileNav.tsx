@@ -8,18 +8,14 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { rootMenuItems } from "@/data/navItems";
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
 import { usePathname } from "next/navigation";
 
-interface Props extends React.ComponentProps<"div"> {
-	menuItems: {
-		label: string;
-		href: string;
-	}[];
-}
+interface Props extends React.ComponentProps<"div"> {}
 
-export const MobileNav = ({ menuItems, ...props }: Props) => {
+export const MobileNav = ({ ...props }: Props) => {
 	const pathname = usePathname();
 	return (
 		<div className={cn(props.className)} {...props}>
@@ -28,7 +24,7 @@ export const MobileNav = ({ menuItems, ...props }: Props) => {
 					<AlignJustify />
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className="-translate-x-8">
-					{menuItems.map((item, index) => (
+					{rootMenuItems.map((item, index) => (
 						<DropdownMenuItem key={index}>
 							<Link
 								className={cn(
