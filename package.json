@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.2.0",
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@prisma/client": "^5.15.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -32,8 +33,10 @@
     "lint-staged": "^15.2.5",
     "lucide-react": "^0.363.0",
     "mongodb": "^6.7.0",
+    "negotiator": "^0.6.3",
     "next": "14.1.4",
     "next-auth": "^5.0.0-beta.19",
+    "next-easy-middlewares": "^1.1.2",
     "next-videos": "^1.4.1",
     "prisma": "^5.15.0",
     "react": "^18.2.0",
@@ -47,11 +50,12 @@
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20.14.2",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",

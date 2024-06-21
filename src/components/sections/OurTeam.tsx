@@ -1,6 +1,6 @@
 import { baloo } from "@/fonts";
 import React from "react";
-import { TeamCard } from "../ui/Cards/TeamCard";
+import { TeamCard } from "../Cards/TeamCard";
 interface Props extends React.ComponentProps<"div"> {}
 
 export const OurTeam = (props: Props) => {
