@@ -1,12 +1,12 @@
 import React from "react";
-import { DashboardStates } from "./_components";
+import { AppointmentManage, DashboardStates } from "./_components";
 
 const Admin = async () => {
 	return (
-		<>
-			<br />
-			<DashboardStates className="px-4" />
-		</>
+		<section className="px-4 py-2">
+			<DashboardStates />
+			<AppointmentManage />
+		</section>
 	);
 };
 
