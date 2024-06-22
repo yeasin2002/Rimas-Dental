@@ -27,7 +27,7 @@ model Doctors {
   updatedAt DateTime @updatedAt
 }
 
-model Clients {
+model Patient {
   id          String    @id @map("_id")
   name        String
   email       String    @unique

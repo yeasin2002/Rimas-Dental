@@ -22,8 +22,8 @@ export const dashboardNav = [
 		icon: User,
 	},
 	{
-		title: "clients",
-		link: "/clients",
+		title: "patient",
+		link: "/patient",
 		icon: User,
 	},
 	{
