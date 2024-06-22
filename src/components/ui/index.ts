@@ -7,6 +7,7 @@ export * from "./calendar";
 export * from "./card";
 export * from "./DatePicker";
 export * from "./input";
+export * from "./pagination";
 export * from "./popover";
 export * from "./sheet";
 export * from "./table";

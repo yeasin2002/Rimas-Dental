@@ -29,6 +29,7 @@ model Doctors {
 }
 
 model Patient {
+  
   id          String    @id @map("_id")
   name        String
   email       String    @unique
@@ -52,13 +53,13 @@ model Patient {
   treatmentPlan             String?
   treatmentNote             String?
   drugHistory               String?
-  treatmentDetails          TreatmentDetails[]
+  treatmentDetails          PatientSchedule[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model TreatmentDetails {
+model PatientSchedule {
   id               String   @id @map("_id")
   date             DateTime
   treatmentNote    String
