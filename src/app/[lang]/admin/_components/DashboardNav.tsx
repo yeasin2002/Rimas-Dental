@@ -13,6 +13,7 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
+import { LinkTo, Logo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
 import React from "react";
@@ -28,20 +29,20 @@ export const DashboardNav = ({ ...props }: Props) => {
 			)}
 		>
 			<nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-				<Link
+				<LinkTo
 					href={"/"}
 					className="flex items-center gap-2 text-lg font-semibold md:text-base"
 				>
 					<Home className="h-6 w-6" />
-				</Link>
-				{dashboardNav.map((item) => (
-					<Link
+				</LinkTo>
+				{dashboardNav?.map((item) => (
+					<LinkTo
 						key={item.title}
-						href={item.link}
+						href={"/admin" + item.link}
 						className="capitalize text-foreground transition-colors hover:text-foreground"
 					>
 						{item.title}
-					</Link>
+					</LinkTo>
 				))}
 			</nav>
 			<Sheet>
@@ -53,12 +54,12 @@ export const DashboardNav = ({ ...props }: Props) => {
 				</SheetTrigger>
 				<SheetContent side="left">
 					<nav className="grid gap-6 text-lg font-medium">
-						<Link
+						<LinkTo
 							href={"/"}
 							className="flex items-center gap-2 text-lg font-semibold"
 						>
 							<Home className="h-6 w-6" />
-						</Link>
+						</LinkTo>
 
 						{dashboardNav.map((item) => (
 							<Link

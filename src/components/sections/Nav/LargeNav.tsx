@@ -2,6 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
+import { LinkTo } from "@/components";
 import { rootMenuItems } from "@/data/navItems";
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
@@ -27,14 +28,14 @@ export const LargeNav = ({ ...props }: Props) => {
 				</Link>
 			))}
 
-			<Link
+			<LinkTo
 				className={cn(
 					`mx-3 flex items-center text-deepBlue-100 ${HindSiliguri.className}`,
 				)}
 				href={"/admin"}
 			>
 				ড্যাশবোর্ড
-			</Link>
+			</LinkTo>
 		</div>
 	);
 };

@@ -1,2 +1,2 @@
 export * from "./DashboardNav";
-export * from "./SalesCards";
+export * from "./DashboardStates";

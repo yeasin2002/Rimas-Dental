@@ -83,3 +83,11 @@ model Services {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+
+model Expense {
+  id          String   @id @map("_id")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

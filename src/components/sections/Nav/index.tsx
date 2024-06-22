@@ -10,7 +10,7 @@ interface Props extends React.ComponentProps<"nav"> {}
 
 export const Nav = (props: Props) => {
 	const pathname = usePathname();
-	const adminRouteRegex = /^\/admin(\/|$)/;
+	const adminRouteRegex = /\/(en|bn|es|...)\/admin(\/|$)/;
 
 	return (
 		<>

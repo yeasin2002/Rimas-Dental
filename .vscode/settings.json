@@ -4,5 +4,6 @@
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 	"files.associations": {
 		"*css": "tailwindcss"
-	}
+	},
+	"files.autoSave": "off"
 }

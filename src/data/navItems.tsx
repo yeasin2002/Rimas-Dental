@@ -17,18 +17,23 @@ export const rootMenuItems = [
 
 export const dashboardNav = [
 	{
-		title: "user",
-		link: "/users",
+		title: "admin",
+		link: "/",
 		icon: User,
 	},
 	{
-		title: "analytics",
-		link: "/analytics",
+		title: "clients",
+		link: "/clients",
 		icon: User,
 	},
 	{
-		title: "product",
-		link: "/product",
+		title: "doctors",
+		link: "/doctors",
+		icon: User,
+	},
+	{
+		title: "services",
+		link: "/services",
 		icon: User,
 	},
 ];

@@ -1,0 +1,61 @@
+name: Close Issues
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Close referenced issues
+        id: close_issues
+        run: |
+          #!/usr/bin/env node
+          
+          const { execSync } = require('child_process');
+          const github = require('@actions/github');
+          
+          // Get the list of commits in the push event
+          const commits = github.context.payload.commits;
+          
+          // Extract issue numbers from commit messages
+          const issueNumbers = [];
+          const issuePattern = /#(\d+)/;
+          
+          commits.forEach(commit => {
+            const matches = commit.message.match(issuePattern);
+            if (matches) {
+              issueNumbers.push(...matches.slice(1).map(Number));
+            }
+          });
+          
+          if (issueNumbers.length === 0) {
+            console.log('No issues to close.');
+            process.exit(0);
+          }
+          
+          // Close the issues
+          const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
+          
+          issueNumbers.forEach(async (issueNumber) => {
+            await octokit.rest.issues.update({
+              owner: github.context.repo.owner,
+              repo: github.context.repo.repo,
+              issue_number: issueNumber,
+              state: 'closed'
+            });
+            console.log(`Closed issue #${issueNumber}`);
+          });
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
