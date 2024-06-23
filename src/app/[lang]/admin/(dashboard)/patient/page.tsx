@@ -1,4 +1,4 @@
-import { Button } from "@/components";
+import { Button, buttonVariants, LinkTo } from "@/components";
 import { ClientsTable } from "./ClientsTable";
 
 const Clients = () => {
@@ -11,9 +11,12 @@ const Clients = () => {
 					</h1>
 					<p>Manage your patients here.</p>
 				</div>
-				<Button variant={"dracula"} className="btn btn-primary">
+				<LinkTo
+					href={"/admin/patient/add"}
+					className={buttonVariants({ variant: "dracula" })}
+				>
 					Add Patient
-				</Button>
+				</LinkTo>
 			</div>
 			<ClientsTable />
 		</section>

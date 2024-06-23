@@ -1,5 +1,4 @@
-import { Button } from "@/components";
-import { ServiceCards } from "@/components/dashboard/ServiceCards";
+import { buttonVariants, LinkTo, ServiceCards } from "@/components";
 
 const ServicesManagement = () => {
 	return (
@@ -11,9 +10,12 @@ const ServicesManagement = () => {
 					</h1>
 					<p>Services that you provide</p>
 				</div>
-				<Button variant={"dracula"} className="btn btn-primary">
+				<LinkTo
+					className={buttonVariants({ variant: "dracula" })}
+					href={"/admin/services/write"}
+				>
 					Add Doctors
-				</Button>
+				</LinkTo>
 			</div>
 			<div className="mt-20 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 				<ServiceCards />

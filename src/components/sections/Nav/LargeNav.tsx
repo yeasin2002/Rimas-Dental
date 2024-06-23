@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-import { Button, LinkTo } from "@/components";
+import { Button, buttonVariants, LinkTo } from "@/components";
 import { rootMenuItems } from "@/data/navItems";
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
@@ -40,8 +40,13 @@ export const LargeNav = ({ ...props }: Props) => {
 			))}
 
 			<div>
-				{isLogin ? (
-					<Button>Login</Button>
+				{!isLogin ? (
+					<LinkTo
+						href={"/login"}
+						className={buttonVariants({ className: "rounded-full" })}
+					>
+						Login
+					</LinkTo>
 				) : (
 					<div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
 						<DropdownMenu>

@@ -50,6 +50,7 @@
     "react-hook-form": "^7.51.1",
     "react-hot-toast": "^2.4.1",
     "sharp": "^0.33.4",
+    "sweetalert2": "^11.12.0",
     "swiper": "^11.1.0",
     "tailwind-merge": "^2.2.2"
   },

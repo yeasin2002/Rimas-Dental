@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../ui";
 interface Props extends React.ComponentProps<"div"> {}
 
 export const ServiceCards = ({ ...props }: Props) => {
