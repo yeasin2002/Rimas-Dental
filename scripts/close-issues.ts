@@ -1,41 +1,57 @@
+import * as core from "@actions/core";
 import * as github from "@actions/github";
-import { execSync } from "child_process";
 
 async function run() {
-	// Get the list of commits in the push event
-	const commits = github.context.payload.commits;
+	try {
+		const token = core.getInput("github_token");
+		const octokit = github.getOctokit(token);
 
-	// Extract issue numbers from commit messages
-	const issueNumbers: number[] = [];
-	const issuePattern = /#(\d+)/;
+		const context = github.context;
+		const repo = context.repo.repo;
+		const owner = context.repo.owner;
+		const commits = context.payload.commits;
 
-	commits.forEach((commit: any) => {
-		const matches = commit.message.match(issuePattern);
-		if (matches) {
-			issueNumbers.push(...matches.slice(1).map(Number));
+		if (!commits) {
+			core.setFailed("No commits found in the payload.");
+			return;
 		}
-	});
 
-	if (issueNumbers.length === 0) {
-		console.log("No issues to close.");
-		process.exit(0);
-	}
+		const issuePattern = /#(\d+)/;
+		const issueNumbers = new Set<number>();
 
-	// Close the issues
-	const octokit = github.getOctokit(process.env.GITHUB_TOKEN as string);
+		for (const commit of commits) {
+			const matches = commit.message.match(issuePattern);
+			if (matches) {
+				for (const match of matches) {
+					const issueNumber = parseInt(match.slice(1), 10);
+					issueNumbers.add(issueNumber);
+				}
+			}
+		}
 
-	for (const issueNumber of issueNumbers) {
-		await octokit.rest.issues.update({
-			owner: github.context.repo.owner,
-			repo: github.context.repo.repo,
-			issue_number: issueNumber,
-			state: "closed",
-		});
-		console.log(`Closed issue #${issueNumber}`);
+		if (issueNumbers.size === 0) {
+			console.log("No issues to close.");
+			return;
+		}
+
+		for (const issueNumber of issueNumbers) {
+			try {
+				await octokit.rest.issues.update({
+					owner,
+					repo,
+					issue_number: issueNumber,
+					state: "closed",
+				});
+				console.log(`Closed issue #${issueNumber}`);
+			} catch (error: any) {
+				console.error(
+					`Failed to close issue #${issueNumber}: ${error.message}`,
+				);
+			}
+		}
+	} catch (error) {
+		core.setFailed(`Action failed with error ${error}`);
 	}
 }
 
-run().catch((err) => {
-	console.error(err);
-	process.exit(1);
-});
+run();

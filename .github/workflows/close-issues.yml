@@ -15,17 +15,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install dependencies
         run: |
-          npm install
-          npm install @actions/github typescript @types/node --save-dev
+          npm install @actions/core @actions/github
+          npm install typescript @types/node
+          npm install -g ts-node
 
-      - name: Compile TypeScript
-        run: npx tsc
-
-      - name: Close referenced issues
-        run: node dist/close-issues.js
+      - name: Run TypeScript script
+        run: ts-node scripts/close_issues.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
