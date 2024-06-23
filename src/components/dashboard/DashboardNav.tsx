@@ -1,4 +1,4 @@
-import { CircleUser, Home, Menu } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -13,9 +13,10 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { LinkTo, Logo } from "@/components";
+import { Doctor01, Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
+import Image from "next/image";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -77,7 +78,7 @@ export const DashboardNav = ({ ...props }: Props) => {
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button variant="secondary" size="icon" className="rounded-full">
-							<CircleUser className="h-5 w-5" />
+							<Doctor02 className="size-5" />
 							<span className="sr-only">Toggle user menu</span>
 						</Button>
 					</DropdownMenuTrigger>

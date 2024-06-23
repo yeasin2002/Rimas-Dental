@@ -1,10 +1,10 @@
-import { DashboardInitialChart, DashboardStates } from "@/components/dashboard";
+import { DashboardAnalytics, DashboardStates } from "@/components/dashboard";
 
 const Admin = async () => {
 	return (
 		<section className="space-y-20 px-4 py-2">
 			<DashboardStates />
-			<DashboardInitialChart />
+			<DashboardAnalytics />
 		</section>
 	);
 };

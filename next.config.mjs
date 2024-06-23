@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 
-// const withVideos = require("next-videos");
-
-const nextConfig = {};
+const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				hostname: "images.unsplash.com",
+				protocol: "https",
+			},
+		],
+	},
+};
 export default nextConfig;

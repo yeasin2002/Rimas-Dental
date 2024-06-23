@@ -12,7 +12,7 @@ const Doctors = () => {
 					<p> Your Devoted and Knowledgeable Doctors</p>
 				</div>
 				<Button variant={"dracula"} className="btn btn-primary">
-					Add Patient
+					Add Doctors
 				</Button>
 			</div>
 			<div className="mt-10 grid grid-cols-2">

@@ -1,5 +1,5 @@
 export * from "./AppointmentManage";
-export * from "./DashboardInitialChart";
+export * from "./DashboardAnalytics";
 export * from "./DashboardNav";
 export * from "./DashboardStates";
 export * from "./DoctorsCards";

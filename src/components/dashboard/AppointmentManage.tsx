@@ -16,10 +16,7 @@ export const AppointmentManage = ({ ...props }: Props) => {
 	return (
 		<div {...props}>
 			<div>
-				<h2
-					//  className="mb-2 mt-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl"
-					className="font-grotesk text-4xl font-bold text-main-400 lg:text-3xl xl:text-4xl"
-				>
+				<h2 className="font-grotesk text-4xl font-bold text-main-400 lg:text-3xl xl:text-4xl">
 					Appointments
 				</h2>
 			</div>
@@ -66,24 +63,23 @@ export const AppointmentManage = ({ ...props }: Props) => {
 						</tr>
 					</tbody>
 				</table>
+				<Pagination>
+					<PaginationContent>
+						<PaginationItem>
+							<PaginationPrevious href="#" />
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink href="#">1</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationEllipsis />
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationNext href="#" />
+						</PaginationItem>
+					</PaginationContent>
+				</Pagination>
 			</div>
-
-			<Pagination>
-				<PaginationContent>
-					<PaginationItem>
-						<PaginationPrevious href="#" />
-					</PaginationItem>
-					<PaginationItem>
-						<PaginationLink href="#">1</PaginationLink>
-					</PaginationItem>
-					<PaginationItem>
-						<PaginationEllipsis />
-					</PaginationItem>
-					<PaginationItem>
-						<PaginationNext href="#" />
-					</PaginationItem>
-				</PaginationContent>
-			</Pagination>
 		</div>
 	);
 };

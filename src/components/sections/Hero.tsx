@@ -7,7 +7,8 @@ export const Hero = (props: Props) => {
 	return (
 		<main {...props} className="relative h-screen">
 			<video
-				src={"/videos/work.mp4"}
+				// src={process.cwd() + "/src/assets/videos/work.mp4"}
+				src="https://videos.pexels.com/video-files/3024322/3024322-hd_1920_1080_30fps.mp4"
 				autoPlay
 				loop
 				muted
