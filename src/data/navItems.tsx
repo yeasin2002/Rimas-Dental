@@ -22,7 +22,12 @@ export const dashboardNav = [
 		icon: User,
 	},
 	{
-		title: "patient",
+		title: "appointment",
+		link: "/appointment",
+		icon: User,
+	},
+	{
+		title: "patients",
 		link: "/patient",
 		icon: User,
 	},

@@ -1,4 +1,3 @@
-export * from "./Appointment";
 export * from "./AppointmentForm";
 export * from "./FAQ";
 export * from "./Footer";

@@ -16,7 +16,10 @@ export const PatientScheduleManagement = ({ ...props }: Props) => {
 	return (
 		<div {...props}>
 			<div>
-				<h2 className="mb-2 mt-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl">
+				<h2
+					className="font-grotesk text-4xl font-bold text-main-400 lg:text-3xl xl:text-4xl"
+					// className="mb-2 mt-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl"
+				>
 					Upcoming Schedules
 				</h2>
 			</div>

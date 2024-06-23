@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import { DeviceInfo } from "./DeviceInfo";
+
 interface Props {
 	children: React.ReactNode;
 }
@@ -9,6 +11,7 @@ interface Props {
 export const ClintProvider = ({ children }: Props) => {
 	return (
 		<>
+			<Toaster />
 			{children}
 			{process.env.NODE_ENV === "development" && <DeviceInfo />}
 		</>

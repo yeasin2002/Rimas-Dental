@@ -82,6 +82,9 @@
 		@apply w-full rounded-2xl bg-main-300 px-4 py-2;
 	}
 	.home_sections-container {
-		@apply px-4 mt-16
+		@apply mt-16 px-4;
+	}
+	.top_heading {
+		@apply font-grotesk text-4xl font-bold text-main-400 sm:text-5xl md:text-6xl lg:text-7xl;
 	}
 }
