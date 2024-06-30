@@ -19,25 +19,26 @@ enum doctorsRole {
 }
 
 model Doctors {
-  id                String      @id @map("_id")
-  email             String      @unique
-  name              String
-  phone             String?     @unique
-  specialization    String
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  email        String @unique
+  phone        String @unique
+  name         String
+  profileImage String
+  gender       Gender
+
+  specialization    String?
+  yearsOfExperience Int?        @default(0)
   bio               String?
-  profileImage      String?
-  yearsOfExperience Int
-  gender            Gender
-  role              doctorsRole
-  isPending         Boolean     @default(false)
+  role              doctorsRole @default(doctor)
 
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
+  isPending Boolean?   @default(false)
   Services  Services[]
 }
 
 model Patient {
-  id          String    @id @map("_id")
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   email       String    @unique
   phone1      String
@@ -74,7 +75,7 @@ model PatientSchedule {
   balanceRemaining Int
   next_Rx_plan     String?
 
-  clientsId String?
+  clientsId String?  @db.ObjectId
   Clients   Patient? @relation(fields: [clientsId], references: [id])
 }
 
@@ -91,7 +92,7 @@ model Services {
   tags        String[]
   isPaused    Boolean? @default(false)
 
-  doctorsId String
+  doctorsId String  @db.ObjectId
   Author    Doctors @relation(fields: [doctorsId], references: [id])
 
   createdAt DateTime @default(now())

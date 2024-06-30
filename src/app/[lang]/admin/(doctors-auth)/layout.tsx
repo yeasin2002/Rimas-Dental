@@ -29,13 +29,13 @@ const Auth = ({ children }: { children: ReactNode }) => {
 			<div>
 				<section className="dark:bg-gray-900">
 					<div className="container mx-auto flex min-h-screen items-center justify-center px-6">
-						<form className="w-full max-w-md">
+						<div className="w-full max-w-md">
 							<div className="mx-auto flex justify-center">
 								<Logo href={"/"} />
 							</div>
 							<ShowMatchRoute />
 							{children}
-						</form>
+						</div>
 					</div>
 				</section>
 			</div>

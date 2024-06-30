@@ -10,10 +10,13 @@
     "lint:biome": "biome lint --error-on-warnings ./src",
     "format:biome": "bunx @biomejs/biome format --write ./src",
     "prepare": "husky",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "db-push": "prisma db generate"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.2.0",
+    "@edgestore/react": "^0.1.7",
+    "@edgestore/server": "^0.1.7",
     "@faker-js/faker": "^8.4.1",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@hookform/resolvers": "^3.6.0",
@@ -52,6 +55,7 @@
     "react-countup": "^6.5.3",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.52.0",
     "react-hot-toast": "^2.4.1",
     "sharp": "^0.33.4",

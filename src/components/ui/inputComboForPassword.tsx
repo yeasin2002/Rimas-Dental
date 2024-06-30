@@ -44,7 +44,7 @@ export const InputComboForPassword = ({
 				className="absolute bottom-0 right-3 top-0 outline-none"
 				type="button"
 			>
-				{isShow ? (
+				{!isShow ? (
 					<EyeOff className="text-gray-600" />
 				) : (
 					<Eye className="text-gray-600" />

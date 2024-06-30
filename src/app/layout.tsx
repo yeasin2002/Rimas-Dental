@@ -4,6 +4,7 @@ import React from "react";
 import { ClintProvider } from "@/components";
 import { baseMetaData } from "@/config";
 import { TiroBangla400 } from "@/fonts";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 import "./globals.css";
 
 function RootLayout({
@@ -16,8 +17,10 @@ function RootLayout({
 			<body
 				className={`overflow-x-hidden bg-main-100 ${TiroBangla400.className}`}
 			>
-				<NextTopLoader color="#3066ac" showSpinner={false} />
-				<ClintProvider>{children}</ClintProvider>
+				<EdgeStoreProvider>
+					<NextTopLoader color="#3066ac" showSpinner={false} />
+					<ClintProvider>{children}</ClintProvider>
+				</EdgeStoreProvider>
 			</body>
 		</html>
 	);
