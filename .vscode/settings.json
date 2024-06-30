@@ -5,5 +5,6 @@
 	"files.associations": {
 		"*css": "tailwindcss"
 	},
-	"files.autoSave": "off"
+	"files.autoSave": "off", 
+	"editor.defaultFormatter": "biomejs.biome"
 }

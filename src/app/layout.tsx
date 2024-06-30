@@ -1,7 +1,7 @@
 import NextTopLoader from "nextjs-toploader";
 import React from "react";
 
-import { ClintProvider, Nav } from "@/components";
+import { ClintProvider } from "@/components";
 import { baseMetaData } from "@/config";
 import { TiroBangla400 } from "@/fonts";
 import "./globals.css";
@@ -17,10 +17,7 @@ function RootLayout({
 				className={`overflow-x-hidden bg-main-100 ${TiroBangla400.className}`}
 			>
 				<NextTopLoader color="#3066ac" showSpinner={false} />
-				<ClintProvider>
-					<Nav />
-					{children}
-				</ClintProvider>
+				<ClintProvider>{children}</ClintProvider>
 			</body>
 		</html>
 	);
