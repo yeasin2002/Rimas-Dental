@@ -14,6 +14,7 @@
     "@auth/mongodb-adapter": "^3.2.0",
     "@faker-js/faker": "^8.4.1",
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@hookform/resolvers": "^3.6.0",
     "@prisma/client": "^5.15.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -49,12 +50,13 @@
     "react-countup": "^6.5.3",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.51.1",
+    "react-hook-form": "^7.52.0",
     "react-hot-toast": "^2.4.1",
     "sharp": "^0.33.4",
     "sweetalert2": "^11.12.0",
     "swiper": "^11.1.0",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "^2.2.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@actions/core": "^1.10.1",
