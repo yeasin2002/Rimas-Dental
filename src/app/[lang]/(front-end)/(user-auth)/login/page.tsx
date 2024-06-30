@@ -1,10 +1,11 @@
 "use client";
 
+import { login_server } from "@/actions";
 import { Email, Lock, UpArrow, User } from "@/components/icons";
-import React, { useActionState } from "react";
+import { useActionState } from "react";
 
 const Login = () => {
-	//  const  [error,action,isLoading] =	useActionState();
+	const [error, action, isLoading] = useActionState(login_server, null);
 	return (
 		<>
 			<div className="relative mt-6 flex items-center">

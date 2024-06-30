@@ -1,20 +1,23 @@
-import { internationalization } from "@/middlewares";
+import { internationalization, sessionUpdate } from "@/middlewares";
 
-// const middlewares = async () => {console.log("🔥 middlewares called");};
+import { createEdgeRouter } from "next-connect";
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-export const config = {
-	matcher: ["/((?!api/|_next/|_static|_vercel|[\\w-]+\\.\\w+).*)"],
-};
+const router = createEdgeRouter<NextRequest, NextFetchEvent>();
 
-export const middleware = internationalization;
+router.use(internationalization);
+router.use(sessionUpdate);
 
-/*
-import { NextRequest } from "next/server";
-import { updateSession } from "./lib";
+router.all(() => {
+	return NextResponse.next();
+});
 
-export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+// the middleware
+export function middleware(request: NextRequest, event: NextFetchEvent) {
+	return router.run(request, event);
 }
 
-
-*/
+export const config = {
+	matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};

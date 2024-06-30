@@ -4,12 +4,26 @@
 		"enabled": true
 	},
 	"linter": {
-		"enabled": true,
+		"enabled": false,
 		"rules": {
 			"recommended": true,
 			"style": {
 				"useImportType": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
 			}
 		}
+	},
+	"formatter": {
+		"ignore": [
+			"node_modules",
+			"build",
+			"dist",
+			"DS_Store",
+			".next",
+			"out/",
+			"cypress"
+		]
 	}
 }

@@ -1,7 +1,10 @@
+import type { NextFetchEvent, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+
 import { languageLocale } from "@/data";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextHandler } from "next-connect";
 
 const { locals, defaultLocale } = languageLocale;
 

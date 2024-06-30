@@ -5,6 +5,15 @@
 	"files.associations": {
 		"*css": "tailwindcss"
 	},
-	"files.autoSave": "off", 
-	"editor.defaultFormatter": "biomejs.biome"
+	"files.autoSave": "off",
+
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	}
 }

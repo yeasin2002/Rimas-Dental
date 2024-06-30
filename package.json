@@ -39,6 +39,7 @@
     "negotiator": "^0.6.3",
     "next": "14.1.4",
     "next-auth": "^5.0.0-beta.19",
+    "next-connect": "^1.0.0",
     "next-videos": "^1.4.1",
     "nextjs-toploader": "^1.6.12",
     "prisma": "^5.15.0",
