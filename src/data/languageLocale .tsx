@@ -1,6 +1,6 @@
 export const languageLocale = {
 	locals: ["bn", "en", "ar", "ja", "hi", "ru", "es"],
-	defaultLocale: "en",
+	defaultLocale: "bn",
 };
 
 export const bangla = {

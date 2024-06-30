@@ -1,7 +1,10 @@
+"use client";
+
 import { Email, Lock, UpArrow, User } from "@/components/icons";
-import React from "react";
+import React, { useActionState } from "react";
 
 const Login = () => {
+	//  const  [error,action,isLoading] =	useActionState();
 	return (
 		<>
 			<div className="relative mt-6 flex items-center">

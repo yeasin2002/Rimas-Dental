@@ -1,7 +1,11 @@
-import doctorIcon from "@/assets/temp/doctor-3.jpg";
 import { Mail, MapPin, SquareUser } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+
+import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
+import maleDoctor from "@/assets/icons/others/doctor-male.svg";
+import doctorIcon from "@/assets/temp/doctor-3.jpg";
+
 interface Props extends React.ComponentProps<"div"> {}
 
 export const DoctorsCards = ({ ...props }: Props) => {
@@ -15,9 +19,10 @@ export const DoctorsCards = ({ ...props }: Props) => {
 				/>
 
 				<div className="px-6 py-4">
-					<h1 className="text-xl font-semibold text-gray-800 dark:text-white">
-						Dr. Farhana Rahman
-					</h1>
+					<div className="flex items-center gap-x-1 text-xl font-semibold text-gray-800 dark:text-white">
+						<Image src={femaleDoctor} alt="Doctor" width={30} height={30} />
+						<h4>Dr. Farhana Rahman</h4>
+					</div>
 					<p className="py-2 text-gray-700 dark:text-gray-400">
 						An experienced internal medicine physician dedicated to providing
 						compassionate and personalized care. With over 15 years in the
