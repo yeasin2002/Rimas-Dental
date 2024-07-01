@@ -1,2 +1,1 @@
-export * from "./patient-auth";
-export * from "./utils.actions";
+export * from "./patient-auth.actions";

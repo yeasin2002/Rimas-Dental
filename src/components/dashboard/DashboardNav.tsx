@@ -13,7 +13,7 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { logoutWithAuthJs } from "@/actions";
+import { logoutWithAuthJs } from "@/actions/authjs.actions";
 import { Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";

@@ -4,13 +4,26 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { Email, InputCombo, InputComboForPassword, Lock } from "@/components";
+import { loginWithAuthJs } from "@/actions/authjs.actions";
+import {
+	Email,
+	EosLoading,
+	InputCombo,
+	InputComboForPassword,
+	Lock,
+} from "@/components";
 import { loginFormSchema } from "@/schema";
+import { useParams, useRouter } from "next/navigation";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 type LoginFormData = z.infer<typeof loginFormSchema>;
 
 const Login = () => {
+	const router = useRouter();
+	const lang = useParams()?.lang;
+	const [isLoading, setIsLoading] = useState(false);
+
 	const {
 		register,
 		handleSubmit,
@@ -21,13 +34,19 @@ const Login = () => {
 	});
 
 	const onSubmit = async (data: LoginFormData) => {
+		setIsLoading(true);
+		const toastId = toast.loading("Processing...");
 		try {
-			console.table(data);
-			toast.success("Success");
-		} catch (error) {
-			setError("root", {
-				message: "Invalid email or password",
+			await loginWithAuthJs({
+				email: data.email,
+				password: data.password,
 			});
+			toast.success("login successful", { id: toastId });
+			return router.push(`/${lang}/admin`);
+		} catch (error) {
+			return toast.error("Registration failed", { id: toastId });
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -57,7 +76,7 @@ const Login = () => {
 				className="mt-6 w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
 				type="submit"
 			>
-				Sign Up
+				{isLoading ? <EosLoading className="mx-auto" /> : "Sign In"}
 			</button>
 		</form>
 	);

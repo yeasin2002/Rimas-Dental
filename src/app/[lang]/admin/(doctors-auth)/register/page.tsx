@@ -4,21 +4,23 @@ import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Phone } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
-import { loginWithAuthJs, register_server } from "@/actions";
+import { loginWithAuthJs } from "@/actions/authjs.actions";
+import { register_server } from "@/actions/patient-auth.actions";
+
 import {
 	Email,
+	EosLoading,
 	InputCombo,
 	InputComboForPassword,
 	Lock,
 	PhotoUploaderDND,
 	SelectGender,
 	UpArrow,
-	UploadingLoop,
 	User,
 } from "@/components";
 import { registerFormSchema } from "@/schema";
@@ -29,10 +31,11 @@ type registerFormData = z.infer<typeof registerFormSchema>;
 
 const Register = () => {
 	const router = useRouter();
+	const [isLoading, setIsLoading] = useState(false);
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isLoading },
+		formState: { errors },
 		setError,
 		setValue,
 		watch,
@@ -44,7 +47,7 @@ const Register = () => {
 
 	const onSubmit = async (data: registerFormData) => {
 		const toastId = toast.loading("Uploading...");
-
+		setIsLoading(true);
 		try {
 			const res = await register_server(data);
 			if (!res.success) throw new Error(res.message || "Something went wrong");
@@ -59,10 +62,11 @@ const Register = () => {
 			setError("root", {
 				message: "Invalid email or password",
 			});
-
 			return toast.error(error.message || "something went wrong", {
 				id: toastId,
 			});
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
@@ -135,7 +139,7 @@ const Register = () => {
 				className="w-full transform rounded-lg bg-blue-500 px-6 py-3  mt-6 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
 				type="submit"
 			>
-				{isLoading ? <UploadingLoop /> : "Sign Up"}
+				{isLoading ? <EosLoading className="mx-auto" /> : "Sign Up"}
 			</button>
 
 			<DevTool control={control} />
