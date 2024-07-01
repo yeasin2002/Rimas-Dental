@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 import { CloudUpload, UploadingLoop } from "../icons";
 
@@ -13,7 +14,6 @@ interface FileWithPreview extends File {
 import {
 	Dialog,
 	DialogContent,
-	DialogDescription,
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
@@ -25,11 +25,13 @@ import { Button } from "./button";
 
 interface Props extends React.ComponentProps<"button"> {
 	onSuccessUpload: (v: string) => void;
+	register: UseFormRegisterReturn;
 }
 
 export const PhotoUploaderDND = ({
 	children,
 	onSuccessUpload,
+	register,
 	...props
 }: Props) => {
 	const [file, setFile] = useState<FileWithPreview | null>(null);
@@ -71,13 +73,14 @@ export const PhotoUploaderDND = ({
 			if (!res) throw new Error("Upload failed");
 			onSuccessUpload(res.url);
 			toast.success("Upload successful");
-			setIsModalClosed(true);
+			return setIsModalClosed(false);
 		} catch (error) {
 			toast.error("Upload failed");
 		} finally {
 			setIsUploading(false);
 		}
 	};
+
 	return (
 		<Dialog open={isModalClosed} onOpenChange={setIsModalClosed}>
 			<DialogTrigger {...props}>{children}</DialogTrigger>
@@ -108,7 +111,13 @@ export const PhotoUploaderDND = ({
 							{...getRootProps()}
 							className=" h-56 w-full  mx-auto aspect-square  items-center justify-center flex flex-col  border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
 						>
-							<input type="file" className="hidden" {...getInputProps()} />
+							<input
+								type="file"
+								className="hidden"
+								{...getInputProps()}
+								// {...register}
+								name={register.name}
+							/>
 
 							<div className="flex flex-col items-center justify-center pt-5 pb-6">
 								<CloudUpload className="size-10" />

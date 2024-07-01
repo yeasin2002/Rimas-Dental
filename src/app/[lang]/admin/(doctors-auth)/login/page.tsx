@@ -23,7 +23,7 @@ const Login = () => {
 
 	const onSubmit = async (data: LoginFormData) => {
 		try {
-			console.log("SUCCESS", data);
+			console.table(data);
 			toast.success("Success");
 		} catch (error) {
 			setError("root", {
