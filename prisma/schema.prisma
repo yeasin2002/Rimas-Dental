@@ -21,7 +21,7 @@ enum doctorsRole {
 model Doctors {
   id           String @id @default(auto()) @map("_id") @db.ObjectId
   email        String @unique
-  phone        String @unique
+  phone        String
   name         String
   profileImage String
   gender       Gender
@@ -30,10 +30,12 @@ model Doctors {
   yearsOfExperience Int?        @default(0)
   bio               String?
   role              doctorsRole @default(doctor)
+  address           String?
+  password          String
 
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
-  isPending Boolean?   @default(false)
+  isPending Boolean?   @default(true)
   Services  Services[]
 }
 

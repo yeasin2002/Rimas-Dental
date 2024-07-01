@@ -82,3 +82,20 @@ export const Home = (props: SVGProps<SVGSVGElement>) => (
 		<path d="M23,30H9a3,3,0,0,1-3-3V17H5a1,1,0,0,1-.63-1.77l11-9a1,1,0,0,1,1.27,0l11,9A1,1,0,0,1,27,17H26V27A3,3,0,0,1,23,30ZM7.58,15.18A1,1,0,0,1,8,16V27a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V16a1,1,0,0,1,.42-.82L16,8.29Z" />
 	</svg>
 );
+
+export function ContactsOutline(props: SVGProps<SVGSVGElement>) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="1em"
+			height="1em"
+			viewBox="0 0 24 24"
+			{...props}
+		>
+			<path
+				fill="currentColor"
+				d="M4 23v-2h16v2zM4 3V1h16v2zm8 10q1.25 0 2.125-.875T15 10t-.875-2.125T12 7t-2.125.875T9 10t.875 2.125T12 13m-8 7q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm1.75-2q1.125-1.4 2.725-2.2T12 15t3.525.8T18.25 18H20V6H4v12zm2.95 0h6.6q-.725-.5-1.562-.75T12 17t-1.737.25T8.7 18m3.3-7q-.425 0-.712-.288T11 10t.288-.712T12 9t.713.288T13 10t-.288.713T12 11m0 1"
+			></path>
+		</svg>
+	);
+}

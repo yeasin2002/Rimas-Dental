@@ -11,7 +11,7 @@ interface Props {
 export const ClintProvider = ({ children }: Props) => {
 	return (
 		<>
-			<Toaster />
+			<Toaster position="top-left" />
 			{children}
 			{process.env.NODE_ENV === "development" && <DeviceInfo />}
 		</>

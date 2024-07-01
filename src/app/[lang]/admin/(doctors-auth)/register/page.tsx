@@ -2,11 +2,14 @@
 
 import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Phone } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
+import { loginWithAuthJs, register_server } from "@/actions";
 import {
 	Email,
 	InputCombo,
@@ -18,14 +21,14 @@ import {
 	UploadingLoop,
 	User,
 } from "@/components";
-import { prisma } from "@/lib";
+import { registerFormSchema } from "@/schema";
 import { cn } from "@/utils";
-import Image from "next/image";
-import { registerFormSchema } from "./registerSchema";
+import { useRouter } from "next/navigation";
 
-type LoginFormData = z.infer<typeof registerFormSchema>;
+type registerFormData = z.infer<typeof registerFormSchema>;
 
 const Register = () => {
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -35,22 +38,34 @@ const Register = () => {
 		watch,
 		control,
 		getValues,
-	} = useForm<LoginFormData>({
+	} = useForm<registerFormData>({
 		resolver: zodResolver(registerFormSchema),
 	});
 
-	const onSubmit = async (data: LoginFormData) => {
-		
+	const onSubmit = async (data: registerFormData) => {
+		const toastId = toast.loading("Uploading...");
+
 		try {
-			console.table(data);
-			toast.success("Success");
-		} catch (error) {
+			const res = await register_server(data);
+			if (!res.success) throw new Error(res.message || "Something went wrong");
+			await loginWithAuthJs({
+				email: data.email,
+				password: data.password,
+			});
+
+			router.push("/en/admin");
+			return toast.success("Registration successful", { id: toastId });
+		} catch (error: any) {
 			setError("root", {
 				message: "Invalid email or password",
 			});
+
+			return toast.error(error.message || "something went wrong", {
+				id: toastId,
+			});
 		}
 	};
-	console.log(errors);
+
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<SelectGender
@@ -95,18 +110,25 @@ const Register = () => {
 				icon={<Email />}
 				placeholder="Email address"
 			/>
-
+			<InputCombo
+				register={register("phone")}
+				error={errors.phone?.message}
+				icon={
+					<Phone className="mx-3 h-6 w-6 text-gray-300 dark:text-gray-500" />
+				}
+				placeholder="01***"
+			/>
 			<InputComboForPassword
 				register={register("password")}
 				error={errors.password?.message}
 				icon={<Lock />}
-				placeholder="******"
+				placeholder="password"
 			/>
 			<InputComboForPassword
 				register={register("confirmPassword")}
 				error={errors.confirmPassword?.message}
 				icon={<Lock />}
-				placeholder="*******"
+				placeholder="confirm password*"
 			/>
 
 			<button

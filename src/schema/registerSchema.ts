@@ -15,6 +15,8 @@ export const registerFormSchema = z
 			.string()
 			.min(8, { message: "Password is too short" })
 			.max(20, { message: "Password is too long" }),
+
+		phone: z.string().min(10, { message: "Phone number should be 10 digits" }),
 	})
 	.refine((data) => data.password === data.confirmPassword, {
 		message: "Passwords do not match",

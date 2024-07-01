@@ -13,10 +13,10 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { Doctor01, Doctor02, LinkTo } from "@/components";
+import { logoutWithAuthJs } from "@/actions";
+import { Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
-import Image from "next/image";
 import React from "react";
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -88,7 +88,9 @@ export const DashboardNav = ({ ...props }: Props) => {
 						<DropdownMenuItem>Settings</DropdownMenuItem>
 						<DropdownMenuItem>Support</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem>Logout</DropdownMenuItem>
+						<DropdownMenuItem onClick={logoutWithAuthJs}>
+							Logout
+						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</div>
