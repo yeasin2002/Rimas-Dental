@@ -1,5 +1,3 @@
-bun run lint:fix
-# bun run  format:fix
 bun run  format:biome
 bun run build
 git add  --all

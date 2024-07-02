@@ -50,6 +50,8 @@ model Patient {
   address     String?
   reference   String?
 
+  password String
+
   treatmentNotes      Json[]
   appointmentHistory  Json[]
   majorDisease        String[]

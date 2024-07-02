@@ -1,11 +1,16 @@
+import { redirect_server } from "@/actions/utils.actions";
+import { auth } from "@/auth";
+import { DashboardNav } from "@/components/dashboard";
 import React from "react";
-import { DashboardNav } from "../../../../components/dashboard";
 
 export const metadata = {
 	title: "Admin Dashboard",
 };
 
-const AdminLayout = ({ children }: { children: React.ReactNode }) => {
+const AdminLayout = async ({ children }: { children: React.ReactNode }) => {
+	const session = await auth();
+	if (!session) return redirect_server("/login");
+
 	return (
 		<>
 			<DashboardNav />
