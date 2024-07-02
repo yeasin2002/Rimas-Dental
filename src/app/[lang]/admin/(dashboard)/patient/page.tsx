@@ -13,7 +13,10 @@ const Clients = () => {
 				</div>
 				<LinkTo
 					href={"/admin/patient/add"}
-					className={buttonVariants({ variant: "dracula" })}
+					className={buttonVariants({
+						variant: "sky",
+						className: "!bg-main-400",
+					})}
 				>
 					Add Patient
 				</LinkTo>

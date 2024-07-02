@@ -11,10 +11,13 @@ const ServicesManagement = () => {
 					<p>Services that you provide</p>
 				</div>
 				<LinkTo
-					className={buttonVariants({ variant: "dracula" })}
+					className={buttonVariants({
+						variant: "sky",
+						className: "!bg-main-400",
+					})}
 					href={"/admin/services/write"}
 				>
-					Add Doctors
+					Add Service
 				</LinkTo>
 			</div>
 			<div className="mt-20 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">

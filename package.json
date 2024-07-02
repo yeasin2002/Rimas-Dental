@@ -2,7 +2,7 @@
   "name": "rimas-dental",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rimraf .next && next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -51,7 +51,7 @@
     "next-connect": "^1.0.0",
     "next-videos": "^1.4.1",
     "nextjs-toploader": "^1.6.12",
-    "prisma": "^5.15.0",
+    "prisma": "^5.16.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-compare-slider": "^3.0.1",
@@ -80,6 +80,7 @@
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "autoprefixer": "^10.4.19",
+    "chalk": "^5.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
@@ -90,7 +91,7 @@
     "prettier": "^3.3.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.6.2",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.5"
   }

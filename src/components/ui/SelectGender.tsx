@@ -2,8 +2,6 @@
 
 import React, { Fragment, useState } from "react";
 
-import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
-import maleDoctor from "@/assets/icons/others/doctor-male.svg";
 import { CheckCheck } from "lucide-react";
 import Image from "next/image";
 import { UseFormRegisterReturn } from "react-hook-form";
@@ -11,20 +9,20 @@ import { UseFormRegisterReturn } from "react-hook-form";
 interface Props extends React.ComponentProps<"div"> {
 	register: UseFormRegisterReturn;
 	selectedValue: "male" | "female";
+	genderList: {
+		name: string;
+		icon: any;
+	}[];
 }
 
-export const SelectGender = ({ register, selectedValue, ...props }: Props) => {
+export const SelectGender = ({
+	register,
+	selectedValue,
+	genderList,
+	...props
+}: Props) => {
 	const [selectGender, SetSelectGender] = useState<string>(selectedValue);
-	const genderList = [
-		{
-			name: "male",
-			icon: maleDoctor,
-		},
-		{
-			name: "female",
-			icon: femaleDoctor,
-		},
-	];
+
 	return (
 		<div
 			className={

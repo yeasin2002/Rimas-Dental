@@ -9,8 +9,9 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
-import { loginWithAuthJs } from "@/actions/authjs.actions";
-import { register_server } from "@/actions/patient-auth.actions";
+import { loginWithAuthJs, register_server } from "@/actions/authjs.actions";
+import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
+import maleDoctor from "@/assets/icons/others/doctor-male.svg";
 
 import {
 	Email,
@@ -70,11 +71,22 @@ const Register = () => {
 		}
 	};
 
+	const genderList = [
+		{
+			name: "male",
+			icon: maleDoctor,
+		},
+		{
+			name: "female",
+			icon: femaleDoctor,
+		},
+	];
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<SelectGender
 				register={register("gender")}
 				selectedValue={getValues("gender")}
+				genderList={genderList}
 			/>
 
 			<InputCombo

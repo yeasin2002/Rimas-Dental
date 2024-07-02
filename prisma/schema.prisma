@@ -18,6 +18,13 @@ enum doctorsRole {
   visitor
 }
 
+enum sweetEatingLevel {
+  low
+  medium
+  high
+  no
+}
+
 model Doctors {
   id           String @id @default(auto()) @map("_id") @db.ObjectId
   email        String @unique
@@ -49,23 +56,25 @@ model Patient {
   gender      Gender
   address     String?
   reference   String?
+  occupation  String
 
   password String
 
-  treatmentNotes      Json[]
-  appointmentHistory  Json[]
-  majorDisease        String[]
-  regularBrushingTime Int      @default(1)
-  brushingMaterials   String
-  sweetEatingLevel    String
-  examination         String
+  treatmentNotes String
+  // appointmentHistory Json[]
+  majorDisease   String[]
 
-  radiologicalInvestigation String?
-  laboratoryInvestigation   String?
-  treatmentPlan             String?
-  treatmentNote             String?
-  drugHistory               String?
-  treatmentDetails          PatientSchedule[]
+  regularBrushingTime Int              @default(1)
+  brushingMaterials   String
+  sweetEatingLevel    sweetEatingLevel @default(no)
+
+  examination String[]
+  problems    String
+
+  treatmentPlan    String?
+  treatmentNote    String?
+  drugHistory      String?
+  treatmentDetails PatientSchedule[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

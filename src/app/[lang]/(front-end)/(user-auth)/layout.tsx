@@ -41,7 +41,7 @@ const Auth = ({ children }: { children: ReactNode }) => {
 					{children}
 					<p className="mt-4 text-center">
 						Are you a doctor?
-						<LinkTo href={"/admin/login"} className="mx-1 text-main-400">
+						<LinkTo href={"/admin"} className="mx-1 text-main-400">
 							login here
 						</LinkTo>
 						as a doctor.

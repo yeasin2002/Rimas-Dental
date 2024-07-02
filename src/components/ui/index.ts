@@ -17,5 +17,6 @@ export * from "./TimePicker";
 // custom
 export * from "./inputCombo";
 export * from "./inputComboForPassword";
+export * from "./inputComboMax";
 export * from "./PhotoUploaderDND";
 export * from "./SelectGender";

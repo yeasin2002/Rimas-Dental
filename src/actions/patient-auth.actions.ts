@@ -36,38 +36,3 @@ export const loginPatient_server = async ({
 		};
 	}
 };
-
-export const register_server = async (data: registerFormData) => {
-	try {
-		// check If Email Already Exists
-		const checkDoctorExist = await prisma.doctors.findFirst({
-			where: { email: data.email },
-		});
-		if (checkDoctorExist)
-			throw new Error("Doctor with this email  already exists");
-
-		// Hash Password
-		const hashedPassword = await bcrypt.hash(data.password, 10);
-		// Create User
-		await prisma.doctors.create({
-			data: {
-				name: data.name,
-				email: data.email,
-				password: hashedPassword,
-				gender: data.gender,
-				phone: data.phone,
-				profileImage: data.profileImage,
-			},
-		});
-
-		return {
-			success: true,
-			message: "success",
-		};
-	} catch (error: any) {
-		return {
-			success: false,
-			message: error?.message as string,
-		};
-	}
-};

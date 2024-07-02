@@ -1,3 +1,4 @@
 bun run  format:biome
+bunx prisma generate
 bun run build
 git add  --all
