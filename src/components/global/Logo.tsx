@@ -12,10 +12,10 @@ export const Logo = ({ href = "/", ...props }: Props) => {
 				src={teeth}
 				alt="teeth"
 				sizes={"100"}
-				className="size-10"
+				className="size-10 2xl:size-14"
 				aria-label="Rima's Dental Logo"
 			/>
-			<p className="ml-2 font-grotesk text-xl font-bold text-main-400 md:text-2xl">
+			<p className="ml-2 font-grotesk text-xl font-bold text-main-400 md:text-2xl 2xl:text-3xl">
 				{`Rima's`} Dental
 			</p>
 		</LinkTo>

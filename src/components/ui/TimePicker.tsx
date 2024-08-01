@@ -12,10 +12,11 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/utils";
 
-interface TimePickerProps {
-	value: { from: string; to: string };
+interface TimePickerProps extends React.ComponentPropsWithoutRef<"button"> {
+	timeValue: { from: string; to: string };
 	onValueChange: (value: { from: string; to: string }) => void;
 }
+
 const times = [
 	{
 		from: "5:00 PM",
@@ -39,25 +40,30 @@ const times = [
 	},
 ];
 
-export function TimePicker({ value, onValueChange }: TimePickerProps) {
-	const handleValueChange = (value: { from: string; to: string }) => {
-		onValueChange(value);
+export function TimePicker({
+	timeValue,
+	onValueChange,
+	className,
+}: TimePickerProps) {
+	const handleValueChange = (timeValue: { from: string; to: string }) => {
+		onValueChange(timeValue);
 	};
 	return (
 		<Popover>
 			<PopoverTrigger asChild>
 				<Button
+					type="button"
 					variant={"outline"}
 					className={cn(
 						"max-w-[280px] justify-start text-left font-normal",
-						!value && "text-muted-foreground",
+						!timeValue && "text-muted-foreground",
 					)}
 				>
 					<Clock2 className="mr-2 h-4 w-4" />
-					{!value ? "Time" : `${value.from} - ${value.to}`}
+					{!timeValue ? "Time" : `${timeValue.from} - ${timeValue.to}`}
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="w-full bg-transparent p-0">
+			<PopoverContent className="w-full bg-transparent p-0 -translate-x-10">
 				<ol>
 					{times.map((time) => (
 						<li

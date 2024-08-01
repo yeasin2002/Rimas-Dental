@@ -4,7 +4,7 @@ import { Logo } from "../global";
 
 export const Footer = () => {
 	return (
-		<footer className="container flex w-full flex-col items-start justify-between gap-y-5 rounded-t-3xl bg-[#e8f1f9] py-6 md:flex-row md:items-center">
+		<footer className="container flex w-full flex-col items-start justify-between gap-y-5 rounded-t-3xl bg-[#e8f1f9] py-6 md:flex-row md:items-center 2xl:mt-8">
 			<div className="grid w-full grid-cols-2 items-start justify-between md:w-fit md:grid-cols-1 md:gap-y-2">
 				<Logo href={"/"} />
 				<div className="flex w-full flex-col justify-end text-end md:text-start">
@@ -19,14 +19,14 @@ export const Footer = () => {
 				<div className="hidden md:block"></div>
 				{footerInfo.map((data) => (
 					<div key={data.context + data.info}>
-						<p className="mb-2 font-grotesk text-base font-bold text-main-400">
+						<p className="mb-2 font-grotesk text-base font-bold text-main-400 2xl:text-2xl	">
 							{data.context}
 						</p>
 						{Array.isArray(data.info) ? (
 							<ul>
 								{data.info.map((info) => (
 									<li
-										className="text-sm font-semibold text-main-600"
+										className="text-sm font-semibold text-main-600 2xl:text-xl"
 										key={info}
 									>
 										{info}
@@ -34,7 +34,9 @@ export const Footer = () => {
 								))}
 							</ul>
 						) : (
-							<p className="text-sm font-semibold text-main-600">{data.info}</p>
+							<p className="text-sm font-semibold text-main-600 2xl:text-xl">
+								{data.info}
+							</p>
 						)}
 					</div>
 				))}
@@ -42,4 +44,3 @@ export const Footer = () => {
 		</footer>
 	);
 };
-

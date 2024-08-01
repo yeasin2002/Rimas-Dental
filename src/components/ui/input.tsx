@@ -7,6 +7,7 @@ interface InputProps extends React.ComponentProps<"input"> {
 	errorMsg?: string;
 	labelName: string;
 	className?: string;
+	labelClassName?: string;
 }
 
 export const Input: FC<InputProps> = ({
@@ -14,13 +15,17 @@ export const Input: FC<InputProps> = ({
 	errorMsg,
 	labelName,
 	className,
+	labelClassName,
 	...rest
 }) => {
 	return (
 		<div className="mb-6">
 			<label
 				htmlFor={labelName}
-				className={cn("mb-2 block text-slate-900 dark:text-slate-100")}
+				className={cn(
+					"mb-2 block text-slate-900 dark:text-slate-100 2xl:text-2xl",
+					labelClassName,
+				)}
 			>
 				{labelName}
 			</label>

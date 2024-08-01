@@ -79,7 +79,7 @@
 
 @layer components {
 	.input-blue {
-		@apply w-full rounded-2xl bg-main-300 px-4 py-2;
+		@apply w-full rounded-2xl bg-main-300 px-4 py-2  ;
 	}
 	.home_sections-container {
 		@apply mt-16 px-4;

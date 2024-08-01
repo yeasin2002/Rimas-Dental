@@ -15,7 +15,7 @@ export const TeethBeforeAndAfterEffects = (props: Props) => {
 	return (
 		<div {...props} className="home_sections-container container">
 			<h2
-				className={`my-5 font-grotesk text-2xl font-bold text-deepBlue-100 mini:text-3xl ${baloo.className}`}
+				className={`my-5 font-grotesk text-2xl font-bold text-deepBlue-100 mini:text-3xl 2xl:text-5xl ${baloo.className}`}
 			>
 				সেবার গ্রহণের আগে ও পরে
 			</h2>
@@ -25,7 +25,7 @@ export const TeethBeforeAndAfterEffects = (props: Props) => {
 					<ReactCompareSliderImage
 						src={teethClean.src}
 						alt="Clean Teeth "
-						className="aspect-video rounded-lg lg:max-h-96"
+						className="aspect-video rounded-lg lg:max-h-96 2xl:max-h-[30rem]"
 						aria-label="Clean Teeth"
 					/>
 				}
@@ -33,7 +33,7 @@ export const TeethBeforeAndAfterEffects = (props: Props) => {
 					<ReactCompareSliderImage
 						src={teethDirty.src}
 						alt="Dirty Teeth "
-						className="aspect-video rounded-lg lg:max-h-96"
+						className="aspect-video rounded-lg lg:max-h-96 2xl:max-h-[30rem]"
 						aria-label="Dirty Teeth"
 					/>
 				}

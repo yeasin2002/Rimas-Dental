@@ -41,7 +41,7 @@ export const AppointmentForm = (props: Props) => {
 			className={cn("h-full rounded-xl bg-white p-6", props.className)}
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<p className="font-grotesk text-2xl font-bold text-main-500">
+			<p className="font-grotesk text-2xl font-bold text-main-500 2xl:text-3xl">
 				অ্যাপয়েন্টমেন্ট বুক করুণ
 			</p>
 			<div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
@@ -70,6 +70,7 @@ export const AppointmentForm = (props: Props) => {
 						<DatePicker
 							date={files.field.value}
 							setDate={files.field.onChange}
+							className="2xl:text-lg  2xl:py-6 2xl:px-4 w-full"
 						/>
 					)}
 				/>
@@ -79,10 +80,8 @@ export const AppointmentForm = (props: Props) => {
 					name="appointmentTime"
 					render={(files) => (
 						<TimePicker
-							value={files.field.value}
-							onValueChange={(value) => {
-								files.field.onChange(value);
-							}}
+							timeValue={files.field.value}
+							onValueChange={(value) => files.field.onChange(value)}
 						/>
 					)}
 				/>
@@ -90,7 +89,7 @@ export const AppointmentForm = (props: Props) => {
 			<Button
 				variant={"dracula"}
 				type="submit"
-				className="mt-4 w-full rounded-lg"
+				className="mt-4 w-full rounded-lg 2xl:text-xl 2xl:py-8 "
 			>
 				নিশ্চিত করুণ
 			</Button>
