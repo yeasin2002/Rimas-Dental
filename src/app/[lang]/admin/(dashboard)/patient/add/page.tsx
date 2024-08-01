@@ -42,7 +42,10 @@ const AddPatients = () => {
 							Select type of account
 						</h1>
 						<div className="mt-3 md:flex md:items-center md:-mx-2">
-							<button className="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-lg md:w-auto md:mx-2 focus:outline-none">
+							<button
+								type="button"
+								className="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-lg md:w-auto md:mx-2 focus:outline-none"
+							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									className="w-6 h-6"
@@ -59,7 +62,10 @@ const AddPatients = () => {
 								</svg>
 								<span className="mx-2">client</span>
 							</button>
-							<button className="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
+							<button
+								type="button"
+								className="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none"
+							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									className="w-6 h-6"
@@ -114,16 +120,6 @@ const AddPatients = () => {
 							placeholder="Enter your password"
 						/>
 
-						<div>
-							<label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-								Confirm password
-							</label>
-							<input
-								type="password"
-								placeholder="Enter your password"
-								className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-							/>
-						</div>
 						<button className="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
 							<span>Sign Up </span>
 							<svg

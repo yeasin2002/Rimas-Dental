@@ -9,7 +9,7 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 			className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
 			{...props}
 		>
-			<a className="absolute inset-0 z-10" href="#">
+			<a className="absolute inset-0 z-10" href="/blog">
 				<span className="sr-only">View</span>
 			</a>
 			<Image

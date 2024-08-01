@@ -218,7 +218,10 @@ export const ClientsTable = ({ ...props }: Props) => {
 						<td className="px-6 py-4">$2999</td>
 						<td className="px-6 py-4">1 Jan 2022</td>
 						<td>
-							<button className="font-medium text-blue-600 hover:underline dark:text-blue-500">
+							<button
+								type="button"
+								className="font-medium text-blue-600 hover:underline dark:text-blue-500"
+							>
 								Details
 							</button>
 						</td>

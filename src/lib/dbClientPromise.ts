@@ -1,20 +1,16 @@
-// This approach is taken from https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-// Ensure globalThis is defined
-if (typeof globalThis === "undefined") {
-	(function () {
-		if (typeof global !== "undefined") {
-			(global as any).globalThis = global;
-		} else if (typeof self !== "undefined") {
-			(self as any).globalThis = self;
-		} else if (typeof window !== "undefined") {
-			(window as any).globalThis = window;
-		} else {
-			throw new Error("Unable to locate global object.");
-		}
-	})();
-}
+(() => {
+	if (typeof global !== "undefined") {
+		(global as any).globalThis = global;
+	} else if (typeof self !== "undefined") {
+		(self as any).globalThis = self;
+	} else if (typeof window !== "undefined") {
+		(window as any).globalThis = window;
+	} else {
+		throw new Error("Unable to locate global object.");
+	}
+})();
 
 if (!process.env.DATABASE_URL) {
 	throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');

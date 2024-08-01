@@ -1,5 +1,5 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 import demoImg from "@/assets/images/cembar-view.webp";
 
@@ -8,7 +8,7 @@ const About = () => {
 		<>
 			<div className="flex min-h-[100dvh] flex-col">
 				<header className="flex h-14 items-center px-4 lg:px-6">
-					<a className="flex items-center justify-center" href="#" rel="ugc">
+					<a className="flex items-center justify-center" href="/" rel="ugc">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width={24}
@@ -31,14 +31,14 @@ const About = () => {
 					<nav className="ml-auto flex gap-4 sm:gap-6">
 						<a
 							className="text-sm font-medium underline-offset-4 hover:underline"
-							href="#"
+							href="/services"
 							rel="ugc"
 						>
 							Services
 						</a>
 						<a
 							className="text-sm font-medium underline-offset-4 hover:underline"
-							href="#"
+							href="/"
 							rel="ugc"
 						>
 							Patients
