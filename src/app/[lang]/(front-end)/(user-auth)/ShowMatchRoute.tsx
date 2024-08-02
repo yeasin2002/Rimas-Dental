@@ -10,11 +10,14 @@ export const ShowMatchRoute = ({ ...props }: Props) => {
 	const params = usePathname()?.split("/")?.at(-1)?.toLowerCase();
 
 	return (
-		<div className="mt-6 flex items-center justify-center" {...props}>
+		<div
+			className="mt-6 2xl:mt-10 2xl:mb-4 flex items-center justify-center"
+			{...props}
+		>
 			<LinkTo
 				href="/login"
 				className={cn(
-					"w-1/3 border-b pb-4 text-center font-medium capitalize text-gray-500 dark:border-gray-400 dark:text-gray-300",
+					"2xl:text-3xl w-1/3 border-b pb-4 text-center font-medium capitalize text-gray-500 dark:border-gray-400 dark:text-gray-300",
 					params === "login" &&
 						"border-b-2 border-blue-500 dark:border-blue-400",
 				)}
@@ -24,7 +27,7 @@ export const ShowMatchRoute = ({ ...props }: Props) => {
 			<Link
 				href="/register"
 				className={cn(
-					"w-1/3 border-b-2 pb-4 text-center font-medium capitalize text-gray-800 dark:text-white",
+					"2xl:text-3xl w-1/3 border-b-2 pb-4 text-center font-medium capitalize text-gray-800 dark:text-white",
 					params === "register" &&
 						"border-b-2 border-blue-500 dark:border-blue-400",
 				)}

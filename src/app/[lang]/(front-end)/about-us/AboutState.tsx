@@ -21,7 +21,7 @@ export const AboutState = ({ ...props }: Props) => {
 										<h3 className="text-2xl font-bold text-primary">
 											<div />
 										</h3>
-										<p className="capitalize text-gray-500 dark:text-gray-400">
+										<p className="capitalize text-gray-500 dark:text-gray-400 2xl:text-2xl">
 											{items.name}
 										</p>
 									</div>

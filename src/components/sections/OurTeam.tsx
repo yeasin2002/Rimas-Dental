@@ -7,7 +7,7 @@ export const OurTeam = (props: Props) => {
 	return (
 		<section
 			{...props}
-			className="home_sections-container mt-10 md:container md:py-6"
+			className="home_sections-container mt-10 md:container md:py-6 2xl:pt-16"
 		>
 			<div className="space-y-2 *:text-center">
 				<p className="font-semibold text-yellowOrange-100 2xl:text-3xl">

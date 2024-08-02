@@ -11,7 +11,7 @@ import { ShowMatchRoute } from "./ShowMatchRoute";
 const Auth = ({ children }: { children: ReactNode }) => {
 	return (
 		<section
-			className="relative grid grid-cols-1 items-center justify-center p-4 md:grid-cols-2"
+			className="relative grid grid-cols-1 items-center justify-center p-4 md:grid-cols-2 h-full"
 			aria-label="patient login"
 		>
 			<Link
@@ -26,22 +26,26 @@ const Auth = ({ children }: { children: ReactNode }) => {
 						"https://images.unsplash.com/photo-1667133295315-820bb6481730?w=500&h=500&auto=format&fit=crop&q=100&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE1fHxkZW50YWx8ZW58MHwxfDB8fHwy"
 					}
 					alt="Logo"
-					className="hidden aspect-square object-cover md:block"
+					className="hidden aspect-square object-cover md:block xl:size-full"
 					width={500}
 					height={500}
 				/>
 			</div>
 
-			<div className="container mx-auto flex min-h-screen items-center justify-center px-6 dark:bg-gray-900">
-				<div className="w-full max-w-md">
+			<div className="container mx-auto flex min-h-[70vh] h-full items-center justify-center px-6 dark:bg-gray-900 w-full">
+				<div className="w-full max-w-md 2xl:max-w-2xl mx-auto">
 					<div className="mx-auto flex justify-center">
-						<Logo href={"/"} />
+						<Logo
+							href={"/"}
+							imgClassName="2xl:size-16"
+							textClassName="2xl:text-3xl"
+						/>
 					</div>
 					<ShowMatchRoute />
 					{children}
-					<p className="mt-4 text-center">
+					<p className="mt-4 text-center  2xl:text-2xl">
 						Are you a doctor?
-						<LinkTo href={"/admin"} className="mx-1 text-main-400">
+						<LinkTo href={"/admin"} className="mx-1 text-main-400 	">
 							login here
 						</LinkTo>
 						as a doctor.
