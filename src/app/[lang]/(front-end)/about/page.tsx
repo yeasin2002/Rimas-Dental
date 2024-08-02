@@ -338,3 +338,7 @@ const About = () => {
 };
 
 export default About;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}

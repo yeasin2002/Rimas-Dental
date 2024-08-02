@@ -8,6 +8,10 @@ import { LinkTo, Logo } from "@/components";
 import Link from "next/link";
 import { ShowMatchRoute } from "./ShowMatchRoute";
 
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}
+
 const Auth = ({ children }: { children: ReactNode }) => {
 	return (
 		<section

@@ -17,3 +17,7 @@ const Services = () => {
 };
 
 export default Services;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}

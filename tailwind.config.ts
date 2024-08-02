@@ -15,11 +15,15 @@ const config = {
 			padding: "2rem",
 			screens: {
 				"2xl": "1400px",
+				"3xl": "1700px",
+				"4xl": "2000px",
 			},
 		},
 		extend: {
 			screens: {
 				mini: "450px",
+				"3xl": "1700px",
+				"4xl": "2000px",
 			},
 			fontFamily: {
 				grotesk: "'Cabinet Grotesk', sans-serif",

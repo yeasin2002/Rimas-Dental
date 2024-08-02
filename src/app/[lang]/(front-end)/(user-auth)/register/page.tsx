@@ -1,6 +1,10 @@
 import { LinkTo } from "@/components";
 import React from "react";
 
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}
+
 const Register = () => {
 	return (
 		<div className="flex flex-col items-center justify-center py-20">

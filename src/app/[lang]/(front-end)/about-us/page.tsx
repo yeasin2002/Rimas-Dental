@@ -19,3 +19,7 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}
