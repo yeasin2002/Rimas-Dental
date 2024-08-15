@@ -1,2 +1,2 @@
 export * from "./dbClientPromise";
-export * from "./prisma";
+// export * from "./prisma";

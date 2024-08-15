@@ -4,14 +4,14 @@ import { ReactNode } from "react";
 
 import { redirect_server } from "@/actions/utils.actions";
 import OT from "@/assets/images/OT.webp";
-import { auth } from "@/auth";
+// import { auth } from "@/auth";
 import { Logo } from "@/components";
 import Link from "next/link";
 import { ShowMatchRoute } from "./ShowMatchRoute";
 
 const Auth = async ({ children }: { children: ReactNode }) => {
-	const session = await auth();
-	if (session) return redirect_server("/en/admin");
+	// const session = await auth();
+	// if (session) return redirect_server("/en/admin");
 
 	return (
 		<div className="relative grid grid-cols-1 items-center justify-center p-4 md:grid-cols-2">

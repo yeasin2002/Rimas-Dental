@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { loginPatient_server } from "@/actions";
+// import { loginPatient_server } from "@/actions";
 import { Email, InputCombo, InputComboForPassword, Lock } from "@/components";
 import { loginFormSchema } from "@/schema";
 import toast from "react-hot-toast";
@@ -24,10 +24,9 @@ const Login = () => {
 	const onSubmit = async (data: LoginFormData) => {
 		const toastId = toast.loading("Processing", { id: "login" });
 		try {
-			const res = await loginPatient_server(data);
-			if (!res.success) throw new Error(res.message);
-
-			toast.success(res.message, { id: toastId });
+			// const res = await loginPatient_server(data);
+			// if (!res.success) throw new Error(res.message);
+			// toast.success(res.message, { id: toastId });
 		} catch (error: any) {
 			toast.error(error?.message || "Invalid email or password", {
 				id: toastId,

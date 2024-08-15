@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "@/lib";
+// import { prisma } from "@/lib";
 import { authSession } from "@/lib/auth";
 import { loginFormSchema, registerFormSchema } from "@/schema";
 import bcrypt from "bcrypt";
