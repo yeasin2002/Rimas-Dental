@@ -46,7 +46,7 @@ export function LangSwitcher() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="outline" size="icon">
+				<Button variant="outline" size="icon" className="mx-2">
 					<Image
 						src={selectedLang?.flag!}
 						alt={selectedLang?.name! || "Flag"}

@@ -16,6 +16,7 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { CircleUser } from "lucide-react";
+import { LangSwitcher } from "@/components/global/LanguageSwitcher";
 
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -29,7 +30,7 @@ export const LargeNav = ({ ...props }: Props) => {
 				<Link
 					key={index}
 					className={cn(
-						`mx-3 flex items-center text-deepBlue-100 2xl:text-2xl		 ${HindSiliguri.className}`,
+						`mx-3 flex items-center text-deepBlue-100 2xl:text-2xl ${HindSiliguri.className}`,
 						pathname === item.href &&
 							`border-b border-main-400 font-bold ${HindSiliguri600.className}`,
 					)}
@@ -38,6 +39,8 @@ export const LargeNav = ({ ...props }: Props) => {
 					{item.label}
 				</Link>
 			))}
+
+			<LangSwitcher />
 
 			<div>
 				{!isLogin ? (

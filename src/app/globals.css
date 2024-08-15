@@ -78,8 +78,11 @@
 }
 
 @layer components {
+	.home_appointment-form {
+		@apply mx-auto w-11/12 -translate-y-2/4 rounded-sm border border-gray-700/40 mini:w-4/5 sm:w-2/3 md:w-11/12;
+	}
 	.input-blue {
-		@apply w-full rounded-2xl bg-main-300 px-4 py-2  ;
+		@apply w-full rounded-2xl bg-main-300 px-4 py-2;
 	}
 	.home_sections-container {
 		@apply mt-16 px-4 2xl:mt-32;
@@ -88,12 +91,11 @@
 		@apply font-grotesk text-4xl font-bold text-main-400 sm:text-5xl md:text-6xl lg:text-7xl;
 	}
 
-
 	/* form  inputs  */
 	.inputCombo-field {
-	@apply items-center	block w-full rounded-lg border bg-white px-10 py-3 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 2xl:pr-5 dark:focus:border-blue-300 2xl:placeholder:text-xl 2xl:text-xl 2xl:py-4 
+		@apply block w-full items-center rounded-lg border bg-white px-10 py-3 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 2xl:py-4 2xl:pr-5 2xl:text-xl 2xl:placeholder:text-xl;
 	}
 	.inputCombo-wrapper {
-	@apply	relative mt-4 flex items-center   2xl:shadow-sm 2xl:placeholder:text-2xl
+		@apply relative mt-4 flex items-center 2xl:shadow-sm 2xl:placeholder:text-2xl;
 	}
 }
