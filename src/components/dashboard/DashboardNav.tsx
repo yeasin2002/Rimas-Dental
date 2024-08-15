@@ -13,7 +13,7 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-import { logoutWithAuthJs } from "@/actions/authjs.actions";
+// import { logoutWithAuthJs } from "@/actions/authjs.actions";
 import { Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
@@ -88,7 +88,9 @@ export const DashboardNav = ({ ...props }: Props) => {
 						<DropdownMenuItem>Settings</DropdownMenuItem>
 						<DropdownMenuItem>Support</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem onClick={logoutWithAuthJs}>
+						<DropdownMenuItem
+						//  onClick={logoutWithAuthJs}
+						>
 							Logout
 						</DropdownMenuItem>
 					</DropdownMenuContent>

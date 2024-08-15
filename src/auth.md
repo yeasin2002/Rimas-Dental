@@ -1,10 +1,14 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import NextAuth from "next-auth"
+import { MongoDBAdapter } from "@auth/mongodb-adapter"
+import client from "./lib/mongoDBClientPromise"
+
+
 import bcrypt from "bcrypt";
-import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
-import { prisma } from "@/lib";
+
 import { signInSchema } from "@/schema";
+import mongoose from "mongoose";
 
 export const {
 	handlers: { GET, POST },
@@ -12,7 +16,8 @@ export const {
 	signOut,
 	auth,
 } = NextAuth({
-	adapter: PrismaAdapter(prisma),
+	adapter: MongoDBAdapter(client),
+
 	session: {
 		strategy: "jwt",
 	},

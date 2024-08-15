@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
-import { loginWithAuthJs, register_server } from "@/actions/authjs.actions";
+// import { loginWithAuthJs, register_server } from "@/actions/authjs.actions";
 import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
 import maleDoctor from "@/assets/icons/others/doctor-male.svg";
 
@@ -50,12 +50,12 @@ const Register = () => {
 		const toastId = toast.loading("Uploading...");
 		setIsLoading(true);
 		try {
-			const res = await register_server(data);
-			if (!res.success) throw new Error(res.message || "Something went wrong");
-			await loginWithAuthJs({
-				email: data.email,
-				password: data.password,
-			});
+			// const res = await register_server(data);
+			// if (!res.success) throw new Error(res.message || "Something went wrong");
+			// await loginWithAuthJs({
+			// 	email: data.email,
+			// 	password: data.password,
+			// });
 
 			router.push("/en/admin");
 			return toast.success("Registration successful", { id: toastId });

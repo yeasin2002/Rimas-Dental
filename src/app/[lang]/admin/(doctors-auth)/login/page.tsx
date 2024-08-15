@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { loginWithAuthJs } from "@/actions/authjs.actions";
+// import { loginWithAuthJs } from "@/actions/authjs.actions";
 import {
 	Email,
 	EosLoading,
@@ -37,10 +37,10 @@ const Login = () => {
 		setIsLoading(true);
 		const toastId = toast.loading("Processing...");
 		try {
-			await loginWithAuthJs({
-				email: data.email,
-				password: data.password,
-			});
+			// await loginWithAuthJs({
+			// 	email: data.email,
+			// 	password: data.password,
+			// });
 			toast.success("login successful", { id: toastId });
 			return router.push(`/${lang}/admin`);
 		} catch (error) {
