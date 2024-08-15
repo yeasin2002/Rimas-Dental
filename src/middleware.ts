@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 
 const router = createEdgeRouter<NextRequest, NextFetchEvent>();
 router.use(internationalization);
-router.use(sessionUpdate);
+// router.use(sessionUpdate);
 router.all(() => {
 	return NextResponse.next();
 });
