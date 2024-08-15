@@ -13,6 +13,9 @@
     "prepare": "husky",
     "lint-staged": "lint-staged"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.2.0",
     "@auth/prisma-adapter": "^2.4.1",
