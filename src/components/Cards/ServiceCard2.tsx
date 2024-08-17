@@ -1,6 +1,8 @@
 import demoImg from "@/assets/images/teeth-dirty .webp";
 import Image from "next/image";
 import React from "react";
+import { LinkTo } from "../client";
+import { ChevronsRight } from "lucide-react";
 interface Props extends React.ComponentProps<"div"> {}
 
 export const ServiceCard2 = ({ ...props }: Props) => {
@@ -9,9 +11,6 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 			className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
 			{...props}
 		>
-			<a className="absolute inset-0 z-10" href="/blog">
-				<span className="sr-only">View</span>
-			</a>
 			<Image
 				src={demoImg}
 				alt="Root Canal"
@@ -25,6 +24,16 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 				<p className="text-sm text-gray-500 dark:text-gray-400">
 					Relieve pain and restore your {`tooth's`} health.
 				</p>
+
+				<LinkTo
+					href="/services/1"
+					// className="absolute inset-0 z-10"
+					className="mt-4 flex items-center text-main-400"
+				>
+					Learn more
+					<ChevronsRight className="opacity-50" />
+					<span className="sr-only">View</span>
+				</LinkTo>
 			</div>
 		</div>
 	);
