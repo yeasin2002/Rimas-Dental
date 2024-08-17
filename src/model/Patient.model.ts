@@ -7,12 +7,6 @@ const Gender = Object.freeze({
 	Female: "female",
 });
 
-const DoctorsRole = Object.freeze({
-	Admin: "admin",
-	Doctor: "doctor",
-	Visitor: "visitor",
-});
-
 const SweetEatingLevel = Object.freeze({
 	Low: "low",
 	Medium: "medium",
@@ -27,7 +21,7 @@ const patientSchema = new Schema({
 	phone1: { type: String, required: true },
 	phone2: { type: String, default: null },
 	dateOfBirth: { type: Date, default: null },
-	gender: { type: String, enum: Object.values(Gender), required: true },
+	gender: { type: String, enum: Gender, required: true },
 	address: { type: String, default: null },
 	reference: { type: String, default: null },
 	occupation: { type: String, required: true },
@@ -40,7 +34,7 @@ const patientSchema = new Schema({
 	brushingMaterials: { type: String, required: true },
 	sweetEatingLevel: {
 		type: String,
-		enum: Object.values(SweetEatingLevel),
+		enum: SweetEatingLevel,
 		default: SweetEatingLevel.No,
 	},
 

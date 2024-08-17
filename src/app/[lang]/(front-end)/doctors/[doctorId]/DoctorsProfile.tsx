@@ -6,8 +6,7 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {}
 
 export const DoctorProfile = ({ ...props }: Props) => {
 	return (
-		<div className="p-4">
-			<DoctorIdNav />
+		<div>
 			<div
 				className="container mx-auto min-h-screen rounded-lg bg-gray-100 p-6 shadow-md"
 				aria-label="doctor profile"

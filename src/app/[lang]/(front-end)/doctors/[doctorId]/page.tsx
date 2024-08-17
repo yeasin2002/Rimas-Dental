@@ -1,5 +1,6 @@
 import React from "react";
 import { DoctorProfile } from "./DoctorsProfile";
+import { DoctorIdNav } from "./DoctorIdNav";
 
 interface Props {
 	params: { doctorId: string };
@@ -7,7 +8,8 @@ interface Props {
 
 const DoctorDetailsById = ({ params }: Props) => {
 	return (
-		<div>
+		<div className="p-4">
+			{/* <DoctorIdNav /> */}
 			<DoctorProfile />
 		</div>
 	);

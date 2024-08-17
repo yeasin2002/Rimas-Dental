@@ -1,10 +1,10 @@
-import { Button, DashboardNav, DoctorsCards } from "@/components";
+import { DashboardNav, DoctorsCards } from "@/components";
 import React from "react";
 
 const Doctors = () => {
 	return (
 		<div>
-			<DashboardNav />
+			{/* <DashboardNav /> */}
 			<section className="p-4">
 				<div className="mb-8 mt-2">
 					<div>
