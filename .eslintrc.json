@@ -1,5 +1,10 @@
 {
-	"extends": ["next/core-web-vitals", "next", "eslint:recommended"],
+	"extends": [
+		"next/core-web-vitals",
+		"next",
+		"eslint:recommended",
+		"@typescript-eslint/recommended"
+	],
 	"plugins": ["@typescript-eslint", "import"],
 	"ignorePatterns": ["dist", ".eslintrc.cjs", "node_modules", ".next"],
 	"rules": {
@@ -9,5 +14,10 @@
 		"prefer-const": "warn",
 		"no-mixed-spaces-and-tabs": "warn",
 		"@typescript-eslint/no-unused-vars": "off"
+	},
+	"globals": {
+		"mongoose": "readonly",
+		"globalThis": "readonly",
+		"InternationalizationType": "readonly"
 	}
 }

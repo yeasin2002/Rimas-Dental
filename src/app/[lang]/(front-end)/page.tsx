@@ -8,12 +8,20 @@ import {
 	Services,
 	TeethBeforeAndAfterEffects,
 } from "@/components";
+import { getDictionary } from "@/Internationalization";
 
 export async function generateStaticParams() {
 	return [{ lang: "bn" }, { lang: "en" }];
 }
 
-export default function Home() {
+export interface ParamsLocals {
+	params: {
+		lang: string;
+	};
+}
+export default async function Home({ params }: ParamsLocals) {
+	const dic = await getDictionary(params.lang, "testing");
+
 	return (
 		<>
 			<Hero />
