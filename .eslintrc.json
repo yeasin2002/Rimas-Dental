@@ -3,7 +3,7 @@
 		"next/core-web-vitals",
 		"next",
 		"eslint:recommended",
-		"@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended"
 	],
 	"plugins": ["@typescript-eslint", "import"],
 	"ignorePatterns": ["dist", ".eslintrc.cjs", "node_modules", ".next"],
@@ -13,7 +13,11 @@
 		"react-hooks/exhaustive-deps": "warn",
 		"prefer-const": "warn",
 		"no-mixed-spaces-and-tabs": "warn",
-		"@typescript-eslint/no-unused-vars": "off"
+		"@typescript-eslint/no-unused-vars": "off",
+
+		// from typescript-eslint/recommended
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-non-null-asserted-optional-chain": "off"
 	},
 	"globals": {
 		"mongoose": "readonly",

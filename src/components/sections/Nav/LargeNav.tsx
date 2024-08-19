@@ -1,9 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
 import { Button, buttonVariants, LinkTo } from "@/components";
-import { rootMenuItems } from "@/data/navItems";
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
 
@@ -18,9 +19,14 @@ import {
 import { CircleUser } from "lucide-react";
 import { LangSwitcher } from "@/components/global/LanguageSwitcher";
 
-interface Props extends React.ComponentProps<"div"> {}
+interface Props extends React.ComponentProps<"div"> {
+	rootMenuItems: {
+		label: any;
+		href: string;
+	}[];
+}
 
-export const LargeNav = ({ ...props }: Props) => {
+export const LargeNav = ({ rootMenuItems, ...props }: Props) => {
 	const pathname = usePathname();
 	const isLogin = false;
 

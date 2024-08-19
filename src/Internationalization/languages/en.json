@@ -1,5 +1,29 @@
 {
-	"testing": {
-		"hello": "Hello!"
+	"root_menu": {
+		"home": "Home",
+		"about_us": "About us",
+		"services": "Services"
+	},
+	"home": {
+		"hero": {
+			"main1": "Your donor's health",
+			"main2": " Our first priority",
+			"desc": " High quality dental care ensures a bright, healthy smile. With the combination of modern technology and professional dentists, the best services are provided."
+		},
+		"our_story": {
+			"facilities1": "Skilled Dentists",
+			"facilities2": "Modern Equipment",
+			"facilities3": "Convenient Environment",
+			"facilities4": "Comprehensive Services",
+			"facilities5": "Emergency Appointments",
+			"main_facilities": "Skilled Dental Services",
+			"main_facilities2": "Convenience and Ease",
+			"mainHeading": "Your Skilled Dental",
+			"mainDesc": "From preventive care to restorative dentistry, our team is fully focused on providing you with the best dental care. A healthy smile is a happy smile - we help you achieve both!"
+		},
+		"our_services": {
+			"mainSubHeading": "Complete Dental Services",
+			"mainHeading": "Our Services"
+		}
 	}
 }
