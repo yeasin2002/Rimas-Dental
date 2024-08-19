@@ -3,16 +3,33 @@ import "server-only";
 import { languageLocale } from "@/data";
 
 export const getDictionary = async (langCode: string, node: string) => {
+	let data = null;
 	try {
-		const { default: data } = await import(`./languages/${langCode}.json`);
-		return node ? data?.[node] || data : data;
-	} catch (error) {
-		const { default: fallbackData } = await import(
-			`./languages/${languageLocale.defaultLocale}.json`
+		data = await import(`./languages/${langCode}.json`).then(
+			(module) => module.default,
 		);
-		return node ? fallbackData?.[node] || fallbackData : fallbackData;
+	} catch (error) {
+		data = await import(
+			`./languages/${languageLocale.defaultLocale}.json`
+		).then((module) => module.default);
 	}
+	if (node) {
+		return data?.[node] || data;
+	}
+	return data;
 };
+
+// export const getDictionary = async (langCode: string, node: string) => {
+// 	try {
+// 		const { default: data } = await import(`./languages/${langCode}.json`);
+// 		return node ? data?.[node] || data : data;
+// 	} catch (error) {
+// 		const { default: fallbackData } = await import(
+// 			`./languages/${languageLocale.defaultLocale}.json`
+// 		);
+// 		return node ? fallbackData?.[node] || fallbackData : fallbackData;
+// 	}
+// };
 
 //! Legacy method 2
 // export const getDictionary = async (langCode: string, node: string) => {
