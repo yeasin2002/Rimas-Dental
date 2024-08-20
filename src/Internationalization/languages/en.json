@@ -1,4 +1,7 @@
 {
+	"global": {
+		"name": "রিমা'স ডেন্টাল"
+	},
 	"root_menu": {
 		"home": "Home",
 		"about_us": "About us",
@@ -53,6 +56,45 @@
 					"value": "56165"
 				}
 			}
+		}
+	},
+	"about_us": {
+		"AboutHero": {
+			"name": "Rima's Dental",
+			"desc1": "Dentar Clinic has been providing top-quality, pain-free dental care for 5 years using advanced technology and experienced dentists. Our goal is to ensure a healthy and bright smile.",
+			"desc2": "For inquiries, call 01731-519025 or 01533-881102.",
+			"bookAppointment": "Book an Appointment"
+		},
+		"aboutState": {
+			"satisfiedClient": "Satisfied Clients",
+			"experience": "Experience",
+			"expert": "Dental Experts"
+		},
+		"SpeechOfCEO": {
+			"CeoName": "Dr. Sharmin Akter Rima",
+			"speech": "Rimas Dental Clinic has been providing high-quality dental care for 5 years. Advanced technology and experienced dentists ensure personalized care for every patient. From regular dental checkups to root canal therapy and dental implants, all types of services are offered. Modern equipment is used to ensure a pain-free and comfortable treatment process. The goal of the clinic is to maintain the dental health and beauty of each patient, enhancing their quality of life and giving them a bright, healthy smile."
+		},
+		"ExplainAboutService": {
+			"heading": "Our Facilities",
+			"desc": "Rimas Dental Clinic is committed to providing the highest quality care to patients. Our modern facility is equipped with the latest dental technology and advanced equipment, ensuring that patients receive the most effective and comfortable treatment.",
+			"facilities": [
+				{
+					"title": "Long-Term Comprehensive Care",
+					"value": "At Rimas Dental Clinic, we are committed to providing long-term comprehensive care. Our primary goal is to address patients' dental health issues so they can fully enjoy the benefits of every treatment."
+				},
+				{
+					"title": "Completely Sterilized Environment",
+					"value": "Our clinic is always kept completely sterilized, ensuring a safe and healthy environment for patients. Every instrument and piece of equipment is regularly sterilized, providing the highest standards of health protection."
+				},
+				{
+					"title": "Friendly and Professional Team",
+					"value": "The friendly and professional team at Rimas Dental understands and caters to each patient's needs. Their caring and empathetic attitude will make your dental experience more comfortable and satisfying."
+				}
+			]
+		},
+		"OurCommitment": {
+			"heading": "Committed to Your Comfort",
+			"desc": "At Rimas Dental, we understand that visiting the dentist can be a cause of anxiety for some people. That's why we aim to create a warm, welcoming, and comfortable environment for all our patients."
 		}
 	}
 }

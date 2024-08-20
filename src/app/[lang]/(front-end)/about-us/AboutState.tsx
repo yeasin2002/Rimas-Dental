@@ -1,11 +1,30 @@
 "use client";
 
-import { aboutState } from "@/data";
 import React from "react";
 import CountUp from "react-countup";
-interface Props extends React.ComponentProps<"div"> {}
+interface Props extends React.ComponentProps<"div"> {
+	dictionary: any;
+}
 
-export const AboutState = ({ ...props }: Props) => {
+export const AboutState = ({ dictionary, ...props }: Props) => {
+	const aboutState = [
+		{
+			name: dictionary?.satisfiedClient,
+			value: 30,
+			duration: 20,
+		},
+		{
+			name: dictionary?.experience,
+			value: 4,
+			duration: 20,
+		},
+		{
+			name: dictionary?.expert,
+			value: 2,
+			duration: 20,
+		},
+	];
+
 	return (
 		<section className="bg-gray-100 py-12 dark:bg-gray-950 md:py-16" {...props}>
 			<div className="container mx-auto px-4 md:px-6">

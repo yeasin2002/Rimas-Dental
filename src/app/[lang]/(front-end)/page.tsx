@@ -21,7 +21,6 @@ export interface ParamsLocals {
 }
 export default async function Home({ params }: ParamsLocals) {
 	const dictionary = await getDictionary(params.lang, "hero");
-	const dictionary2 = await getDictionary(params.lang, "home");
 
 	return (
 		<>
