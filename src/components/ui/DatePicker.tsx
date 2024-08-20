@@ -16,12 +16,14 @@ import { cn } from "@/utils";
 interface DatePickerProps extends React.ComponentPropsWithoutRef<"button"> {
 	date: Date;
 	setDate: React.Dispatch<React.SetStateAction<Date | undefined>>;
+	defaultPlaceholder: string;
 }
 
 export function DatePicker({
 	date,
 	setDate,
 	className,
+	defaultPlaceholder,
 	...rest
 }: DatePickerProps) {
 	return (
@@ -37,7 +39,7 @@ export function DatePicker({
 					)}
 				>
 					<CalendarIcon className="mr-2 h-4 w-4" />
-					{date ? format(date, "PPP") : <span>তারিখ বাছাই করুণ</span>}
+					{date ? format(date, "PPP") : <span>{defaultPlaceholder}</span>}
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="w-auto p-0">

@@ -5,18 +5,22 @@ import { cn } from "@/utils";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 
-interface Props extends React.ComponentProps<"form"> {}
+interface Props extends React.ComponentProps<"form"> {
+	dictionary: any;
+}
+
 interface FormValues {
 	name: string;
 	phone: string;
 	appointmentDate: Date;
+
 	appointmentTime: {
 		from: string;
 		to: string;
 	};
 }
 
-export const AppointmentForm = (props: Props) => {
+export const AppointmentForm = ({ dictionary, ...props }: Props) => {
 	const {
 		register,
 		formState: { errors },
@@ -42,7 +46,7 @@ export const AppointmentForm = (props: Props) => {
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<p className="font-grotesk text-2xl font-bold text-main-500 2xl:text-3xl">
-				অ্যাপয়েন্টমেন্ট বুক করুণ
+				{dictionary?.heading}
 			</p>
 			<div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
 				<Input
@@ -50,18 +54,18 @@ export const AppointmentForm = (props: Props) => {
 						required: "Name is required",
 					})}
 					errorMsg={errors.name?.message}
-					labelName="পুর্ণ নাম"
+					labelName={dictionary.inputs.fullName}
 					className="input-blue"
-					placeholder="উদাঃ   ডা. শারমিন আকতার রিমা"
+					placeholder={dictionary.placeholder.fullName}
 				/>
 				<Input
 					register={register("phone", {
 						required: "Phone number  is required",
 					})}
-					errorMsg={errors.name?.message}
-					labelName="ফোন নাম্বার"
+					errorMsg={errors.phone?.message}
+					labelName={dictionary.inputs.phone}
 					className="input-blue"
-					placeholder="০১******"
+					placeholder={dictionary.placeholder.phone}
 				/>
 				<Controller
 					control={control}
@@ -70,7 +74,8 @@ export const AppointmentForm = (props: Props) => {
 						<DatePicker
 							date={files.field.value}
 							setDate={files.field.onChange}
-							className="2xl:text-lg  2xl:py-6 2xl:px-4 w-full"
+							className="w-full 2xl:px-4 2xl:py-6 2xl:text-lg"
+							defaultPlaceholder={dictionary.inputs.date}
 						/>
 					)}
 				/>
@@ -89,9 +94,9 @@ export const AppointmentForm = (props: Props) => {
 			<Button
 				variant={"dracula"}
 				type="submit"
-				className="mt-4 w-full rounded-lg 2xl:text-xl 2xl:py-8 "
+				className="mt-4 w-full rounded-lg 2xl:py-8 2xl:text-xl"
 			>
-				নিশ্চিত করুণ
+				{dictionary?.cta}
 			</Button>
 		</form>
 	);

@@ -7,7 +7,6 @@ interface Props extends React.ComponentPropsWithoutRef<"footer"> {
 }
 
 export const Footer = ({ dictionary }: Props) => {
-	console.log("🚀 ~ Footer ~ dictionary:", dictionary?.workingTime_day);
 	const footerInfo = [
 		{
 			context: dictionary.footerInfo.contact.title,

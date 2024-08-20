@@ -12,10 +12,13 @@ interface Props {
 
 const AboutUs = async ({ params }: Props) => {
 	const dictionary = await getDictionary(params.lang, "about_us");
-
+	const dictionaryForAppointment = await getDictionary(params.lang, "shared");
 	return (
 		<>
-			<AboutHero dictionary={dictionary.AboutHero} />
+			<AboutHero
+				dictionary={dictionary.AboutHero}
+				dicForForm={dictionaryForAppointment?.appointment}
+			/>
 			<AboutState dictionary={dictionary.aboutState} />
 			<SpeechOfCEO dictionary={dictionary.SpeechOfCEO} />
 			<ExplainAboutService dictionary={dictionary.ExplainAboutService} />

@@ -1,7 +1,14 @@
 import { ServiceCard2 } from "@/components";
 import doctorWork_img from "@/assets/images/x-ray.jpg";
+import { getDictionary } from "@/Internationalization";
 
-const Services = () => {
+interface Props {
+	params: { lang: string };
+}
+
+const Services = async ({ params }: Props) => {
+	const dictionary = await getDictionary(params.lang, "services");
+
 	const arr = [1, 2, 3, 4];
 	return (
 		<div className="container py-4">
@@ -15,14 +22,14 @@ const Services = () => {
 				/>
 				<div className="absolute inset-0 flex flex-col items-center justify-center rounded-md bg-black/70 text-white">
 					<h1 className="font-grotesk text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-						Service that we provide
+						{dictionary?.heading}
 					</h1>
-					<p className="text-2xl">We provide various type of dental services</p>
+					<p className="text-2xl">{dictionary?.subheading}</p>
 				</div>
 			</section>
 			<article className="">
-				<h1 className="mb-8 mt-10 text-center font-grotesk text-xl font-bold capitalize text-main-400 md:text-3xl lg:text-4xl">
-					List of our Services
+				<h1 className="mb-8 mt-10 font-grotesk text-xl font-bold capitalize text-main-400 md:text-3xl lg:text-4xl">
+					{dictionary?.listOfContent}
 				</h1>
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{arr.map((item) => (

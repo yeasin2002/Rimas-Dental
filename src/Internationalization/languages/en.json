@@ -2,6 +2,21 @@
 	"global": {
 		"name": "রিমা'স ডেন্টাল"
 	},
+	"shared": {
+		"appointment": {
+			"heading": "Book Appointment",
+			"cta": "Confirm",
+			"inputs": {
+				"fullName": "Full Name",
+				"phone": "Phone Number",
+				"date": "Select Date"
+			},
+			"placeholder": {
+				"fullName": "Exp: John Doe",
+				"phone": "01***"
+			}
+		}
+	},
 	"root_menu": {
 		"home": "Home",
 		"about_us": "About us",
@@ -96,5 +111,10 @@
 			"heading": "Committed to Your Comfort",
 			"desc": "At Rimas Dental, we understand that visiting the dentist can be a cause of anxiety for some people. That's why we aim to create a warm, welcoming, and comfortable environment for all our patients."
 		}
+	},
+	"services": {
+		"heading": "Service that we provide",
+		"subheading": "We provide various type of dental services",
+		"listOfContent": "List of our Services"
 	}
 }

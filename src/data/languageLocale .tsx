@@ -7,7 +7,7 @@ export const languageLocale = {
 };
 
 export const bangla = {
-	name: "Bangla",
+	name: "বাংলা",
 	code: "bn",
 	flag: bdFlag,
 };

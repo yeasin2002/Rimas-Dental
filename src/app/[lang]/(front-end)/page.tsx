@@ -21,11 +21,15 @@ export interface ParamsLocals {
 }
 export default async function Home({ params }: ParamsLocals) {
 	const dictionary = await getDictionary(params.lang, "hero");
+	const dictionaryForAppointment = await getDictionary(params.lang, "shared");
 
 	return (
 		<>
 			<Hero dictionary={dictionary} />
-			<AppointmentForm className="home_appointment-form" />
+			<AppointmentForm
+				className="home_appointment-form"
+				dictionary={dictionaryForAppointment?.appointment}
+			/>
 			<OurStory dictionary={dictionary} />
 			<Services dictionary={dictionary} />
 			<OurTeam dictionary={dictionary?.home?.OurTeam} />
