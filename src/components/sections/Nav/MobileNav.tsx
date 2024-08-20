@@ -1,7 +1,6 @@
 "use client";
 
 import { AlignJustify } from "lucide-react";
-import Link from "next/link";
 import React from "react";
 
 import {
@@ -14,6 +13,7 @@ import {
 import { HindSiliguri, HindSiliguri600 } from "@/fonts";
 import { cn } from "@/utils";
 import { usePathname } from "next/navigation";
+import { LinkTo } from "@/components/client";
 
 interface Props extends React.ComponentProps<"div"> {
 	rootMenuItems: {
@@ -34,7 +34,7 @@ export const MobileNav = ({ rootMenuItems, ...props }: Props) => {
 				<DropdownMenuContent className="-translate-x-8">
 					{rootMenuItems.map((item, index) => (
 						<DropdownMenuItem key={index}>
-							<Link
+							<LinkTo
 								className={cn(
 									`mx-3 flex items-center text-deepBlue-100 ${HindSiliguri.className}`,
 									pathname === item.href &&
@@ -43,7 +43,7 @@ export const MobileNav = ({ rootMenuItems, ...props }: Props) => {
 								href={item.href}
 							>
 								{item.label}
-							</Link>
+							</LinkTo>
 						</DropdownMenuItem>
 					))}
 				</DropdownMenuContent>

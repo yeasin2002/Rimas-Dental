@@ -116,5 +116,19 @@
 		"heading": "Service that we provide",
 		"subheading": "We provide various type of dental services",
 		"listOfContent": "List of our Services"
+	},
+	"useAuth": {
+		"areYouDoctor": "Are you a doctor?",
+		"loginHere": "login here",
+		"asDoctor": "as a doctor.",
+		"emailPlaceholder": "Write your email here",
+		"singup": "Sing Up ",
+		"register": {
+			"heading": "You can's  register yourself",
+			"subHeading": "Only doctors can register you as an user.",
+			"bookAppointment": "book your",
+			"bookAppointment2": "appointment",
+			"bookAppointment3": "with doctor and get treatment."
+		}
 	}
 }

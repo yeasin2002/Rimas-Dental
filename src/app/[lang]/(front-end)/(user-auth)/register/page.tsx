@@ -1,24 +1,33 @@
 import { LinkTo } from "@/components";
+import { getDictionary } from "@/Internationalization";
 import React from "react";
 
-export async function generateStaticParams() {
-	return [{ lang: "bn" }, { lang: "en" }];
+interface Props {
+	params: {
+		lang: string;
+	};
 }
 
-const Register = () => {
+const Register = async ({ params }: Props) => {
+	const dictionary = await getDictionary(params.lang, "useAuth");
+
 	return (
-		<div className="flex flex-col items-center justify-center py-20">
-			<h3>You {`can's `} register yourself</h3>
-			<p>Only doctors can register you as an user.</p>
+		<div className="flex flex-col items-center justify-center py-20 text-center">
+			<h3>{dictionary.register.heading}</h3>
+			<p>{dictionary.register.subHeading}</p>
 			<p className="mt-5">
-				book your
+				{dictionary.register.bookAppointment}
 				<LinkTo href={"/about-us"} className="mx-1 text-main-400">
-					appointment
+					{dictionary.register.bookAppointment2}
 				</LinkTo>
-				with doctor and get treatment.
+				{dictionary.register.bookAppointment3}
 			</p>
 		</div>
 	);
 };
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}
 
 export default Register;

@@ -3,19 +3,26 @@ import { Home } from "@/components/icons";
 import Image from "next/image";
 import { ReactNode } from "react";
 
-import OT from "@/assets/images/OT.webp";
 import { LinkTo, Logo } from "@/components";
 import Link from "next/link";
 import { ShowMatchRoute } from "./ShowMatchRoute";
+import { getDictionary } from "@/Internationalization";
 
 export async function generateStaticParams() {
 	return [{ lang: "bn" }, { lang: "en" }];
 }
 
-const Auth = ({ children }: { children: ReactNode }) => {
+interface Props {
+	children: ReactNode;
+	params: { lang: string };
+}
+
+const Auth = async ({ children, params }: Props) => {
+	const dictionary = await getDictionary(params.lang, "useAuth");
+
 	return (
 		<section
-			className="relative grid grid-cols-1 items-center justify-center p-4 md:grid-cols-2 h-full"
+			className="relative grid h-full grid-cols-1 items-center justify-center p-4 md:grid-cols-2"
 			aria-label="patient login"
 		>
 			<Link
@@ -36,8 +43,8 @@ const Auth = ({ children }: { children: ReactNode }) => {
 				/>
 			</div>
 
-			<div className="container mx-auto flex min-h-[70vh] h-full items-center justify-center px-6 dark:bg-gray-900 w-full">
-				<div className="w-full max-w-md 2xl:max-w-2xl mx-auto">
+			<div className="container mx-auto flex h-full min-h-[70vh] w-full items-center justify-center px-6 dark:bg-gray-900">
+				<div className="mx-auto w-full max-w-md 2xl:max-w-2xl">
 					<div className="mx-auto flex justify-center">
 						<Logo
 							href={"/"}
@@ -47,12 +54,12 @@ const Auth = ({ children }: { children: ReactNode }) => {
 					</div>
 					<ShowMatchRoute />
 					{children}
-					<p className="mt-4 text-center  2xl:text-2xl">
-						Are you a doctor?
-						<LinkTo href={"/admin"} className="mx-1 text-main-400 	">
-							login here
+					<p className="mt-4 text-center 2xl:text-2xl">
+						{dictionary?.areYouDoctor}
+						<LinkTo href={"/admin"} className="mx-1 text-main-400">
+							{dictionary?.loginHere}
 						</LinkTo>
-						as a doctor.
+						{dictionary?.asDoctor}
 					</p>
 				</div>
 			</div>

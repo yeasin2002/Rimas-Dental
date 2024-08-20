@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -34,7 +33,7 @@ export const LargeNav = ({ rootMenuItems, login, ...props }: Props) => {
 	return (
 		<div className={cn(props.className)} {...props}>
 			{rootMenuItems.map((item, index) => (
-				<Link
+				<LinkTo
 					key={index}
 					className={cn(
 						`mx-3 flex items-center text-deepBlue-100 2xl:text-2xl ${HindSiliguri.className}`,
@@ -44,7 +43,7 @@ export const LargeNav = ({ rootMenuItems, login, ...props }: Props) => {
 					href={item.href}
 				>
 					{item.label}
-				</Link>
+				</LinkTo>
 			))}
 
 			<LangSwitcher />

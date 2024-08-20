@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { convertEnglishToBengaliNumber } from "@/utils";
 import { getDictionary } from "@/Internationalization";
+import { LinkTo } from "@/components";
 
 interface Props {
 	lang: string;
@@ -36,14 +37,14 @@ const AboutFooter = async ({ lang, ...props }: Props) => {
 				</p>
 				<nav className="flex gap-4 sm:ml-auto sm:gap-6">
 					{menuItems.map((items) => (
-						<Link
+						<LinkTo
 							key={items.href}
 							className="text-xs underline-offset-4 hover:underline 2xl:text-xl"
 							href={items.href}
-							rel="ugc"
+							// rel="ugc"
 						>
 							{items.label}
-						</Link>
+						</LinkTo>
 					))}
 				</nav>
 			</footer>
