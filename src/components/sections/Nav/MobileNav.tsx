@@ -20,6 +20,7 @@ interface Props extends React.ComponentProps<"div"> {
 		label: any;
 		href: string;
 	}[];
+	login: string;
 }
 
 export const MobileNav = ({ rootMenuItems, ...props }: Props) => {

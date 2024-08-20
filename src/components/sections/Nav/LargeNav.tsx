@@ -24,9 +24,10 @@ interface Props extends React.ComponentProps<"div"> {
 		label: any;
 		href: string;
 	}[];
+	login: string;
 }
 
-export const LargeNav = ({ rootMenuItems, ...props }: Props) => {
+export const LargeNav = ({ rootMenuItems, login, ...props }: Props) => {
 	const pathname = usePathname();
 	const isLogin = false;
 
@@ -54,7 +55,7 @@ export const LargeNav = ({ rootMenuItems, ...props }: Props) => {
 						href={"/login"}
 						className={buttonVariants({ className: "rounded-full" })}
 					>
-						Login
+						{login}
 					</LinkTo>
 				) : (
 					<div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">

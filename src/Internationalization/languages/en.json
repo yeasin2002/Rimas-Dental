@@ -2,11 +2,12 @@
 	"root_menu": {
 		"home": "Home",
 		"about_us": "About us",
-		"services": "Services"
+		"services": "Services",
+		"login": "Login"
 	},
 	"home": {
 		"hero": {
-			"main1": "Your donor's health",
+			"main1": "Your dental health",
 			"main2": " Our first priority",
 			"desc": " High quality dental care ensures a bright, healthy smile. With the combination of modern technology and professional dentists, the best services are provided."
 		},
@@ -24,6 +25,34 @@
 		"our_services": {
 			"mainSubHeading": "Complete Dental Services",
 			"mainHeading": "Our Services"
+		},
+		"OurTeam": {
+			"heading": "Our Dedicated Dental Team",
+			"subHeading": "Skilled and Professional",
+			"desc": "Our dedicated and skilled dental team is sincerely prepared to reassess our commitment to your dental health. We are committed to providing a convenient and advanced service for all your dental needs."
+		},
+		"Faq_TeethEffects": {
+			"faqHeading": "Frequently Asked Questions",
+			"teethEffects": "Before and After Service"
+		},
+		"footer": {
+			"workingTime_title": "Working Hours",
+			"workingTime_day": "Wednes. - Mon.",
+			"workingTime_time": "5 PM - 9 PM",
+			"footerInfo": {
+				"contact": {
+					"title": "Contact",
+					"value": ["01731-519025", "01533-881102", "01679-112725"]
+				},
+				"address": {
+					"title": "Address",
+					"value": "Kachukhet, Mirpur 14, Dhaka, Bangladesh"
+				},
+				"certificateNo": {
+					"title": "Certificate No:",
+					"value": "56165"
+				}
+			}
 		}
 	}
 }

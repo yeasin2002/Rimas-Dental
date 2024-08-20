@@ -3,7 +3,7 @@ import React from "react";
 
 import { LargeNav } from "./LargeNav";
 import { MobileNav } from "./MobileNav";
-import { getDictionary } from "@/Internationalization";
+
 interface Props extends React.ComponentProps<"nav"> {
 	dictionary?: any;
 }
@@ -30,8 +30,16 @@ export const Nav = async ({ dictionary, ...props }: Props) => {
 		>
 			<Logo href={"/"} />
 			<>
-				<MobileNav className="flex sm:hidden" rootMenuItems={rootMenuItems} />
-				<LargeNav className="hidden sm:flex" rootMenuItems={rootMenuItems} />
+				<MobileNav
+					className="flex sm:hidden"
+					rootMenuItems={rootMenuItems}
+					login={dictionary?.login}
+				/>
+				<LargeNav
+					className="hidden sm:flex"
+					rootMenuItems={rootMenuItems}
+					login={dictionary?.login}
+				/>
 			</>
 		</nav>
 	);
