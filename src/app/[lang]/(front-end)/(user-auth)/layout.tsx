@@ -52,7 +52,7 @@ const Auth = async ({ children, params }: Props) => {
 							textClassName="2xl:text-3xl"
 						/>
 					</div>
-					<ShowMatchRoute />
+					<ShowMatchRoute dictionary={dictionary} />
 					{children}
 					<p className="mt-4 text-center 2xl:text-2xl">
 						{dictionary?.areYouDoctor}

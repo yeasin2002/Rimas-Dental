@@ -88,3 +88,7 @@ const DentalPatientProfile = () => {
 };
 
 export default DentalPatientProfile;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}

@@ -1,6 +1,8 @@
 {
 	"global": {
-		"name": "রিমা'স ডেন্টাল"
+		"name": "রিমা'স ডেন্টাল",
+		"login": "লগইন",
+		"register": "রেজিস্টার"
 	},
 	"shared": {
 		"appointment": {
@@ -60,7 +62,11 @@
 			"footerInfo": {
 				"contact": {
 					"title": "Contact",
-					"value": ["01731-519025", "01533-881102", "01679-112725"]
+					"value": [
+						"01731-519025",
+						"01533-881102",
+						"01679-112725"
+					]
 				},
 				"address": {
 					"title": "Address",
@@ -123,7 +129,9 @@
 		"asDoctor": "as a doctor.",
 		"emailPlaceholder": "Write your email here",
 		"singup": "Sing Up ",
+		"login": "Login",
 		"register": {
+			"title": "Register",
 			"heading": "You can's  register yourself",
 			"subHeading": "Only doctors can register you as an user.",
 			"bookAppointment": "book your",
