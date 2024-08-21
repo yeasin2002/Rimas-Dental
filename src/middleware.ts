@@ -1,4 +1,5 @@
 import { internationalization, sessionUpdate } from "@/middlewares";
+import { auth as authSession } from "@/auth";
 
 import { createEdgeRouter } from "next-connect";
 import type { NextFetchEvent, NextRequest } from "next/server";
@@ -6,10 +7,10 @@ import { NextResponse } from "next/server";
 
 const router = createEdgeRouter<NextRequest, NextFetchEvent>();
 router.use(internationalization);
+// router.use(authSession);
 // router.use(sessionUpdate);
-router.all(() => {
-	return NextResponse.next();
-});
+
+router.all(() => NextResponse.next());
 
 export function middleware(request: NextRequest, event: NextFetchEvent) {
 	return router.run(request, event);

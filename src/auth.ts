@@ -1,26 +1,16 @@
-import NextAuth from "next-auth"
-import { MongoDBAdapter } from "@auth/mongodb-adapter"
-import client from "./lib/mongoDBClientPromise"
+import mongoose from "mongoose";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import bcrypt from "bcryptjs";
 
-
-import bcrypt from "bcrypt";
+import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
-
 import { signInSchema } from "@/schema";
-import mongoose from "mongoose";
+import connectDB from "./lib/connectDB";
+import client from "@/lib/MongoDBClient";
 
-export const {
-	handlers: { GET, POST },
-	signIn,
-	signOut,
-	auth,
-} = NextAuth({
+export const { handlers, signIn, signOut, auth } = NextAuth({
 	adapter: MongoDBAdapter(client),
-
-	session: {
-		strategy: "jwt",
-	},
 	providers: [
 		Credentials({
 			credentials: {
@@ -31,10 +21,8 @@ export const {
 				if (credentials === null) return null;
 				const { email, password } = await signInSchema.parseAsync(credentials);
 
-				await prisma.$connect();
-				const user = await prisma.doctors.findFirst({
-					where: { email: email },
-				});
+				await connectDB();
+				const user = await mongoose.models.Doctor.findOne({ email: email });
 
 				if (!user) throw new Error("User not found");
 

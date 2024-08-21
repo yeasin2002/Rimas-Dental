@@ -17,7 +17,7 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@auth/mongodb-adapter": "^3.2.0",
+    "@auth/mongodb-adapter": "^3.4.2",
     "@auth/prisma-adapter": "^2.4.1",
     "@edgestore/react": "^0.1.7",
     "@edgestore/server": "^0.1.7",
@@ -38,7 +38,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "0.0.22",
     "@tailwindcss/typography": "^0.5.12",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -48,11 +48,11 @@
     "jose": "^5.6.2",
     "lint-staged": "^15.2.5",
     "lucide-react": "^0.396.0",
-    "mongodb": "^6.7.0",
+    "mongodb": "^6.8.0",
     "mongoose": "^8.5.3",
     "negotiator": "^0.6.3",
     "next": "14.1.4",
-    "next-auth": "^5.0.0-beta.19",
+    "next-auth": "^5.0.0-beta.20",
     "next-connect": "^1.0.0",
     "next-videos": "^1.4.1",
     "nextjs-toploader": "^1.6.12",
@@ -72,6 +72,7 @@
     "sweetalert2": "^11.12.0",
     "swiper": "^11.1.0",
     "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -80,6 +81,7 @@
     "@biomejs/biome": "1.8.3",
     "@hookform/devtools": "^4.3.1",
     "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/globalthis": "^1.0.4",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.3.0",
