@@ -7,9 +7,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import * as z from "zod";
+import { useParams, useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
-// import { loginWithAuthJs, register_server } from "@/actions/authjs.actions";
 import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
 import maleDoctor from "@/assets/icons/others/doctor-male.svg";
 
@@ -26,46 +26,53 @@ import {
 } from "@/components";
 import { registerFormSchema } from "@/schema";
 import { cn } from "@/utils";
-import { useRouter } from "next/navigation";
-
-type registerFormData = z.infer<typeof registerFormSchema>;
+import { registerFormData } from "@/types";
+import { loginWithAuthJs, registerDoctor_server } from "@/actions";
 
 const Register = () => {
 	const router = useRouter();
+	const params = useParams();
+
 	const [isLoading, setIsLoading] = useState(false);
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-		setError,
 		setValue,
 		watch,
 		control,
 		getValues,
-	} = useForm<registerFormData>({
-		resolver: zodResolver(registerFormSchema),
-	});
+		reset,
+	} = useForm<registerFormData>({ resolver: zodResolver(registerFormSchema) });
 
 	const onSubmit = async (data: registerFormData) => {
-		const toastId = toast.loading("Uploading...");
 		setIsLoading(true);
 		try {
-			// const res = await register_server(data);
-			// if (!res.success) throw new Error(res.message || "Something went wrong");
+			const res = await registerDoctor_server(data);
+
+			if (!res.success) throw new Error(res.message || "Something went wrong");
+
+			reset();
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title: "Registration Successful",
+				showConfirmButton: false,
+				text: "You are registered  as a doctor. Wait for admin approval. Thank you.",
+				timer: 4000,
+			});
+
+			return router.push(`/${params?.lang || "en"}/admin/login`);
+
+			//! legacy
 			// await loginWithAuthJs({
 			// 	email: data.email,
 			// 	password: data.password,
 			// });
 
-			router.push("/en/admin");
-			return toast.success("Registration successful", { id: toastId });
+			// return toast.success("Registration successful", { id: toastId });
 		} catch (error: any) {
-			setError("root", {
-				message: "Invalid email or password",
-			});
-			return toast.error(error.message || "something went wrong", {
-				id: toastId,
-			});
+			return toast.error(error.message || "something went wrong");
 		} finally {
 			setIsLoading(false);
 		}
@@ -87,6 +94,7 @@ const Register = () => {
 				register={register("gender")}
 				selectedValue={getValues("gender")}
 				genderList={genderList}
+				error={errors.gender?.message}
 			/>
 
 			<InputCombo
@@ -98,7 +106,7 @@ const Register = () => {
 
 			<PhotoUploaderDND
 				className={cn(
-					"mx-auto w-full mt-6 flex cursor-pointer items-center rounded-lg border-2 border-dashed bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900 justify-between	",
+					"mx-auto mt-6 flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-dashed bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900",
 					{ "border border-red-600": errors.profileImage },
 				)}
 				onSuccessUpload={(url) => setValue("profileImage", url)}
@@ -115,7 +123,7 @@ const Register = () => {
 						alt="Preview"
 						width={100}
 						height={100}
-						className="object-cover aspect-square size-8 rounded-md"
+						className="aspect-square size-8 rounded-md object-cover"
 					/>
 				)}
 			</PhotoUploaderDND>
@@ -148,7 +156,7 @@ const Register = () => {
 			/>
 
 			<button
-				className="w-full transform rounded-lg bg-blue-500 px-6 py-3  mt-6 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+				className="mt-6 w-full transform rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
 				type="submit"
 			>
 				{isLoading ? <EosLoading className="mx-auto" /> : "Sign Up"}

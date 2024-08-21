@@ -7,14 +7,10 @@ export const registerFormSchema = z
 		email: z.string().email(),
 		gender: z.enum(["male", "female"]),
 
-		password: z
-			.string()
-			.min(8, { message: "Password is too short" })
-			.max(20, { message: "Password is too long" }),
-		confirmPassword: z
-			.string()
-			.min(8, { message: "Password is too short" })
-			.max(20, { message: "Password is too long" }),
+		password: z.string().min(8, { message: "Password is too short" }),
+		// .max(20, { message: "Password is too long" }),
+		confirmPassword: z.string().min(8, { message: "Password is too short" }),
+		// .max(20, { message: "Password is too long" }),
 
 		phone: z.string().min(10, { message: "Phone number should be 10 digits" }),
 	})

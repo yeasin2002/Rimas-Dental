@@ -1,4 +1,4 @@
 export * from "./loginSchema";
 export * from "./NewPatientSchema";
-export * from "./registerSchema";
+export * from "./doctorAuth.schema";
 export * from "./signInSchema";

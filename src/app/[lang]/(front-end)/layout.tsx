@@ -12,7 +12,7 @@ const FrontEndLayout = async ({
 }>) => {
 	const dic = await getDictionary(params.lang, "root_menu");
 	const session = await authSession.getSession();
-	console.log("🚀 ~ session:", session);
+	console.log("🚀 ~ Patient Session:", session);
 
 	return (
 		<>

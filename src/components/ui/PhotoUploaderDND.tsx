@@ -90,36 +90,37 @@ export const PhotoUploaderDND = ({
 				</DialogHeader>
 				<div className="py-4">
 					{file ? (
-						<div className="relative  ">
+						<div className="relative">
 							<Image
 								src={file?.preview}
 								alt="Preview"
 								width={100}
 								height={100}
-								className=" rounded-lg mx-auto  size-full max-h-80 object-cover"
+								className="mx-auto size-full max-h-80 rounded-lg object-cover"
 							/>
 
 							<button
-								className="absolute top-3 right-3 p-1 bg-white rounded-full cursor-pointer"
+								className="absolute right-3 top-3 cursor-pointer rounded-full bg-white p-1"
 								onClick={() => setFile(null)}
 							>
-								<X className="text-black " />
+								<X className="text-black" />
 							</button>
 						</div>
 					) : (
 						<div
 							{...getRootProps()}
-							className=" h-56 w-full  mx-auto aspect-square  items-center justify-center flex flex-col  border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+							className="mx-auto flex aspect-square h-56 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
 						>
 							<input
 								type="file"
 								className="hidden"
+								accept="image/*"
 								{...getInputProps()}
 								// {...register}
 								name={register.name}
 							/>
 
-							<div className="flex flex-col items-center justify-center pt-5 pb-6">
+							<div className="flex flex-col items-center justify-center pb-6 pt-5">
 								<CloudUpload className="size-10" />
 								<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
 									<span className="font-semibold">Click to upload</span> or drag

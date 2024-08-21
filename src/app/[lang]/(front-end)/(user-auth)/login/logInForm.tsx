@@ -25,11 +25,12 @@ export const LoginForm = ({ dictionary }: Props) => {
 	});
 
 	const onSubmit = async (data: loginFormData) => {
-		const toastId = toast.loading("Processing", { id: "login" });
 		try {
 			const res = await loginPatient_server(data);
+			console.log("🚀 ~ onSubmit ~ res:", res);
+
 			if (!res.success) throw new Error(res.message);
-			toast.success(res.message, { id: toastId });
+			toast.success(res?.message);
 		} catch (error: any) {
 			// toast.error(error?.message || "Invalid email or password", {id: toastId,});
 			return Swal.fire({

@@ -1,7 +1,9 @@
-import { Home, Menu } from "lucide-react";
-import Link from "next/link";
+"use client";
 
-import { Button } from "@/components/ui/button";
+import React from "react";
+import Link from "next/link";
+import { Home, Menu } from "lucide-react";
+
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -10,14 +12,14 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-// import { logoutWithAuthJs } from "@/actions/authjs.actions";
 import { Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
-import React from "react";
+import { logoutWithAuthJs } from "@/actions";
+
 interface Props extends React.ComponentProps<"div"> {}
 
 export const DashboardNav = ({ ...props }: Props) => {
@@ -87,9 +89,7 @@ export const DashboardNav = ({ ...props }: Props) => {
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>Profile</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem
-						//  onClick={logoutWithAuthJs}
-						>
+						<DropdownMenuItem onClick={() => logoutWithAuthJs("/")}>
 							Logout
 						</DropdownMenuItem>
 					</DropdownMenuContent>

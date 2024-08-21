@@ -2,9 +2,13 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { useParams, useRouter } from "next/navigation";
 
-// import { loginWithAuthJs } from "@/actions/authjs.actions";
+import { loginFormSchema } from "@/schema";
+import { loginWithAuthJs } from "@/actions";
+import { loginFormData } from "@/types";
 import {
 	Email,
 	EosLoading,
@@ -12,12 +16,6 @@ import {
 	InputComboForPassword,
 	Lock,
 } from "@/components";
-import { loginFormSchema } from "@/schema";
-import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
-import toast from "react-hot-toast";
-
-type LoginFormData = z.infer<typeof loginFormSchema>;
 
 const Login = () => {
 	const router = useRouter();
@@ -28,22 +26,25 @@ const Login = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
-		setError,
-	} = useForm<LoginFormData>({
-		resolver: zodResolver(loginFormSchema),
-	});
+	} = useForm<loginFormData>({ resolver: zodResolver(loginFormSchema) });
 
-	const onSubmit = async (data: LoginFormData) => {
+	const onSubmit = async (data: loginFormData) => {
+		console.log("🚀 ~ onSubmit ~ data:", data);
+
 		setIsLoading(true);
 		const toastId = toast.loading("Processing...");
 		try {
-			// await loginWithAuthJs({
-			// 	email: data.email,
-			// 	password: data.password,
-			// });
+			const loginReq = await loginWithAuthJs({
+				email: data.email,
+				password: data.password,
+			});
+
+			console.log("🚀 ~ onSubmit ~ loginReq:", loginReq);
 			toast.success("login successful", { id: toastId });
+
 			return router.push(`/${lang}/admin`);
-		} catch (error) {
+		} catch (error: any) {
+			console.log("🚀 ~ onSubmit ~ error:", error?.message);
 			return toast.error("Registration failed", { id: toastId });
 		} finally {
 			setIsLoading(false);

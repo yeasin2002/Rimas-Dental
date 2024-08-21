@@ -5,8 +5,10 @@ import React, { Fragment, useState } from "react";
 import { CheckCheck } from "lucide-react";
 import Image from "next/image";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { cn } from "@/utils";
 
 interface Props extends React.ComponentProps<"div"> {
+	error: string | undefined;
 	register: UseFormRegisterReturn;
 	selectedValue: "male" | "female";
 	genderList: {
@@ -19,15 +21,17 @@ export const SelectGender = ({
 	register,
 	selectedValue,
 	genderList,
+	error,
 	...props
 }: Props) => {
 	const [selectGender, SetSelectGender] = useState<string>(selectedValue);
 
 	return (
 		<div
-			className={
-				"mx-auto w-full mt-6 flex  items-center rounded-lg border-2  bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900 "
-			}
+			className={cn(
+				"mx-auto mt-6 flex w-full items-center rounded-lg border-2 bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900",
+				{ "border-red-700": error },
+			)}
 			{...props}
 		>
 			<p className="mx-3 text-gray-600">Gender:</p>
@@ -36,7 +40,7 @@ export const SelectGender = ({
 					<Fragment key={gender.name}>
 						<label
 							htmlFor={gender.name}
-							className={"cursor-pointer relative"}
+							className={"relative cursor-pointer"}
 							onClick={() => SetSelectGender(gender.name)}
 						>
 							<Image
@@ -44,10 +48,10 @@ export const SelectGender = ({
 								alt={gender.name}
 								width={100}
 								height={100}
-								className="object-cover aspect-square size-8 rounded-md"
+								className="aspect-square size-8 rounded-md object-cover"
 							/>
 							{selectGender === gender.name && (
-								<CheckCheck className="text-green-600/50 absolute  -bottom-3   left-0 right-0" />
+								<CheckCheck className="absolute -bottom-3 left-0 right-0 text-green-600/50" />
 							)}
 						</label>
 						<input

@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const revalidatePath_server = async (path: string) => {
-	revalidatePath(path);
+	return revalidatePath(path);
 };
 
 export const redirect_server = async (path: string) => redirect(path);

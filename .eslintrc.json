@@ -3,7 +3,8 @@
 		"next/core-web-vitals",
 		"next",
 		"eslint:recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@tanstack/eslint-plugin-query/recommended"
 	],
 	"plugins": ["@typescript-eslint", "import"],
 	"ignorePatterns": ["dist", ".eslintrc.cjs", "node_modules", ".next"],

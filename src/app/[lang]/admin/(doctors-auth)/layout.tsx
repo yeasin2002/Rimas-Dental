@@ -4,14 +4,19 @@ import { ReactNode } from "react";
 
 import { redirect_server } from "@/actions/utils.actions";
 import OT from "@/assets/images/OT.webp";
-// import { auth } from "@/auth";
 import { Logo } from "@/components";
 import Link from "next/link";
 import { ShowMatchRoute } from "./ShowMatchRoute";
+import { auth } from "@/auth";
 
-const Auth = async ({ children }: { children: ReactNode }) => {
-	// const session = await auth();
-	// if (session) return redirect_server("/en/admin");
+interface Props {
+	children: ReactNode;
+	params: { lang: string };
+}
+
+const Auth = async ({ children, params }: Props) => {
+	const session = await auth();
+	if (session) return redirect_server(`/${params?.lang}/admin`);
 
 	return (
 		<div className="relative grid grid-cols-1 items-center justify-center p-4 md:grid-cols-2">
@@ -32,7 +37,7 @@ const Auth = async ({ children }: { children: ReactNode }) => {
 			</div>
 			<div>
 				<section className="dark:bg-gray-900">
-					<div className="container mx-auto flex min-h-screen items-center justify-center px-6">
+					<div className="container mx-auto flex min-h-[90vh] items-center justify-center px-6">
 						<div className="w-full max-w-md">
 							<div className="mx-auto flex justify-center">
 								<Logo href={"/"} />
