@@ -23,7 +23,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
 				await connectDB();
 				const user = await mongoose.models.Doctor.findOne({ email: email });
-
 				if (!user) throw new Error("User not found");
 
 				const isMatch = await bcrypt.compare(password, user?.password);

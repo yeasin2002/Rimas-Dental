@@ -2,20 +2,24 @@ import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { decrypt, encrypt } from "./processEncryption";
 
+const cookiesSessionName = "patient-session";
 const secretKey = process.env.JWT_SECRET_KEY;
 const key = new TextEncoder().encode(secretKey);
-const cookiesSessionName = "session";
 
 async function login({ name, email }: { name: string; email: string }) {
 	const expires = new Date(Date.now() + 10 * 1000);
 	const newSession = await encrypt({ user: { name, email }, expires }, key);
 
 	// Save the session in a cookie
-	cookies().set(cookiesSessionName, newSession, { expires, httpOnly: true });
+	cookies().set(cookiesSessionName, newSession, {
+		expires,
+		httpOnly: true,
+		path: "/",
+	});
 }
 
 async function logout() {
-	cookies().set("session", "", { expires: new Date(0) });
+	cookies().set("session", "", { expires: new Date(0), path: "/" });
 }
 
 async function getSession() {

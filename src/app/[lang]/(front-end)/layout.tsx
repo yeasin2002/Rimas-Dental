@@ -1,5 +1,6 @@
 import { Nav } from "@/components";
 import { getDictionary } from "@/Internationalization";
+import { authSession } from "@/lib/auth";
 import React from "react";
 
 const FrontEndLayout = async ({
@@ -10,6 +11,8 @@ const FrontEndLayout = async ({
 	params: { lang: string };
 }>) => {
 	const dic = await getDictionary(params.lang, "root_menu");
+	const session = await authSession.getSession();
+	console.log("🚀 ~ session:", session);
 
 	return (
 		<>

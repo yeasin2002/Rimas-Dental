@@ -2,14 +2,14 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
-
-// import { loginPatient_server } from "@/actions";
-import { Email, InputCombo, InputComboForPassword, Lock } from "@/components";
-import { loginFormSchema } from "@/schema";
+import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
-type LoginFormData = z.infer<typeof loginFormSchema>;
+import { loginPatient_server } from "@/actions";
+import { Email, InputCombo, InputComboForPassword, Lock } from "@/components";
+import { loginFormSchema } from "@/schema";
+import { loginFormData } from "@/types";
+
 interface Props {
 	dictionary: any;
 }
@@ -20,19 +20,22 @@ export const LoginForm = ({ dictionary }: Props) => {
 		handleSubmit,
 		formState: { errors, isLoading },
 		setError,
-	} = useForm<LoginFormData>({
+	} = useForm<loginFormData>({
 		resolver: zodResolver(loginFormSchema),
 	});
 
-	const onSubmit = async (data: LoginFormData) => {
+	const onSubmit = async (data: loginFormData) => {
 		const toastId = toast.loading("Processing", { id: "login" });
 		try {
-			// const res = await loginPatient_server(data);
-			// if (!res.success) throw new Error(res.message);
-			// toast.success(res.message, { id: toastId });
+			const res = await loginPatient_server(data);
+			if (!res.success) throw new Error(res.message);
+			toast.success(res.message, { id: toastId });
 		} catch (error: any) {
-			toast.error(error?.message || "Invalid email or password", {
-				id: toastId,
+			// toast.error(error?.message || "Invalid email or password", {id: toastId,});
+			return Swal.fire({
+				icon: "error",
+				title: "authentication failed.",
+				text: error?.message || "Something went wrong!",
 			});
 		}
 	};

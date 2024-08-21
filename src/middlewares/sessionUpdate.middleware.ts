@@ -2,7 +2,7 @@ import { authSession } from "@/lib/auth";
 import { NextHandler } from "next-connect";
 import type { NextFetchEvent, NextRequest } from "next/server";
 
-export async function sessionUpdate(
+export async function patientAuthSession(
 	request: NextRequest,
 	event: NextFetchEvent,
 	next: NextHandler,
