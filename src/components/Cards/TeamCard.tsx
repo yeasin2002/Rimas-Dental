@@ -1,11 +1,14 @@
 import React from "react";
-interface Props extends React.ComponentProps<"div"> {}
+interface Props extends React.ComponentProps<"div"> {
+	doctor: Doctor;
+}
 
 import doctorIcon from "@/assets/temp/doctor-3.jpg";
 import { FacebookLogo, WhatsappLogo } from "@/components/icons";
 import Image from "next/image";
+import { Doctor } from "@/types";
 
-export const TeamCard = (props: Props) => {
+export const TeamCard = ({ doctor, ...props }: Props) => {
 	return (
 		<div
 			{...props}

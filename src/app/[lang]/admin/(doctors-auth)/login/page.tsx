@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 
 import { loginFormSchema } from "@/schema";
-import { loginWithAuthJs } from "@/actions";
+import { loginWithAuthJs } from "@/actions/auth.actions";
 import { loginFormData } from "@/types";
 import {
 	Email,

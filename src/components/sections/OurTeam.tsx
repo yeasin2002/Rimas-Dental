@@ -1,11 +1,14 @@
 import { baloo } from "@/fonts";
 import React from "react";
 import { TeamCard } from "../Cards/TeamCard";
+import { getAllDoctors } from "@/actions/doctors.actions/doctor-queries.actions";
 interface Props extends React.ComponentProps<"div"> {
 	dictionary: any;
 }
 
-export const OurTeam = ({ dictionary, ...props }: Props) => {
+export const OurTeam = async ({ dictionary, ...props }: Props) => {
+	const doctorsList = await getAllDoctors();
+
 	return (
 		<section
 			{...props}
@@ -26,8 +29,9 @@ export const OurTeam = ({ dictionary, ...props }: Props) => {
 			</div>
 
 			<div className="min:px-5 mt-5 grid grid-cols-1 gap-8 px-3 md:grid-cols-2 2xl:gap-x-12">
-				<TeamCard />
-				<TeamCard />
+				{doctorsList?.data?.doctors.map((doctor) => {
+					return <TeamCard key={doctor._id} doctor={doctor} />;
+				})}
 			</div>
 		</section>
 	);

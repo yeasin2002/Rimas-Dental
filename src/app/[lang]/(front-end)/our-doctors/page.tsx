@@ -15,8 +15,8 @@ const Doctors = () => {
 					</div>
 				</div>
 				<div className="mt-10 grid grid-cols-2 gap-2 md:gap-x-8 lg:gap-x-10 xl:gap-x-14">
-					<DoctorsCards className="max-w-full" imageClassName="h-80" />
-					<DoctorsCards className="max-w-full" imageClassName="h-80" />
+					{/* <DoctorsCards className="max-w-full" imageClassName="h-80" /> */}
+					{/* <DoctorsCards className="max-w-full" imageClassName="h-80" /> */}
 				</div>
 			</section>
 		</div>

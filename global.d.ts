@@ -5,8 +5,8 @@ import mongoose from "mongoose";
 import globalThisType from "globalthis";
 
 declare global {
-	var mongoose: typeof mongoose;
-	var globalThis: globalThisType;
+	const mongoose: typeof mongoose;
+	const globalThis: globalThisType;
 
 	type InternationalizationType =
 		| typeof bdLanguage

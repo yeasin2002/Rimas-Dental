@@ -18,7 +18,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Doctor02, LinkTo } from "@/components";
 import { dashboardNav } from "@/data/navItems";
 import { cn } from "@/utils";
-import { logoutWithAuthJs } from "@/actions";
+import { logoutWithAuthJs } from "@/actions/auth.actions";
 
 interface Props extends React.ComponentProps<"div"> {}
 

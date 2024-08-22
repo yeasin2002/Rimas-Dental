@@ -1,8 +1,8 @@
 {
 	"global": {
-		"name": "রিমা'স ডেন্টাল",
-		"login": "লগইন",
-		"register": "রেজিস্টার"
+		"name": "Rima's Dental",
+		"login": "Login",
+		"register": "Register"
 	},
 	"shared": {
 		"appointment": {
@@ -23,7 +23,8 @@
 		"home": "Home",
 		"about_us": "About us",
 		"services": "Services",
-		"login": "Login"
+		"login": "Login",
+		"dashboard": "Dashboard"
 	},
 	"home": {
 		"hero": {
@@ -62,7 +63,11 @@
 			"footerInfo": {
 				"contact": {
 					"title": "Contact",
-					"value": ["01731-519025", "01533-881102", "01679-112725"]
+					"value": [
+						"01731-519025",
+						"01533-881102",
+						"01679-112725"
+					]
 				},
 				"address": {
 					"title": "Address",

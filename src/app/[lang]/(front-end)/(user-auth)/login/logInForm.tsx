@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
-import { loginPatient_server } from "@/actions";
+import { loginPatient_server } from "@/actions/auth.actions";
 import { Email, InputCombo, InputComboForPassword, Lock } from "@/components";
 import { loginFormSchema } from "@/schema";
 import { loginFormData } from "@/types";

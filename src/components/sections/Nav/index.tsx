@@ -3,12 +3,14 @@ import React from "react";
 
 import { LargeNav } from "./LargeNav";
 import { MobileNav } from "./MobileNav";
+import { Session } from "next-auth";
 
 interface Props extends React.ComponentProps<"nav"> {
 	dictionary?: any;
+	doctorSession: Session | null;
 }
 
-export const Nav = async ({ dictionary, ...props }: Props) => {
+export const Nav = async ({ dictionary, doctorSession, ...props }: Props) => {
 	const rootMenuItems = [
 		{
 			label: dictionary?.home,
@@ -38,7 +40,9 @@ export const Nav = async ({ dictionary, ...props }: Props) => {
 				<LargeNav
 					className="hidden sm:flex"
 					rootMenuItems={rootMenuItems}
-					login={dictionary?.login}
+					loginText={dictionary?.login}
+					dashboardText={dictionary?.dashboard}
+					doctorSession={doctorSession}
 				/>
 			</>
 		</nav>

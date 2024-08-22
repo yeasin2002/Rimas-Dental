@@ -2,6 +2,7 @@ import { Nav } from "@/components";
 import { getDictionary } from "@/Internationalization";
 import { authSession } from "@/lib/auth";
 import React from "react";
+import { auth } from "@/auth";
 
 const FrontEndLayout = async ({
 	children,
@@ -11,12 +12,15 @@ const FrontEndLayout = async ({
 	params: { lang: string };
 }>) => {
 	const dic = await getDictionary(params.lang, "root_menu");
+	const doctorSession = await auth();
 	const session = await authSession.getSession();
-	console.log("🚀 ~ Patient Session:", session);
+
+	// console.log("🚀 ~ doctor session:", doctorSession);
+	// console.log("🚀 ~Patient session:", session);
 
 	return (
 		<>
-			<Nav dictionary={dic} />
+			<Nav dictionary={dic} doctorSession={doctorSession} />
 			{children}
 		</>
 	);

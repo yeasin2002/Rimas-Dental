@@ -27,7 +27,7 @@ import {
 import { registerFormSchema } from "@/schema";
 import { cn } from "@/utils";
 import { registerFormData } from "@/types";
-import { loginWithAuthJs, registerDoctor_server } from "@/actions";
+import { loginWithAuthJs, registerDoctor_server } from "@/actions/auth.actions";
 
 const Register = () => {
 	const router = useRouter();

@@ -14,31 +14,32 @@ const DoctorsRole = Object.freeze({
 });
 
 // Doctors Schema
-const doctorsSchema = new Schema({
-	email: { type: String, unique: true, required: true },
-	phone: { type: String, required: true },
-	name: { type: String, required: true },
-	profileImage: { type: String, required: true },
-	gender: { type: String, enum: Gender, required: true },
+const doctorsSchema = new Schema(
+	{
+		// basic info
+		name: { type: String, required: true },
+		profileImage: { type: String, required: true },
+		gender: { type: String, enum: Gender, required: true },
 
-	specialization: { type: String, default: null },
-	yearsOfExperience: { type: Number, default: 0 },
-	bio: { type: String, default: null },
-	role: {
-		type: String,
-		enum: Object.values(DoctorsRole),
-		default: DoctorsRole.Doctor,
+		// contact info
+		email: { type: String, unique: true, required: true },
+		phone: { type: String, required: true },
+		facebookLink: { type: String, default: null },
+		address: { type: String, default: null },
+
+		// extra info
+		specialization: { type: String, default: null },
+		yearsOfExperience: { type: Number, default: 0 },
+		bio: { type: String, default: null },
+		role: { type: String, enum: DoctorsRole, default: DoctorsRole.Doctor },
+
+		// others
+		password: { type: String, required: true },
+		services: [{ type: mongoose.Schema.Types.ObjectId, ref: "Services" }],
+		isPending: { type: Boolean, default: true },
 	},
-
-	address: { type: String, default: null },
-	password: { type: String, required: true },
-
-	services: [{ type: mongoose.Schema.Types.ObjectId, ref: "Services" }],
-	isPending: { type: Boolean, default: true },
-
-	createdAt: { type: Date, default: Date.now },
-	updatedAt: { type: Date, default: Date.now },
-});
+	{ timestamps: true },
+);
 
 export const Doctors =
 	mongoose.models.Doctors || mongoose.model("Doctors", doctorsSchema);
