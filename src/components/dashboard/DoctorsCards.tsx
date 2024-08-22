@@ -13,26 +13,15 @@ interface Props extends React.ComponentProps<"div"> {
 	data: Doctor;
 }
 
-export const DoctorsCards = ({
-	imageClassName,
-	className,
-	data,
-	...props
-}: Props) => {
+export const DoctorsCards = ({ imageClassName, className, data, ...props }: Props) => {
 	if (!data) return "";
 	return (
 		<div
-			className={cn(
-				"w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800",
-				className,
-			)}
+			className={cn("w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800", className)}
 			{...props}
 		>
 			<Image
-				className={cn(
-					"aspect-square h-56 w-full rounded-lg object-cover object-center",
-					imageClassName,
-				)}
+				className={cn("aspect-square h-56 w-full rounded-lg object-cover object-center", imageClassName)}
 				src={data?.profileImage}
 				alt="Doctor"
 				width={500}
@@ -44,20 +33,18 @@ export const DoctorsCards = ({
 					<Image src={femaleDoctor} alt="Doctor" width={30} height={30} />
 					<h4> {data?.name} </h4>
 				</div>
-				<p className="py-2 text-gray-700 dark:text-gray-400">
-					An experienced internal medicine physician dedicated to providing
-					compassionate and personalized care. With over 15 years in the field,
-					she specializes in managing chronic conditions and promoting overall
-					wellness.
-				</p>
+				<p className="py-2 text-gray-700 dark:text-gray-400">{data?.bio}</p>
 				<div className="mt-4 flex items-center text-gray-700 dark:text-gray-200">
 					<SquareUser />
 					<h1 className="px-2 text-sm">{data.phone}</h1>
 				</div>
-				<div className="mt-4 flex items-center text-gray-700 dark:text-gray-200">
-					<MapPin />
-					<h1 className="px-2 text-sm">Mirpur 14, Dhaka </h1>
-				</div>
+				{data.address && (
+					<div className="mt-4 flex items-center text-gray-700 dark:text-gray-200">
+						<MapPin />
+						<h1 className="px-2 text-sm">{data?.address} </h1>
+					</div>
+				)}
+
 				<div className="mt-4 flex items-center text-gray-700 dark:text-gray-200">
 					<Mail />
 					<h1 className="px-2 text-sm">{data?.email}</h1>

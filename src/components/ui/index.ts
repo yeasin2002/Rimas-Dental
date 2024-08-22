@@ -20,3 +20,4 @@ export * from "./inputComboForPassword";
 export * from "./inputComboMax";
 export * from "./PhotoUploaderDND";
 export * from "./SelectGender";
+export * from "./InputComboTextArea";

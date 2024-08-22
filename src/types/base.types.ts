@@ -13,6 +13,11 @@ export interface Doctor {
 	password: string;
 	isPending: boolean;
 	services: string[];
+	facebook: {
+		name: string;
+		link: string;
+	};
+
 	createdAt: Date;
 	updatedAt: Date;
 }

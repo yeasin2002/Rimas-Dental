@@ -1,8 +1,13 @@
 {
+	"printWidth": 120,
 	"semi": true,
 	"trailingComma": "all",
 	"singleQuote": false,
 	"tabWidth": 2,
 	"useTabs": true,
-	"plugins": ["prettier-plugin-tailwindcss"]
+	"plugins": [
+		"prettier-plugin-tailwindcss"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
 }

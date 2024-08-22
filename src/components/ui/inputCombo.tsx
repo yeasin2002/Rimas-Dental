@@ -9,14 +9,7 @@ interface Props extends React.ComponentProps<"input"> {
 	wrapperClassName?: string;
 }
 
-export const InputCombo = ({
-	icon,
-	className,
-	register,
-	wrapperClassName,
-	error,
-	...props
-}: Props) => {
+export const InputCombo = ({ icon, className, register, wrapperClassName, error, ...props }: Props) => {
 	return (
 		<div className={cn("inputCombo-wrapper", wrapperClassName)}>
 			<span className="absolute">{icon}</span>
