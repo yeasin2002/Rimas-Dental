@@ -4,10 +4,7 @@ interface Props extends React.ComponentProps<"div"> {}
 
 export const ServiceCards = ({ ...props }: Props) => {
 	return (
-		<div
-			className="relative max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
-			{...props}
-		>
+		<div className="relative max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800" {...props}>
 			<Image
 				className="h-64 w-full object-cover"
 				src="https://images.unsplash.com/photo-1550439062-609e1531270e"
@@ -28,10 +25,9 @@ export const ServiceCards = ({ ...props }: Props) => {
 						</a>
 					</div>
 					<p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie
-						parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris
-						egestas quam volutpat viverra. In pretium nec senectus erat. Et
-						malesuada lobortis.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel.
+						Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada
+						lobortis.
 					</p>
 				</div>
 				<div className="mt-4">
@@ -44,18 +40,11 @@ export const ServiceCards = ({ ...props }: Props) => {
 								width={48}
 								height={48}
 							/>
-							<a
-								href="#"
-								className="mx-2 font-semibold text-gray-700 dark:text-gray-200"
-								tabIndex={0}
-								role="link"
-							>
+							<a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabIndex={0} role="link">
 								Jone Doe
 							</a>
 						</div>
-						<span className="mx-1 text-xs text-gray-600 dark:text-gray-300">
-							21 SEP 2015
-						</span>
+						<span className="mx-1 text-xs text-gray-600 dark:text-gray-300">21 SEP 2015</span>
 					</div>
 				</div>
 			</div>

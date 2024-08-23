@@ -20,8 +20,7 @@ export const internationalization = (req: NextRequest) => {
 	const pathname = req.nextUrl.pathname;
 
 	const pathnameIsMissingLocale = locals.every(
-		(locale) =>
-			!pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+		(locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
 	);
 
 	if (pathnameIsMissingLocale) {

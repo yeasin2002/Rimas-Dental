@@ -4,10 +4,7 @@ import teethClean from "@/assets/images/teeth-clean.webp";
 import teethDirty from "@/assets/images/teeth-dirty .webp";
 import { baloo } from "@/fonts";
 import React from "react";
-import {
-	ReactCompareSlider,
-	ReactCompareSliderImage,
-} from "react-compare-slider";
+import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
 
 interface Props extends React.ComponentProps<"div"> {
 	dictionary: any;

@@ -40,8 +40,7 @@ export const DoctorProfile = ({ ...props }: Props) => {
 							<strong>Gender:</strong> Male
 						</p>
 						<p>
-							<strong>Address:</strong> 7898 Marsh Ln Richardson, Wisconsin
-							35697
+							<strong>Address:</strong> 7898 Marsh Ln Richardson, Wisconsin 35697
 						</p>
 					</div>
 					<div>
@@ -60,9 +59,8 @@ export const DoctorProfile = ({ ...props }: Props) => {
 				<div className="mt-6">
 					<h3 className="mb-2 text-xl font-semibold">Bio</h3>
 					<p className="text-gray-700">
-						Dr. Adam is a highly skilled dentist with over 10 years of
-						experience in general dentistry. He specializes in preventive care,
-						cosmetic dentistry, and restorative procedures.
+						Dr. Adam is a highly skilled dentist with over 10 years of experience in general dentistry. He specializes
+						in preventive care, cosmetic dentistry, and restorative procedures.
 					</p>
 				</div>
 				<div className="mt-6">

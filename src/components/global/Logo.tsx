@@ -10,19 +10,9 @@ interface Props extends LinkProps {
 	textClassName?: string;
 }
 
-export const Logo = ({
-	href = "/",
-	className,
-	imgClassName,
-	textClassName,
-	...props
-}: Props) => {
+export const Logo = ({ href = "/", className, imgClassName, textClassName, ...props }: Props) => {
 	return (
-		<LinkTo
-			{...props}
-			className={cn("flex items-center justify-center", className)}
-			href={href}
-		>
+		<LinkTo {...props} className={cn("flex items-center justify-center", className)} href={href}>
 			<Image
 				src={teeth}
 				alt="teeth"
@@ -30,12 +20,7 @@ export const Logo = ({
 				className={cn("h-10 w-10", imgClassName)}
 				aria-label="Rima's Dental Logo"
 			/>
-			<p
-				className={cn(
-					"ml-2 font-grotesk text-xl font-bold text-main-400 md:text-2xl 2xl:text-3xl",
-					textClassName,
-				)}
-			>
+			<p className={cn("ml-2 font-grotesk text-xl font-bold text-main-400 md:text-2xl 2xl:text-3xl", textClassName)}>
 				{`Rima's`} Dental
 			</p>
 		</LinkTo>

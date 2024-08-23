@@ -45,9 +45,7 @@ export const AppointmentForm = ({ dictionary, ...props }: Props) => {
 			className={cn("h-full rounded-xl bg-white p-6", props.className)}
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<p className="font-grotesk text-2xl font-bold text-main-500 2xl:text-3xl">
-				{dictionary?.heading}
-			</p>
+			<p className="font-grotesk text-2xl font-bold text-main-500 2xl:text-3xl">{dictionary?.heading}</p>
 			<div className="mt-4 grid w-full grid-cols-1 gap-4 md:grid-cols-2">
 				<Input
 					register={register("name", {
@@ -84,18 +82,11 @@ export const AppointmentForm = ({ dictionary, ...props }: Props) => {
 					control={control}
 					name="appointmentTime"
 					render={(files) => (
-						<TimePicker
-							timeValue={files.field.value}
-							onValueChange={(value) => files.field.onChange(value)}
-						/>
+						<TimePicker timeValue={files.field.value} onValueChange={(value) => files.field.onChange(value)} />
 					)}
 				/>
 			</div>
-			<Button
-				variant={"dracula"}
-				type="submit"
-				className="mt-4 w-full rounded-lg 2xl:py-8 2xl:text-xl"
-			>
+			<Button variant={"dracula"} type="submit" className="mt-4 w-full rounded-lg 2xl:py-8 2xl:text-xl">
 				{dictionary?.cta}
 			</Button>
 		</form>

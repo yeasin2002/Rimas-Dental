@@ -22,8 +22,12 @@ const RegisterPage = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isFirstStep, setIsFirstStep] = useState(true);
 
-	const firstForm = useForm<registerFormFirstStepData>({ resolver: zodResolver(registerFormFirstStepSchema) });
-	const secondForm = useForm<registerFormSecondStepData>({ resolver: zodResolver(registerFormSecondStepSchema) });
+	const firstForm = useForm<registerFormFirstStepData>({
+		resolver: zodResolver(registerFormFirstStepSchema),
+	});
+	const secondForm = useForm<registerFormSecondStepData>({
+		resolver: zodResolver(registerFormSecondStepSchema),
+	});
 	console.log("🚀 ~ RegisterPage ~ secondForm:", secondForm.formState.errors);
 
 	const finalRegister = async (data: registerFormSecondStepData) => {

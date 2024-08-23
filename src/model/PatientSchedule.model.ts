@@ -17,5 +17,4 @@ const patientScheduleSchema = new Schema({
 });
 
 export const PatientSchedule =
-	mongoose.models.PatientSchedule ||
-	mongoose.model("PatientSchedule", patientScheduleSchema);
+	mongoose.models.PatientSchedule || mongoose.model("PatientSchedule", patientScheduleSchema);

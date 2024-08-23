@@ -14,8 +14,7 @@ export const ShowMatchRoute = ({ ...props }: Props) => {
 				href="/admin/login"
 				className={cn(
 					"w-1/3 border-b pb-4 text-center font-medium capitalize text-gray-500 dark:border-gray-400 dark:text-gray-300",
-					params === "login" &&
-						"border-b-2 border-blue-500 dark:border-blue-400",
+					params === "login" && "border-b-2 border-blue-500 dark:border-blue-400",
 				)}
 			>
 				Log In
@@ -24,8 +23,7 @@ export const ShowMatchRoute = ({ ...props }: Props) => {
 				href="/admin/register"
 				className={cn(
 					"w-1/3 border-b-2 pb-4 text-center font-medium capitalize text-gray-800 dark:text-white",
-					params === "register" &&
-						"border-b-2 border-blue-500 dark:border-blue-400",
+					params === "register" && "border-b-2 border-blue-500 dark:border-blue-400",
 				)}
 			>
 				Register

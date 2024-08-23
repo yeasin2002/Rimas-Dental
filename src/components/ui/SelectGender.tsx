@@ -17,13 +17,7 @@ interface Props extends React.ComponentProps<"div"> {
 	}[];
 }
 
-export const SelectGender = ({
-	register,
-	selectedValue,
-	genderList,
-	error,
-	...props
-}: Props) => {
+export const SelectGender = ({ register, selectedValue, genderList, error, ...props }: Props) => {
 	const [selectGender, SetSelectGender] = useState<string>(selectedValue);
 
 	return (
@@ -54,13 +48,7 @@ export const SelectGender = ({
 								<CheckCheck className="absolute -bottom-3 left-0 right-0 text-green-600/50" />
 							)}
 						</label>
-						<input
-							type="radio"
-							{...register}
-							value={gender.name}
-							id={gender.name}
-							className="hidden"
-						/>
+						<input type="radio" {...register} value={gender.name} id={gender.name} className="hidden" />
 					</Fragment>
 				))}
 			</div>

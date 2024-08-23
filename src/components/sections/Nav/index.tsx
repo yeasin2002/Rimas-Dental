@@ -32,11 +32,7 @@ export const Nav = async ({ dictionary, doctorSession, ...props }: Props) => {
 		>
 			<Logo href={"/"} />
 			<>
-				<MobileNav
-					className="flex sm:hidden"
-					rootMenuItems={rootMenuItems}
-					login={dictionary?.login}
-				/>
+				<MobileNav className="flex sm:hidden" rootMenuItems={rootMenuItems} login={dictionary?.login} />
 				<LargeNav
 					className="hidden sm:flex"
 					rootMenuItems={rootMenuItems}

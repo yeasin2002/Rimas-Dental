@@ -14,9 +14,7 @@ function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`3xl:container   overflow-x-hidden bg-main-100 ${TiroBangla400.className}`}
-			>
+			<body className={`overflow-x-hidden bg-main-100 3xl:container ${TiroBangla400.className}`}>
 				<EdgeStoreProvider>
 					<NextTopLoader color="#3066ac" showSpinner={false} />
 					<ClintProvider>{children}</ClintProvider>

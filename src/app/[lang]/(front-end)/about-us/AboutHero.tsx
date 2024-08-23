@@ -10,11 +10,7 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
 	dicForForm: any;
 }
 
-export const AboutHero = async ({
-	dictionary,
-	dicForForm,
-	...props
-}: Props) => {
+export const AboutHero = async ({ dictionary, dicForForm, ...props }: Props) => {
 	return (
 		<section className="w-full py-6 xl:py-32">
 			<div className="container px-4 md:px-6">

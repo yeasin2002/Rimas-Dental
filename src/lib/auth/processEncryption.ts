@@ -8,10 +8,7 @@ export async function encrypt(payload: any, key: KeyLike | Uint8Array) {
 		.sign(key);
 }
 
-export async function decrypt(
-	input: string,
-	key: KeyLike | Uint8Array,
-): Promise<any> {
+export async function decrypt(input: string, key: KeyLike | Uint8Array): Promise<any> {
 	const { payload } = await jwtVerify(input, key, {
 		algorithms: ["HS256"],
 	});

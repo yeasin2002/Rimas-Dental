@@ -39,9 +39,7 @@ const DentalPatientProfile = () => {
 
 					{/* Upcoming Appointments */}
 					<div className="mb-6">
-						<h2 className="mb-2 text-xl font-semibold">
-							Upcoming Appointments
-						</h2>
+						<h2 className="mb-2 text-xl font-semibold">Upcoming Appointments</h2>
 						<div className="rounded bg-gray-100 p-4">
 							<p className="font-semibold">04/30/2024 - 10:00 AM</p>
 							<p>Dental Cleaning</p>
@@ -51,9 +49,7 @@ const DentalPatientProfile = () => {
 
 					{/* Medical Records & Documents */}
 					<div className="mb-6">
-						<h2 className="mb-2 text-xl font-semibold">
-							Medical Records & Documents
-						</h2>
+						<h2 className="mb-2 text-xl font-semibold">Medical Records & Documents</h2>
 						<ul className="list-disc pl-5">
 							<li>Dental X-Ray (03/15/2024)</li>
 							<li>Treatment Plan (02/01/2024)</li>
@@ -66,20 +62,13 @@ const DentalPatientProfile = () => {
 					{/* Notes */}
 					<div className="mb-6">
 						<h2 className="mb-2 text-xl font-semibold">Notes</h2>
-						<textarea
-							className="h-32 w-full rounded border p-2"
-							placeholder="Add notes here..."
-						></textarea>
+						<textarea className="h-32 w-full rounded border p-2" placeholder="Add notes here..."></textarea>
 					</div>
 
 					{/* Quick Actions */}
 					<div className="flex justify-end">
-						<button className="mr-2 rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600">
-							Send Message
-						</button>
-						<button className="rounded bg-gray-500 px-4 py-2 text-white hover:bg-gray-600">
-							Edit Patient
-						</button>
+						<button className="mr-2 rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600">Send Message</button>
+						<button className="rounded bg-gray-500 px-4 py-2 text-white hover:bg-gray-600">Edit Patient</button>
 					</div>
 				</div>
 			</div>

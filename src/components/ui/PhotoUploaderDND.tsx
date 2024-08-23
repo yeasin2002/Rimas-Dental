@@ -11,13 +11,7 @@ interface FileWithPreview extends File {
 	preview: string;
 }
 
-import {
-	Dialog,
-	DialogContent,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useEdgeStore } from "@/lib/edgestore";
 import { X } from "lucide-react";
 import toast from "react-hot-toast";
@@ -28,12 +22,7 @@ interface Props extends React.ComponentProps<"button"> {
 	register: UseFormRegisterReturn;
 }
 
-export const PhotoUploaderDND = ({
-	children,
-	onSuccessUpload,
-	register,
-	...props
-}: Props) => {
+export const PhotoUploaderDND = ({ children, onSuccessUpload, register, ...props }: Props) => {
 	const [file, setFile] = useState<FileWithPreview | null>(null);
 	const [isModalClosed, setIsModalClosed] = useState(false);
 	const [isUploading, setIsUploading] = useState(false);
@@ -123,12 +112,9 @@ export const PhotoUploaderDND = ({
 							<div className="flex flex-col items-center justify-center pb-6 pt-5">
 								<CloudUpload className="size-10" />
 								<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-									<span className="font-semibold">Click to upload</span> or drag
-									and drop
+									<span className="font-semibold">Click to upload</span> or drag and drop
 								</p>
-								<p className="text-xs text-gray-500 dark:text-gray-400">
-									SVG, PNG, JPG or GIF
-								</p>
+								<p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF</p>
 							</div>
 						</div>
 					)}
@@ -137,12 +123,7 @@ export const PhotoUploaderDND = ({
 					<Button variant={"outline"} onClick={() => setIsModalClosed(false)}>
 						Cancel
 					</Button>
-					<Button
-						variant={"outline"}
-						className="grow"
-						onClick={onUpload}
-						disabled={!file || isUploading}
-					>
+					<Button variant={"outline"} className="grow" onClick={onUpload} disabled={!file || isUploading}>
 						{isUploading ? <UploadingLoop /> : "Upload"}
 					</Button>
 				</div>

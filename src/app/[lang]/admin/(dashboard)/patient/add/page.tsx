@@ -27,28 +27,25 @@ const AddPatients = () => {
 	const onSubmit = (data: PatientData) => {};
 
 	return (
-		<section className=" min-h-screen bg-white dark:bg-gray-900">
-			<div className="flex items-center w-full p-8 mx-auto lg:px-12 ">
+		<section className="min-h-screen bg-white dark:bg-gray-900">
+			<div className="mx-auto flex w-full items-center p-8 lg:px-12">
 				<div className="w-full">
-					<h1 className="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
+					<h1 className="text-2xl font-semibold capitalize tracking-wider text-gray-800 dark:text-white">
 						Get your free account now.
 					</h1>
 					<p className="mt-4 text-gray-500 dark:text-gray-400">
-						Let’s get you all set up so you can verify your personal account and
-						begin setting up your profile.
+						Let’s get you all set up so you can verify your personal account and begin setting up your profile.
 					</p>
 					<div className="mt-6">
-						<h1 className="text-gray-500 dark:text-gray-300">
-							Select type of account
-						</h1>
-						<div className="mt-3 md:flex md:items-center md:-mx-2">
+						<h1 className="text-gray-500 dark:text-gray-300">Select type of account</h1>
+						<div className="mt-3 md:-mx-2 md:flex md:items-center">
 							<button
 								type="button"
-								className="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-lg md:w-auto md:mx-2 focus:outline-none"
+								className="flex w-full justify-center rounded-lg bg-blue-500 px-6 py-3 text-white focus:outline-none md:mx-2 md:w-auto"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									className="w-6 h-6"
+									className="h-6 w-6"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -64,11 +61,11 @@ const AddPatients = () => {
 							</button>
 							<button
 								type="button"
-								className="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-lg md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none"
+								className="mt-4 flex w-full justify-center rounded-lg border border-blue-500 px-6 py-3 text-blue-500 focus:outline-none dark:border-blue-400 dark:text-blue-400 md:mx-2 md:mt-0 md:w-auto"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									className="w-6 h-6"
+									className="h-6 w-6"
 									fill="none"
 									viewBox="0 0 24 24"
 									stroke="currentColor"
@@ -84,10 +81,7 @@ const AddPatients = () => {
 							</button>
 						</div>
 					</div>
-					<form
-						className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
-						onSubmit={handleSubmit(onSubmit)}
-					>
+					<form className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2" onSubmit={handleSubmit(onSubmit)}>
 						<InputComboMax
 							register={register("name")}
 							error={errors.name?.message}
@@ -120,11 +114,11 @@ const AddPatients = () => {
 							placeholder="Enter your password"
 						/>
 
-						<button className="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+						<button className="flex w-full transform items-center justify-between rounded-lg bg-blue-500 px-6 py-3 text-sm capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
 							<span>Sign Up </span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								className="w-5 h-5 rtl:-scale-x-100"
+								className="h-5 w-5 rtl:-scale-x-100"
 								viewBox="0 0 20 20"
 								fill="currentColor"
 							>

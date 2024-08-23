@@ -46,11 +46,7 @@ const Auth = async ({ children, params }: Props) => {
 			<div className="container mx-auto flex h-full min-h-[70vh] w-full items-center justify-center px-6 dark:bg-gray-900">
 				<div className="mx-auto w-full max-w-md 2xl:max-w-2xl">
 					<div className="mx-auto flex justify-center">
-						<Logo
-							href={"/"}
-							imgClassName="2xl:size-16"
-							textClassName="2xl:text-3xl"
-						/>
+						<Logo href={"/"} imgClassName="2xl:size-16" textClassName="2xl:text-3xl" />
 					</div>
 					<ShowMatchRoute dictionary={dictionary} />
 					{children}

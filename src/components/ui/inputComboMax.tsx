@@ -21,16 +21,13 @@ export const InputComboMax = ({
 	const { name, ...restRegister } = register;
 	return (
 		<div className={cn(wrapperClassName)}>
-			<label
-				className="block mb-2 text-sm text-gray-600 dark:text-gray-200 capitalize"
-				htmlFor={name}
-			>
+			<label className="mb-2 block text-sm capitalize text-gray-600 dark:text-gray-200" htmlFor={name}>
 				{labelName}
 			</label>
 			<input
 				type={type}
 				className={cn(
-					"block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40",
+					"mt-2 block w-full rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-40 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:placeholder-gray-600 dark:focus:border-blue-400",
 					className,
 				)}
 				name={name}

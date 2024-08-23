@@ -1,9 +1,4 @@
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui";
 
 import { faqData } from "@/data";
 import { baloo } from "@/fonts";
@@ -16,9 +11,7 @@ interface Props extends React.ComponentProps<"div"> {
 export const FAQ = ({ dictionary, ...props }: Props) => {
 	return (
 		<div {...props} className="home_sections-container container">
-			<h2
-				className={`mt-8 py-4 font-grotesk text-4xl font-bold text-main-400 2xl:text-5xl ${baloo.className}`}
-			>
+			<h2 className={`mt-8 py-4 font-grotesk text-4xl font-bold text-main-400 2xl:text-5xl ${baloo.className}`}>
 				{dictionary?.faqHeading}
 			</h2>
 

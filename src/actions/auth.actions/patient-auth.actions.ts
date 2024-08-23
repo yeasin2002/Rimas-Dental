@@ -8,10 +8,7 @@ import { authSession } from "@/lib/auth";
 import { loginFormData, registerFormData } from "@/types";
 import { db } from "@/model";
 
-export const loginPatient_server = async ({
-	email,
-	password,
-}: loginFormData) => {
+export const loginPatient_server = async ({ email, password }: loginFormData) => {
 	try {
 		await connectDB();
 
@@ -44,8 +41,7 @@ export const registerPatient_server = async (data: registerFormData) => {
 		const checkDoctorExist = await mongoose.models.Doctor.findOne({
 			email: data.email,
 		});
-		if (checkDoctorExist)
-			throw new Error("Doctor with this email  already exists");
+		if (checkDoctorExist) throw new Error("Doctor with this email  already exists");
 
 		// Hash Password
 		const hashedPassword = await bcrypt.hash(data.password, 10);

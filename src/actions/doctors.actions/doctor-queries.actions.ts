@@ -6,10 +6,8 @@ import { Doctor } from "@/types";
 export const getAllDoctors = async () => {
 	try {
 		await db.connectDB();
-		const doctors: Doctor[] =
-			(await db.Doctors.find({ isPending: false }).lean()) || [];
-		const pendingDoctors: Doctor[] =
-			(await db.Doctors.find({ isPending: true }).lean()) || [];
+		const doctors: Doctor[] = (await db.Doctors.find({ isPending: false }).lean()) || [];
+		const pendingDoctors: Doctor[] = (await db.Doctors.find({ isPending: true }).lean()) || [];
 
 		return {
 			success: true,

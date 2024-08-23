@@ -37,8 +37,7 @@ export const MobileNav = ({ rootMenuItems, ...props }: Props) => {
 							<LinkTo
 								className={cn(
 									`mx-3 flex items-center text-deepBlue-100 ${HindSiliguri.className}`,
-									pathname === item.href &&
-										`font-bold ${HindSiliguri600.className}`,
+									pathname === item.href && `font-bold ${HindSiliguri600.className}`,
 								)}
 								href={item.href}
 							>

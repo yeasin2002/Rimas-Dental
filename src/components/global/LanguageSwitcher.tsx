@@ -59,18 +59,8 @@ export function LangSwitcher() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end">
 				{flags.map((item) => (
-					<DropdownMenuItem
-						key={item.name}
-						onClick={() => handleLangChange(item)}
-						className="cursor-pointer gap-x-2"
-					>
-						<Image
-							src={item.flag}
-							alt={item.name}
-							width={20}
-							height={20}
-							className="h-5 w-5 object-contain"
-						/>
+					<DropdownMenuItem key={item.name} onClick={() => handleLangChange(item)} className="cursor-pointer gap-x-2">
+						<Image src={item.flag} alt={item.name} width={20} height={20} className="h-5 w-5 object-contain" />
 						<span>{item.name}</span>
 					</DropdownMenuItem>
 				))}

@@ -20,12 +20,7 @@ export const ShowPendingDoctorList = ({ doctors, ...props }: Props) => {
 			</div>
 			<div className="mt-10 grid grid-cols-2 gap-x-4">
 				{doctors.map((doctor) => (
-					<DoctorsCards
-						className="max-w-full"
-						imageClassName={"h-96"}
-						key={doctor._id}
-						data= {doctor}
-					/>
+					<DoctorsCards className="max-w-full" imageClassName={"h-96"} key={doctor._id} data={doctor} />
 				))}
 			</div>
 		</section>

@@ -13,10 +13,7 @@ const AddServicePage = () => {
 				<div className="rounded-lg bg-white p-6 shadow-md">
 					<form>
 						<div className="mb-4">
-							<label
-								htmlFor="name"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="name" className="mb-2 block font-bold text-gray-700">
 								Service Name
 							</label>
 							<input
@@ -29,10 +26,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="description"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="description" className="mb-2 block font-bold text-gray-700">
 								Description
 							</label>
 							<textarea
@@ -44,10 +38,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="content"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="content" className="mb-2 block font-bold text-gray-700">
 								Content
 							</label>
 							<textarea
@@ -59,10 +50,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="coverImage"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="coverImage" className="mb-2 block font-bold text-gray-700">
 								Cover Image URL
 							</label>
 							<input
@@ -75,10 +63,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="icons"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="icons" className="mb-2 block font-bold text-gray-700">
 								Icons
 							</label>
 							<input
@@ -91,10 +76,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="YT_VideoUrl"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="YT_VideoUrl" className="mb-2 block font-bold text-gray-700">
 								YouTube Video URL
 							</label>
 							<input
@@ -107,10 +89,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="price_range"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="price_range" className="mb-2 block font-bold text-gray-700">
 								Price Range
 							</label>
 							<input
@@ -123,10 +102,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="tags"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="tags" className="mb-2 block font-bold text-gray-700">
 								Tags
 							</label>
 							<input
@@ -139,10 +115,7 @@ const AddServicePage = () => {
 						</div>
 
 						<div className="mb-4">
-							<label
-								htmlFor="doctorsId"
-								className="mb-2 block font-bold text-gray-700"
-							>
+							<label htmlFor="doctorsId" className="mb-2 block font-bold text-gray-700">
 								Doctor
 							</label>
 							<select
@@ -158,11 +131,7 @@ const AddServicePage = () => {
 
 						<div className="mb-4">
 							<label className="flex items-center">
-								<input
-									type="checkbox"
-									name="isPaused"
-									className="form-checkbox h-5 w-5 text-blue-600"
-								/>
+								<input type="checkbox" name="isPaused" className="form-checkbox h-5 w-5 text-blue-600" />
 								<span className="ml-2 text-gray-700">Pause this service</span>
 							</label>
 						</div>

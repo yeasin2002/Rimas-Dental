@@ -5,11 +5,7 @@ import { Clock2 } from "lucide-react";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/utils";
 
 interface TimePickerProps extends React.ComponentPropsWithoutRef<"button"> {
@@ -40,11 +36,7 @@ const times = [
 	},
 ];
 
-export function TimePicker({
-	timeValue,
-	onValueChange,
-	className,
-}: TimePickerProps) {
+export function TimePicker({ timeValue, onValueChange, className }: TimePickerProps) {
 	const handleValueChange = (timeValue: { from: string; to: string }) => {
 		onValueChange(timeValue);
 	};
@@ -54,16 +46,13 @@ export function TimePicker({
 				<Button
 					type="button"
 					variant={"outline"}
-					className={cn(
-						"max-w-[280px] justify-start text-left font-normal",
-						!timeValue && "text-muted-foreground",
-					)}
+					className={cn("max-w-[280px] justify-start text-left font-normal", !timeValue && "text-muted-foreground")}
 				>
 					<Clock2 className="mr-2 h-4 w-4" />
 					{!timeValue ? "Time" : `${timeValue.from} - ${timeValue.to}`}
 				</Button>
 			</PopoverTrigger>
-			<PopoverContent className="w-full bg-transparent p-0 -translate-x-10">
+			<PopoverContent className="w-full -translate-x-10 bg-transparent p-0">
 				<ol>
 					{times.map((time) => (
 						<li

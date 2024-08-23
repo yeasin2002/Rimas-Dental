@@ -26,17 +26,12 @@ export default async function Home({ params }: ParamsLocals) {
 	return (
 		<>
 			<Hero dictionary={dictionary} />
-			<AppointmentForm
-				className="home_appointment-form"
-				dictionary={dictionaryForAppointment?.appointment}
-			/>
+			<AppointmentForm className="home_appointment-form" dictionary={dictionaryForAppointment?.appointment} />
 			<OurStory dictionary={dictionary} />
 			<Services dictionary={dictionary} />
 			<OurTeam dictionary={dictionary?.home?.OurTeam} />
 			<FAQ dictionary={dictionary?.home?.Faq_TeethEffects} />
-			<TeethBeforeAndAfterEffects
-				dictionary={dictionary?.home?.Faq_TeethEffects}
-			/>
+			<TeethBeforeAndAfterEffects dictionary={dictionary?.home?.Faq_TeethEffects} />
 			<Footer dictionary={dictionary?.home?.footer} />
 		</>
 	);

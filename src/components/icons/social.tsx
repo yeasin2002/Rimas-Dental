@@ -3,12 +3,7 @@ import { SVGProps } from "react";
 
 export function FacebookLogo(props: SVGProps<SVGSVGElement>) {
 	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 256 256"
-			className={cn("size-4", props.className)}
-			{...props}
-		>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className={cn("size-4", props.className)} {...props}>
 			<path
 				fill="#1877F2"
 				d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"
@@ -32,23 +27,11 @@ export function WhatsappLogo(props: SVGProps<SVGSVGElement>) {
 			{...props}
 		>
 			<defs>
-				<linearGradient
-					id="logosWhatsappIcon0"
-					x1="50%"
-					x2="50%"
-					y1="100%"
-					y2="0%"
-				>
+				<linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
 					<stop offset="0%" stopColor="#1FAF38"></stop>
 					<stop offset="100%" stopColor="#60D669"></stop>
 				</linearGradient>
-				<linearGradient
-					id="logosWhatsappIcon1"
-					x1="50%"
-					x2="50%"
-					y1="100%"
-					y2="0%"
-				>
+				<linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
 					<stop offset="0%" stopColor="#F9F9F9"></stop>
 					<stop offset="100%" stopColor="#FFF"></stop>
 				</linearGradient>

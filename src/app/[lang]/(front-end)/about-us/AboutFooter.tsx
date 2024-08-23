@@ -29,11 +29,8 @@ const AboutFooter = async ({ lang, ...props }: Props) => {
 		<div>
 			<footer className="flex w-full shrink-0 flex-col items-center gap-2 border-t px-4 py-6 sm:flex-row md:px-6">
 				<p className="text-xs text-gray-500 dark:text-gray-400 2xl:text-xl">
-					©{convertEnglishToBengaliNumber(new Date().getFullYear().toString())}{" "}
-					<span>{`Rima's`} Dental.</span>
-					<span className="mx-1">
-						{lang === "bn" ? "সমস্ত স্বত্ব সংরক্ষিত." : "All Rights Reserved."}
-					</span>
+					©{convertEnglishToBengaliNumber(new Date().getFullYear().toString())} <span>{`Rima's`} Dental.</span>
+					<span className="mx-1">{lang === "bn" ? "সমস্ত স্বত্ব সংরক্ষিত." : "All Rights Reserved."}</span>
 				</p>
 				<nav className="flex gap-4 sm:ml-auto sm:gap-6">
 					{menuItems.map((items) => (

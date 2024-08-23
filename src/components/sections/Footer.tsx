@@ -38,24 +38,17 @@ export const Footer = ({ dictionary }: Props) => {
 				<div className="hidden md:block"></div>
 				{footerInfo.map((data) => (
 					<div key={data.context + data.info}>
-						<p className="mb-2 font-grotesk text-base font-bold text-main-400 2xl:text-2xl">
-							{data.context}
-						</p>
+						<p className="mb-2 font-grotesk text-base font-bold text-main-400 2xl:text-2xl">{data.context}</p>
 						{Array.isArray(data.info) ? (
 							<ul>
 								{data.info.map((info) => (
-									<li
-										className="text-sm font-semibold text-main-600 2xl:text-xl"
-										key={info}
-									>
+									<li className="text-sm font-semibold text-main-600 2xl:text-xl" key={info}>
 										{info}
 									</li>
 								))}
 							</ul>
 						) : (
-							<p className="text-sm font-semibold text-main-600 2xl:text-xl">
-								{data.info}
-							</p>
+							<p className="text-sm font-semibold text-main-600 2xl:text-xl">{data.info}</p>
 						)}
 					</div>
 				))}

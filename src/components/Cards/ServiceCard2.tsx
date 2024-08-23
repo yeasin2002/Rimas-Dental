@@ -21,9 +21,7 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 			/>
 			<div className="bg-white p-4 dark:bg-gray-950">
 				<h3 className="text-xl font-bold">Root Canal</h3>
-				<p className="text-sm text-gray-500 dark:text-gray-400">
-					Relieve pain and restore your {`tooth's`} health.
-				</p>
+				<p className="text-sm text-gray-500 dark:text-gray-400">Relieve pain and restore your {`tooth's`} health.</p>
 
 				<LinkTo
 					href="/services/1"

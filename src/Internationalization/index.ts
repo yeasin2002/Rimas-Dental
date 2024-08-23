@@ -5,13 +5,9 @@ import { languageLocale } from "@/data";
 export const getDictionary = async (langCode: string, node: string) => {
 	let data = null;
 	try {
-		data = await import(`./languages/${langCode}.json`).then(
-			(module) => module.default,
-		);
+		data = await import(`./languages/${langCode}.json`).then((module) => module.default);
 	} catch (error) {
-		data = await import(
-			`./languages/${languageLocale.defaultLocale}.json`
-		).then((module) => module.default);
+		data = await import(`./languages/${languageLocale.defaultLocale}.json`).then((module) => module.default);
 	}
 	if (node) {
 		return data?.[node] || data;

@@ -22,12 +22,9 @@ const SingleServices = ({ params }: SingleServicesProps) => {
 							height={800}
 						/>
 						<div className="p-6">
-							<h2 className="mb-2 text-2xl font-bold text-gray-800">
-								Dental Cleaning
-							</h2>
+							<h2 className="mb-2 text-2xl font-bold text-gray-800">Dental Cleaning</h2>
 							<p className="mb-4 text-gray-600">
-								Professional teeth cleaning service to maintain oral hygiene and
-								prevent dental issues.
+								Professional teeth cleaning service to maintain oral hygiene and prevent dental issues.
 							</p>
 							<div className="mb-4 flex items-center">
 								<svg
@@ -47,33 +44,23 @@ const SingleServices = ({ params }: SingleServicesProps) => {
 								<span className="text-gray-600">Price Range: $50 - $100</span>
 							</div>
 							<div className="mb-4 flex flex-wrap gap-2">
-								<span className="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">
-									Dental
-								</span>
-								<span className="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">
-									Cleaning
-								</span>
+								<span className="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">Dental</span>
+								<span className="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">Cleaning</span>
 								<span className="rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800">
 									Oral Health
 								</span>
 							</div>
 
 							<div className="mb-6 mt-10">
-								<h3 className="mb-2 text-xl font-semibold text-gray-800">
-									About This Service
-								</h3>
+								<h3 className="mb-2 text-xl font-semibold text-gray-800">About This Service</h3>
 								<p className="text-gray-600">
-									Our dental cleaning service includes a thorough examination of
-									your teeth and gums, removal of plaque and tartar, and
-									professional polishing. This service is essential for
-									maintaining good oral health and preventing various dental
-									problems.
+									Our dental cleaning service includes a thorough examination of your teeth and gums, removal of plaque
+									and tartar, and professional polishing. This service is essential for maintaining good oral health and
+									preventing various dental problems.
 								</p>
 							</div>
 							<div className="mb-6 mt-10">
-								<h3 className="mb-2 text-xl font-semibold text-gray-800">
-									Video Demonstration
-								</h3>
+								<h3 className="mb-2 text-xl font-semibold text-gray-800">Video Demonstration</h3>
 								<div className="aspect-video">
 									<iframe
 										src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -84,9 +71,7 @@ const SingleServices = ({ params }: SingleServicesProps) => {
 								</div>
 							</div>
 							<div className="mt-10">
-								<h3 className="mb-2 text-xl font-semibold text-gray-800">
-									Doctor Information
-								</h3>
+								<h3 className="mb-2 text-xl font-semibold text-gray-800">Doctor Information</h3>
 								<div className="flex items-center">
 									<Image
 										src="https://images.unsplash.com/photo-1723441857662-d465a52e78d0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8"
@@ -96,9 +81,7 @@ const SingleServices = ({ params }: SingleServicesProps) => {
 										height={100}
 									/>
 									<div>
-										<p className="font-semibold text-gray-800">
-											Dr. Jane Smith
-										</p>
+										<p className="font-semibold text-gray-800">Dr. Jane Smith</p>
 										<p className="text-gray-600">Dental Specialist</p>
 									</div>
 								</div>

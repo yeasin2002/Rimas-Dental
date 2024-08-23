@@ -32,10 +32,7 @@ export const DashboardNav = ({ ...props }: Props) => {
 			)}
 		>
 			<nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-				<LinkTo
-					href={"/"}
-					className="flex items-center gap-2 text-lg font-semibold md:text-base"
-				>
+				<LinkTo href={"/"} className="flex items-center gap-2 text-lg font-semibold md:text-base">
 					<Home className="h-6 w-6" />
 				</LinkTo>
 				{dashboardNav?.map((item) => (
@@ -57,19 +54,12 @@ export const DashboardNav = ({ ...props }: Props) => {
 				</SheetTrigger>
 				<SheetContent side="left">
 					<nav className="grid gap-6 text-lg font-medium">
-						<LinkTo
-							href={"/"}
-							className="flex items-center gap-2 text-lg font-semibold"
-						>
+						<LinkTo href={"/"} className="flex items-center gap-2 text-lg font-semibold">
 							<Home className="h-6 w-6" />
 						</LinkTo>
 
 						{dashboardNav.map((item) => (
-							<Link
-								key={item.title}
-								href={item.link}
-								className="hover:text-foreground"
-							>
+							<Link key={item.title} href={item.link} className="hover:text-foreground">
 								{item.title}
 							</Link>
 						))}
@@ -89,9 +79,7 @@ export const DashboardNav = ({ ...props }: Props) => {
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>Profile</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem onClick={() => logoutWithAuthJs("/")}>
-							Logout
-						</DropdownMenuItem>
+						<DropdownMenuItem onClick={() => logoutWithAuthJs("/")}>Logout</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</div>

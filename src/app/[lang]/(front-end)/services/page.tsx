@@ -21,9 +21,7 @@ const Services = async ({ params }: Props) => {
 					className="h-full w-full rounded-md object-cover"
 				/>
 				<div className="absolute inset-0 flex flex-col items-center justify-center rounded-md bg-black/70 text-white">
-					<h1 className="font-grotesk text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-						{dictionary?.heading}
-					</h1>
+					<h1 className="font-grotesk text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">{dictionary?.heading}</h1>
 					<p className="text-2xl">{dictionary?.subheading}</p>
 				</div>
 			</section>

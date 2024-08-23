@@ -29,13 +29,7 @@ interface Props extends React.ComponentProps<"div"> {
 	doctorSession: Session | null;
 }
 
-export const LargeNav = ({
-	rootMenuItems,
-	dashboardText,
-	doctorSession,
-	loginText,
-	...props
-}: Props) => {
+export const LargeNav = ({ rootMenuItems, dashboardText, doctorSession, loginText, ...props }: Props) => {
 	const pathname = usePathname();
 	const isLogin = false;
 
@@ -46,8 +40,7 @@ export const LargeNav = ({
 					key={index}
 					className={cn(
 						`mx-3 flex items-center text-deepBlue-100 2xl:text-2xl ${HindSiliguri.className}`,
-						pathname === item.href &&
-							`border-b border-main-400 font-bold ${HindSiliguri600.className}`,
+						pathname === item.href && `border-b border-main-400 font-bold ${HindSiliguri600.className}`,
 					)}
 					href={item.href}
 				>
@@ -59,17 +52,11 @@ export const LargeNav = ({
 
 			<div>
 				{doctorSession ? (
-					<LinkTo
-						href={"/admin"}
-						className={buttonVariants({ className: "rounded-full" })}
-					>
+					<LinkTo href={"/admin"} className={buttonVariants({ className: "rounded-full" })}>
 						{dashboardText}
 					</LinkTo>
 				) : !isLogin ? (
-					<LinkTo
-						href={"/login"}
-						className={buttonVariants({ className: "rounded-full" })}
-					>
+					<LinkTo href={"/login"} className={buttonVariants({ className: "rounded-full" })}>
 						{loginText}
 					</LinkTo>
 				) : (

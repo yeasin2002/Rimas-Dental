@@ -9,13 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import { loginFormSchema } from "@/schema";
 import { loginWithAuthJs } from "@/actions/auth.actions";
 import { loginFormData } from "@/types";
-import {
-	Email,
-	EosLoading,
-	InputCombo,
-	InputComboForPassword,
-	Lock,
-} from "@/components";
+import { Email, EosLoading, InputCombo, InputComboForPassword, Lock } from "@/components";
 
 const Login = () => {
 	const router = useRouter();

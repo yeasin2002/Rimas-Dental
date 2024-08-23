@@ -6,10 +6,7 @@ import globalThisType from "globalthis";
 
 declare global {
 	const mongoose: typeof mongoose;
-	const globalThis: globalThisType;
+	// const globalThis: globalThisType;
 
-	type InternationalizationType =
-		| typeof bdLanguage
-		| typeof enLanguage
-		| undefined;
+	type InternationalizationType = typeof bdLanguage | typeof enLanguage | undefined;
 }

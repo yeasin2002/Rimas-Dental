@@ -6,11 +6,7 @@ import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/utils";
 
 interface DatePickerProps extends React.ComponentPropsWithoutRef<"button"> {
@@ -19,13 +15,7 @@ interface DatePickerProps extends React.ComponentPropsWithoutRef<"button"> {
 	defaultPlaceholder: string;
 }
 
-export function DatePicker({
-	date,
-	setDate,
-	className,
-	defaultPlaceholder,
-	...rest
-}: DatePickerProps) {
+export function DatePicker({ date, setDate, className, defaultPlaceholder, ...rest }: DatePickerProps) {
 	return (
 		<Popover>
 			<PopoverTrigger asChild>
@@ -43,12 +33,7 @@ export function DatePicker({
 				</Button>
 			</PopoverTrigger>
 			<PopoverContent className="w-auto p-0">
-				<Calendar
-					mode="single"
-					selected={date}
-					onSelect={setDate}
-					initialFocus
-				/>
+				<Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
 			</PopoverContent>
 		</Popover>
 	);

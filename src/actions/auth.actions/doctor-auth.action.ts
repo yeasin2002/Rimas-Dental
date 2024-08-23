@@ -20,7 +20,10 @@ export const registerDoctor_server = async ({ password, ...data }: registerFormD
 		// Create User
 		await db.Doctors.create({
 			password: hashedPassword,
-			facebook: { name: data.facebookName || "", link: data.facebookLink || "" },
+			facebook: {
+				name: data.facebookName || "",
+				link: data.facebookLink || "",
+			},
 			...data,
 		});
 		return { success: true, message: "success" };

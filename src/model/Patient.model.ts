@@ -44,13 +44,10 @@ const patientSchema = new Schema({
 	treatmentPlan: { type: String, default: null },
 	treatmentNote: { type: String, default: null },
 	drugHistory: { type: String, default: null },
-	treatmentDetails: [
-		{ type: mongoose.Schema.Types.ObjectId, ref: "PatientSchedule" },
-	],
+	treatmentDetails: [{ type: mongoose.Schema.Types.ObjectId, ref: "PatientSchedule" }],
 
 	createdAt: { type: Date, default: Date.now },
 	updatedAt: { type: Date, default: Date.now },
 });
 
-export const Patient =
-	mongoose.models.Patient || mongoose.model("Patient", patientSchema);
+export const Patient = mongoose.models.Patient || mongoose.model("Patient", patientSchema);

@@ -21,14 +21,12 @@ export const ServicesCard = ({ data, ...rest }: Props) => {
 					className="size-14 shadow-sm 2xl:size-20"
 				/>
 			</div>
-			<h5 className="font-grotesk text-2xl font-bold mt-2 2xl:mt-4 2xl:text-3xl	">
-				{data.title}
-			</h5>
+			<h5 className="mt-2 font-grotesk text-2xl font-bold 2xl:mt-4 2xl:text-3xl">{data.title}</h5>
 			<p className={cn("text-md py-3 2xl:text-lg")}>{data.desc}</p>
 
 			<Link
 				href={`/services/${data?.id}`}
-				className="my-3 py-1 capitalize text-main-600 2xl:text-xl 2xl:mt-2 "
+				className="my-3 py-1 capitalize text-main-600 2xl:mt-2 2xl:text-xl"
 				aria-label={`Learn more about  ${data.title}`}
 			>
 				Learn More

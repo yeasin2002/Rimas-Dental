@@ -12,20 +12,13 @@ interface Props extends React.ComponentProps<"input"> {
 	wrapperClassName?: string;
 }
 
-export const InputComboForPassword = ({
-	icon,
-	className,
-	register,
-	wrapperClassName,
-	error,
-	...props
-}: Props) => {
+export const InputComboForPassword = ({ icon, className, register, wrapperClassName, error, ...props }: Props) => {
 	const [isShow, setIsShow] = useState(false);
 	const toggleShowPassword = () => {
 		setIsShow((pre) => !pre);
 	};
 	return (
-		<div className={cn("inputCombo-wrapper ", wrapperClassName)}>
+		<div className={cn("inputCombo-wrapper", wrapperClassName)}>
 			<span className="absolute">{icon}</span>
 			<input
 				className={cn("inputCombo-field", className, {
@@ -35,16 +28,8 @@ export const InputComboForPassword = ({
 				{...props}
 				{...register}
 			/>
-			<button
-				onClick={toggleShowPassword}
-				className="absolute bottom-0 right-3 top-0 outline-none"
-				type="button"
-			>
-				{!isShow ? (
-					<EyeOff className="text-gray-600" />
-				) : (
-					<Eye className="text-gray-600" />
-				)}
+			<button onClick={toggleShowPassword} className="absolute bottom-0 right-3 top-0 outline-none" type="button">
+				{!isShow ? <EyeOff className="text-gray-600" /> : <Eye className="text-gray-600" />}
 			</button>
 		</div>
 	);

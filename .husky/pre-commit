@@ -1,2 +1,2 @@
-bun run  format:biome
+bun run  format:fix
 bun run build
