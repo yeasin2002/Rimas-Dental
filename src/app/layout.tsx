@@ -2,6 +2,8 @@ import NextTopLoader from "nextjs-toploader";
 import React from "react";
 
 import { ClintProvider } from "@/components";
+import { CookieNotice } from "@/components/shared/CookieNotice";
+
 import { baseMetaData } from "@/config";
 import { TiroBangla400 } from "@/fonts";
 import { EdgeStoreProvider } from "@/lib/edgestore";
@@ -19,6 +21,7 @@ function RootLayout({
 					<NextTopLoader color="#3066ac" showSpinner={false} />
 					<ClintProvider>{children}</ClintProvider>
 				</EdgeStoreProvider>
+				<CookieNotice />
 			</body>
 		</html>
 	);

@@ -20,9 +20,10 @@ import { Button } from "./button";
 interface Props extends React.ComponentProps<"button"> {
 	onSuccessUpload: (v: string) => void;
 	register: UseFormRegisterReturn;
+	labelName?: string;
 }
 
-export const PhotoUploaderDND = ({ children, onSuccessUpload, register, ...props }: Props) => {
+export const PhotoUploaderDND = ({ children, onSuccessUpload, register, labelName, ...props }: Props) => {
 	const [file, setFile] = useState<FileWithPreview | null>(null);
 	const [isModalClosed, setIsModalClosed] = useState(false);
 	const [isUploading, setIsUploading] = useState(false);
@@ -72,7 +73,14 @@ export const PhotoUploaderDND = ({ children, onSuccessUpload, register, ...props
 
 	return (
 		<Dialog open={isModalClosed} onOpenChange={setIsModalClosed}>
-			<DialogTrigger {...props}>{children}</DialogTrigger>
+			{labelName && (
+				<label htmlFor={register.name} className="block font-bold text-gray-700">
+					{labelName}
+				</label>
+			)}
+			<DialogTrigger {...props} className="my-0 mt-2">
+				{children}
+			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>Upload your photo?</DialogTitle>

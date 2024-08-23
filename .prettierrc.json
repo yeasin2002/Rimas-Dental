@@ -7,7 +7,5 @@
 	"useTabs": true,
 	"plugins": [
 		"prettier-plugin-tailwindcss"
-	],
-	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true
+	]
 }

@@ -4,7 +4,7 @@ import React from "react";
 
 import femaleDoctor from "@/assets/icons/others/doctor-female.svg";
 import maleDoctor from "@/assets/icons/others/doctor-male.svg";
-import doctorIcon from "@/assets/temp/doctor-3.jpg";
+
 import { cn } from "@/utils";
 import { Doctor } from "@/types";
 
@@ -30,7 +30,7 @@ export const DoctorsCards = ({ imageClassName, className, data, ...props }: Prop
 
 			<div className="px-6 py-4">
 				<div className="flex items-center gap-x-1 text-xl font-semibold text-gray-800 dark:text-white">
-					<Image src={femaleDoctor} alt="Doctor" width={30} height={30} />
+					<Image alt="Doctor" width={30} height={30} src={data.gender === "male" ? maleDoctor : femaleDoctor} />
 					<h4> {data?.name} </h4>
 				</div>
 				<p className="py-2 text-gray-700 dark:text-gray-400">{data?.bio}</p>

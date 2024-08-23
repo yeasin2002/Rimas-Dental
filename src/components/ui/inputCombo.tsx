@@ -7,19 +7,29 @@ interface Props extends React.ComponentProps<"input"> {
 	register: UseFormRegisterReturn;
 	error: string | undefined;
 	wrapperClassName?: string;
+
+	labelName?: string;
 }
 
-export const InputCombo = ({ icon, className, register, wrapperClassName, error, ...props }: Props) => {
+export const InputCombo = ({ icon, className, register, wrapperClassName, error, labelName, ...props }: Props) => {
 	return (
-		<div className={cn("inputCombo-wrapper", wrapperClassName)}>
-			<span className="absolute">{icon}</span>
-			<input
-				className={cn("inputCombo-field", className, {
-					"border-red-700": error,
-				})}
-				{...register}
-				{...props}
-			/>
+		<div>
+			{labelName && (
+				<label htmlFor={register.name} className="block font-bold text-gray-700">
+					{labelName}
+				</label>
+			)}
+
+			<div className={cn("inputCombo-wrapper", wrapperClassName)}>
+				<span className="absolute">{icon}</span>
+				<input
+					className={cn("inputCombo-field", className, {
+						"border-red-700": error,
+					})}
+					{...register}
+					{...props}
+				/>
+			</div>
 		</div>
 	);
 };
