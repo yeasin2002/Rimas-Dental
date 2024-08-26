@@ -9,10 +9,16 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "@/components/ui/pagination";
+import { getAllAppointment } from "@/actions/Appointments.actions/ index";
+import { getFormattedDate } from "@/utils/formateDates";
+import { Trash2 } from "lucide-react";
+import AppointmentActions from "./ApoointmentActionst";
 
 interface Props extends React.ComponentProps<"div"> {}
 
-export const AppointmentManage = ({ ...props }: Props) => {
+export const AppointmentManage = async ({ ...props }: Props) => {
+	const data = await getAllAppointment();
+
 	return (
 		<div {...props}>
 			<div>
@@ -40,19 +46,19 @@ export const AppointmentManage = ({ ...props }: Props) => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
-							<th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
-								Yeasin
-							</th>
-							<td className="px-6 py-4">163227965</td>
-							<td className="px-6 py-4">Tody</td>
-							<td className="px-6 py-4">9:00 PM</td>
-							<td className="px-6 py-4">
-								<a href="#" className="font-medium text-blue-600 hover:underline dark:text-blue-500">
-									Edit
-								</a>
-							</td>
-						</tr>
+						{data?.map((item) => (
+							<tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800" key={item._id}>
+								<th scope="row" className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+									{item.name}
+								</th>
+								<td className="px-6 py-4">{item.phone}</td>
+								<td className="px-6 py-4">{getFormattedDate(item.date)}</td>
+								<td className="px-6 py-4">{item.time.from + " - " + item.time.to}</td>
+								<td className="px-6 py-4">
+									<AppointmentActions id={item._id} />
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 				<Pagination>

@@ -1,16 +1,17 @@
 "use client";
 
+import { BookMarked, PencilLine } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { addService } from "@/actions/service/service.actions";
 import { InputCombo, PhotoUploaderDND, UpArrow } from "@/components";
 import { serviceSchema } from "@/schema";
 import { serviceFormData } from "@/types";
 import { cn } from "@/utils";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { BookMarked, PencilLine } from "lucide-react";
-import Image from "next/image";
-import React from "react";
-import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 const ServiceForm = () => {
 	const {
@@ -43,7 +44,7 @@ const ServiceForm = () => {
 	return (
 		<main className="container mx-auto px-4 py-8">
 			<div className="rounded-lg bg-white p-6 shadow-md">
-				<form>
+				<form className="space-y-4">
 					<InputCombo
 						register={register("name")}
 						error={errors.name?.message}
@@ -73,10 +74,7 @@ const ServiceForm = () => {
 					</div>
 
 					<PhotoUploaderDND
-						className={cn(
-							"mx-auto mt-6 flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-dashed bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900",
-							{ "border border-red-600": errors.coverImage },
-						)}
+						className={cn({ "border border-red-600": errors.coverImage })}
 						onSuccessUpload={(url) => setValue("coverImage", url)}
 						register={register("coverImage")}
 						labelName="Cover Image"
@@ -98,10 +96,7 @@ const ServiceForm = () => {
 					</PhotoUploaderDND>
 
 					<PhotoUploaderDND
-						className={cn(
-							"mx-auto mt-6 flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-dashed bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900",
-							{ "border border-red-600": errors.icons },
-						)}
+						className={cn({ "border border-red-600": errors.icons })}
 						onSuccessUpload={(url) => setValue("icons", url)}
 						register={register("icons")}
 						labelName="icons"

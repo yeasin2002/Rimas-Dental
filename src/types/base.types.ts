@@ -1,4 +1,4 @@
-export interface Doctor {
+export type Doctor = {
 	_id: string;
 	email: string;
 	phone: string;
@@ -20,4 +20,14 @@ export interface Doctor {
 
 	createdAt: Date;
 	updatedAt: Date;
-}
+};
+
+export type Appointments = {
+	_id: string;
+	name: string;
+	phone: string;
+	date: Date;
+	time: { from: string; to: string };
+	isCompleted: boolean;
+	isCanceled: boolean;
+};

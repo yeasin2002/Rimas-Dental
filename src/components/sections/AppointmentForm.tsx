@@ -1,42 +1,50 @@
 "use client";
 
-import { Button, DatePicker, Input, TimePicker } from "@/components";
-import { cn } from "@/utils";
-import React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+
+import { Button, DatePicker, Input, TimePicker, UploadingLoop } from "@/components";
+import { AppointmentScheduleData, AppointmentScheduleSchema } from "@/schema";
+import { cn } from "@/utils";
+import { createNewAppointment } from "@/actions/Appointments.actions/ index";
+import toast from "react-hot-toast";
+import { revalidatePath_server } from "@/actions";
+import { useParams } from "next/navigation";
 
 interface Props extends React.ComponentProps<"form"> {
 	dictionary: any;
 }
 
-interface FormValues {
-	name: string;
-	phone: string;
-	appointmentDate: Date;
-
-	appointmentTime: {
-		from: string;
-		to: string;
-	};
-}
-
 export const AppointmentForm = ({ dictionary, ...props }: Props) => {
+	const [isLoading, setIsLoading] = useState(false);
+	const params = useParams();
+
 	const {
 		register,
 		formState: { errors },
 		control,
 		handleSubmit,
-	} = useForm<FormValues>({
-		defaultValues: {
-			appointmentTime: {
-				from: "5:00 PM",
-				to: "6:00 PM",
-			},
-		},
+		reset,
+	} = useForm<AppointmentScheduleData>({
+		resolver: zodResolver(AppointmentScheduleSchema),
+		defaultValues: { time: { from: "5:00 PM", to: "6:00 PM" }, date: new Date() },
 	});
 
-	const onSubmit = (data: FormValues) => {
-		console.log(data);
+	const onSubmit = async (data: AppointmentScheduleData) => {
+		setIsLoading(true);
+		try {
+			console.log(data);
+			const req = await createNewAppointment(data);
+			if (!req) throw new Error("something went wrong");
+			reset();
+			toast.success("Appointment created successfully");
+			return await revalidatePath_server(`/${params.lang}/admin/appointment`);
+		} catch (error) {
+			console.log("🚀 ~ onSubmit ~ error:", error);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	return (
@@ -67,27 +75,30 @@ export const AppointmentForm = ({ dictionary, ...props }: Props) => {
 				/>
 				<Controller
 					control={control}
-					name="appointmentDate"
+					name="date"
 					render={(files) => (
-						<DatePicker
-							date={files.field.value}
-							setDate={files.field.onChange}
-							className="w-full 2xl:px-4 2xl:py-6 2xl:text-lg"
-							defaultPlaceholder={dictionary.inputs.date}
-						/>
+						<div>
+							<DatePicker
+								date={files.field.value}
+								setDate={files.field.onChange}
+								className="w-full 2xl:px-4 2xl:py-6 2xl:text-lg"
+								defaultPlaceholder={dictionary.inputs.date}
+							/>
+							{errors?.date && <p className="text-red-500"> Date is required! </p>}
+						</div>
 					)}
 				/>
 
 				<Controller
 					control={control}
-					name="appointmentTime"
+					name="time"
 					render={(files) => (
 						<TimePicker timeValue={files.field.value} onValueChange={(value) => files.field.onChange(value)} />
 					)}
 				/>
 			</div>
 			<Button variant={"dracula"} type="submit" className="mt-4 w-full rounded-lg 2xl:py-8 2xl:text-xl">
-				{dictionary?.cta}
+				{isLoading ? <UploadingLoop /> : dictionary?.cta}
 			</Button>
 		</form>
 	);

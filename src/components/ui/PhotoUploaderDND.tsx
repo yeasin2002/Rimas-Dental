@@ -16,6 +16,7 @@ import { useEdgeStore } from "@/lib/edgestore";
 import { X } from "lucide-react";
 import toast from "react-hot-toast";
 import { Button } from "./button";
+import { cn } from "@/utils";
 
 interface Props extends React.ComponentProps<"button"> {
 	onSuccessUpload: (v: string) => void;
@@ -23,7 +24,7 @@ interface Props extends React.ComponentProps<"button"> {
 	labelName?: string;
 }
 
-export const PhotoUploaderDND = ({ children, onSuccessUpload, register, labelName, ...props }: Props) => {
+export const PhotoUploaderDND = ({ children, onSuccessUpload, register, labelName, className, ...props }: Props) => {
 	const [file, setFile] = useState<FileWithPreview | null>(null);
 	const [isModalClosed, setIsModalClosed] = useState(false);
 	const [isUploading, setIsUploading] = useState(false);
@@ -78,7 +79,13 @@ export const PhotoUploaderDND = ({ children, onSuccessUpload, register, labelNam
 					{labelName}
 				</label>
 			)}
-			<DialogTrigger {...props} className="my-0 mt-2">
+			<DialogTrigger
+				{...props}
+				className={cn(
+					"mx-auto my-0 flex w-full cursor-pointer items-center justify-between rounded-lg border-2 border-dashed bg-white px-3 py-3 text-center dark:border-gray-600 dark:bg-gray-900",
+					className,
+				)}
+			>
 				{children}
 			</DialogTrigger>
 			<DialogContent>
