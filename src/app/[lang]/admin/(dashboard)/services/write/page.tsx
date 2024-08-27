@@ -1,7 +1,10 @@
 import React from "react";
 import ServiceForm from "./ServiceForm";
+import { auth } from "@/auth";
 
-const AddServicePage = () => {
+const AddServicePage = async () => {
+	const admin = await auth();
+
 	return (
 		<div className="min-h-screen bg-gray-100">
 			<header className="bg-white shadow-md">
@@ -9,7 +12,7 @@ const AddServicePage = () => {
 					<h1 className="text-3xl font-bold text-gray-800">Add New Service</h1>
 				</div>
 			</header>
-			<ServiceForm />
+			<ServiceForm doctorId={admin?.user?.id!} />
 		</div>
 	);
 };

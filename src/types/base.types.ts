@@ -31,3 +31,18 @@ export type Appointments = {
 	isCompleted: boolean;
 	isCanceled: boolean;
 };
+
+export type Service = {
+	_id: string;
+	name: string;
+	description: string;
+	content: string;
+	coverImage: string;
+	icons?: string;
+	YT_VideoUrl?: string;
+	price_range: string;
+	tags: string[];
+	isPaused: boolean;
+	doctorsId: Doctor;
+	createdAt: Date;
+};

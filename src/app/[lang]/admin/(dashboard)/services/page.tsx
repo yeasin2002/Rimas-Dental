@@ -1,6 +1,9 @@
+import { getAllService } from "@/actions/service/service.actions";
 import { buttonVariants, LinkTo, ServiceCards } from "@/components";
 
-const ServicesManagement = () => {
+const ServicesManagement = async () => {
+	const data = await getAllService();
+
 	return (
 		<section className="p-4">
 			<div className="mb-8 mt-2 flex items-center justify-between">
@@ -21,9 +24,9 @@ const ServicesManagement = () => {
 				</LinkTo>
 			</div>
 			<div className="mt-20 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-				<ServiceCards />
-				<ServiceCards />
-				<ServiceCards />
+				{data.data?.map((service) => {
+					return <ServiceCards key={service._id} data={service} />;
+				})}
 			</div>
 		</section>
 	);

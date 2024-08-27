@@ -15,7 +15,7 @@ export const InputCombo = ({ icon, className, register, wrapperClassName, error,
 	return (
 		<div>
 			{labelName && (
-				<label htmlFor={register.name} className="block font-bold text-gray-700">
+				<label htmlFor={register.name} className="inputCombo-label">
 					{labelName}
 				</label>
 			)}

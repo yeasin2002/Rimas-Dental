@@ -120,6 +120,12 @@
 		"subheading": "We provide various type of dental services",
 		"listOfContent": "List of our Services"
 	},
+	"details_services": {
+		"Price_Range": "Price Range",
+		"about_this": "About This Service",
+		"demonstration": "Video Demonstration",
+		"DoctorInformation": "Doctor Information"
+	},
 	"useAuth": {
 		"areYouDoctor": "Are you a doctor?",
 		"loginHere": "login here",

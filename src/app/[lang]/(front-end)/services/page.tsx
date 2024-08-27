@@ -1,6 +1,7 @@
 import { ServiceCard2 } from "@/components";
 import doctorWork_img from "@/assets/images/x-ray.jpg";
 import { getDictionary } from "@/Internationalization";
+import { getAllService } from "@/actions/service/service.actions";
 
 interface Props {
 	params: { lang: string };
@@ -8,6 +9,7 @@ interface Props {
 
 const Services = async ({ params }: Props) => {
 	const dictionary = await getDictionary(params.lang, "services");
+	const data = await getAllService();
 
 	const arr = [1, 2, 3, 4];
 	return (
@@ -30,9 +32,7 @@ const Services = async ({ params }: Props) => {
 					{dictionary?.listOfContent}
 				</h1>
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{arr.map((item) => (
-						<ServiceCard2 key={item} />
-					))}
+					{data?.data?.map((service) => <ServiceCard2 key={service._id} data={service} />)}
 				</div>
 			</article>
 		</div>

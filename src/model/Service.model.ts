@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 // Services Schema
 const servicesSchema = new mongoose.Schema({
 	name: { type: String, required: true },
-	description: { type: String, required: true },
+	description: { type: String, required: true, minlength: [50, "Description must be at least 50 characters long"] },
 	content: { type: String, required: true },
 	coverImage: { type: String, required: true },
 

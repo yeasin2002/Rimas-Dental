@@ -98,4 +98,14 @@
 	.inputCombo-wrapper {
 		@apply relative flex items-center 2xl:shadow-sm 2xl:placeholder:text-2xl;
 	}
+	.inputCombo-label {
+		@apply block font-bold text-gray-700;
+	}
+	.inputCombo-warning {
+		@apply text-sm font-bold italic text-red-500;
+	}
+}
+
+.ql-editor {
+	min-height: 15rem !important;
 }

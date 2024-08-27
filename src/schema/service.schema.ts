@@ -7,14 +7,13 @@ export const serviceSchema = z.object({
 	coverImage: z.string().min(1, { message: "Cover Image is required" }),
 
 	icons: z.string().optional(),
-	price_range: z.string().nullable().optional(),
+	price_range: z.string().min(1, { message: "Price Range is required" }),
 
 	YT_VideoUrl: z.string().nullable().optional(),
-
 	tags: z
 		.array(z.string().min(1, { message: "Each tag must be a non-empty string" }))
 		.min(1, { message: "At least one tag is required" }),
 
 	isPaused: z.boolean().optional().default(false),
-	doctorsId: z.string().min(1, { message: "Doctor's ID is required" }),
+	doctorsId: z.string().optional(),
 });

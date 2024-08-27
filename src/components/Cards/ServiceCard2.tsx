@@ -3,16 +3,20 @@ import Image from "next/image";
 import React from "react";
 import { LinkTo } from "../client";
 import { ChevronsRight } from "lucide-react";
-interface Props extends React.ComponentProps<"div"> {}
+import { Service } from "@/types";
+interface Props extends React.ComponentProps<"div"> {
+	data: Service;
+}
 
-export const ServiceCard2 = ({ ...props }: Props) => {
+export const ServiceCard2 = ({ data, ...props }: Props) => {
 	return (
-		<div
+		<LinkTo
+			href={`/services/${data._id}`}
 			className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
-			{...props}
+			// {...props}
 		>
 			<Image
-				src={demoImg}
+				src={data.coverImage || demoImg}
 				alt="Root Canal"
 				width={300}
 				height={200}
@@ -20,11 +24,11 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 				className="h-48 w-full object-cover"
 			/>
 			<div className="bg-white p-4 dark:bg-gray-950">
-				<h3 className="text-xl font-bold">Root Canal</h3>
-				<p className="text-sm text-gray-500 dark:text-gray-400">Relieve pain and restore your {`tooth's`} health.</p>
+				<h3 className="text-xl font-bold">{data.name}</h3>
+				<p className="text-sm text-gray-500 dark:text-gray-400">{data.description}</p>
 
 				<LinkTo
-					href="/services/1"
+					href={`/services/${data._id}`}
 					// className="absolute inset-0 z-10"
 					className="mt-4 flex items-center text-main-400"
 				>
@@ -33,6 +37,6 @@ export const ServiceCard2 = ({ ...props }: Props) => {
 					<span className="sr-only">View</span>
 				</LinkTo>
 			</div>
-		</div>
+		</LinkTo>
 	);
 };

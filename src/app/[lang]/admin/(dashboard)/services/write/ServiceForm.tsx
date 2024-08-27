@@ -2,49 +2,66 @@
 
 import { BookMarked, PencilLine } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 import toast from "react-hot-toast";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import React, { useState } from "react";
+import { TagsInput } from "react-tag-input-component";
 
 import { addService } from "@/actions/service/service.actions";
-import { InputCombo, PhotoUploaderDND, UpArrow } from "@/components";
+import { InputCombo, PhotoUploaderDND, UpArrow, UploadingLoop } from "@/components";
 import { serviceSchema } from "@/schema";
 import { serviceFormData } from "@/types";
 import { cn } from "@/utils";
+import dynamic from "next/dynamic";
 
-const ServiceForm = () => {
+const QuillEditor = dynamic(() => import("@/components/shared/QuillEditor").then((module) => module.QuillEditor), {
+	ssr: false,
+});
+
+interface Props {
+	doctorId: string;
+}
+
+const ServiceForm = ({ doctorId }: Props) => {
+	const [isLoading, setIsLoading] = useState(false);
+
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isLoading },
+		formState: { errors },
 		setError,
 		setValue,
 		watch,
 		getValues,
+		control,
+		reset,
 	} = useForm<serviceFormData>({
 		resolver: zodResolver(serviceSchema),
 	});
 
 	const onSubmit = async ({ doctorsId, ...data }: serviceFormData) => {
-		const toastId = toast.loading("Processing...");
-		try {
-			const res = await addService({
-				doctorsId: "",
-				...data,
-			});
+		console.table({ doctorId, ...data });
 
+		setIsLoading(true);
+
+		try {
+			const res = await addService({ doctorsId: doctorId, ...data });
 			if (!res.success) throw new Error(res.message);
-			toast.success(res?.message);
+			toast.success("Service created successfully");
+			reset();
 		} catch (error: any) {
-			toast.error(error?.message || "Invalid email or password", { id: toastId });
+			console.log("🚀 ~ onSubmit ~ error:", error);
+			toast.error(error?.message || "Failed to create service");
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
 	return (
 		<main className="container mx-auto px-4 py-8">
 			<div className="rounded-lg bg-white p-6 shadow-md">
-				<form className="space-y-4">
+				<form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
 					<InputCombo
 						register={register("name")}
 						error={errors.name?.message}
@@ -61,17 +78,23 @@ const ServiceForm = () => {
 						labelName="Description"
 					/>
 
-					<div className="mb-4">
-						<label htmlFor="content" className="mb-2 block font-bold text-gray-700">
-							Content
-						</label>
-						<textarea
-							id="content"
-							name="content"
-							className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-							placeholder="Enter detailed content about the service"
-						></textarea>
-					</div>
+					<Controller
+						control={control}
+						name="content"
+						render={({ field: { onChange, value } }) => (
+							<div>
+								<div className="flex items-center gap-x-3">
+									<p>Description</p>
+									{errors.content && <p className="inputCombo-warning">Required</p>}
+								</div>
+								<QuillEditor
+									value={value}
+									setValue={onChange}
+									className={cn({ "border border-red-700": errors.content })}
+								/>
+							</div>
+						)}
+					/>
 
 					<PhotoUploaderDND
 						className={cn({ "border border-red-600": errors.coverImage })}
@@ -103,7 +126,7 @@ const ServiceForm = () => {
 					>
 						<span className="flex items-center">
 							<UpArrow />
-							<span className="mx-3 text-gray-400">Select Icons </span>
+							<span className="mx-3 text-gray-400">Select transparent SVG Icons </span>
 						</span>
 
 						{watch("icons") && (
@@ -132,26 +155,29 @@ const ServiceForm = () => {
 						placeholder={"Provide  you service you tube video url "}
 						labelName="Youtube Video Url"
 					/>
-
-					<div className="mb-4">
-						<label htmlFor="tags" className="mb-2 block font-bold text-gray-700">
-							Tags
-						</label>
-						<input
-							type="text"
-							id="tags"
-							name="tags"
-							className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-							placeholder="Enter tags separated by commas"
-						/>
-					</div>
+					<Controller
+						control={control}
+						name="tags"
+						render={({ field: { onChange, value = [] } }) => (
+							<div>
+								<p className="inputCombo-label">Tags </p>
+								<TagsInput
+									value={value}
+									onChange={(tags: string[] = []) => onChange(tags)}
+									name="tags"
+									placeHolder="enter tags name "
+								/>
+								<p className="text-xs italic text-gray-400">press enter to add new tag</p>
+							</div>
+						)}
+					/>
 
 					<div className="flex justify-end">
 						<button
 							type="submit"
 							className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
 						>
-							Add Service
+							{isLoading ? <UploadingLoop /> : "Add Service"}
 						</button>
 					</div>
 				</form>
