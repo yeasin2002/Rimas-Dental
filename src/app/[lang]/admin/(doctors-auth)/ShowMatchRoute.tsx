@@ -9,7 +9,7 @@ export const ShowMatchRoute = ({ ...props }: Props) => {
 	const params = usePathname()?.split("/")?.at(-1)?.toLowerCase();
 
 	return (
-		<div className="mt-6 flex items-center justify-center" {...props}>
+		<div className="my-6 flex items-center justify-center" {...props}>
 			<Link
 				href="/admin/login"
 				className={cn(

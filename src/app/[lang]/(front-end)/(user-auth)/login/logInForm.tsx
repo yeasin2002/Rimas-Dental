@@ -42,7 +42,7 @@ export const LoginForm = ({ dictionary }: Props) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 			<InputCombo
 				register={register("email")}
 				error={errors.email?.message}

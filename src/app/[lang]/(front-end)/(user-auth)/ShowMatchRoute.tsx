@@ -12,7 +12,7 @@ export const ShowMatchRoute = ({ dictionary, ...props }: Props) => {
 	const params = usePathname()?.split("/")?.at(-1)?.toLowerCase();
 
 	return (
-		<div className="mt-6 flex items-center justify-center 2xl:mb-4 2xl:mt-10" {...props}>
+		<div className="my-4 flex items-center justify-center 2xl:mb-4 2xl:mt-10" {...props}>
 			<LinkTo
 				href="/login"
 				className={cn(

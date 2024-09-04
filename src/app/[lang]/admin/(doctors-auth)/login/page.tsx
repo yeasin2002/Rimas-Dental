@@ -46,7 +46,7 @@ const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)} className="spay">
 			<InputCombo
 				register={register("email")}
 				error={errors.email?.message}

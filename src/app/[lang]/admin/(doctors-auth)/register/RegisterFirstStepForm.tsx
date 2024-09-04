@@ -46,7 +46,7 @@ export const RegisterFirstStepForm = ({ formReturn, setIsFirstStep }: Props) => 
 		},
 	];
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 			<SelectGender
 				register={register("gender")}
 				selectedValue={getValues("gender")}

@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 import { Button, buttonVariants, LinkTo } from "@/components";
@@ -35,18 +35,26 @@ export const LargeNav = ({ rootMenuItems, dashboardText, doctorSession, loginTex
 
 	return (
 		<div className={cn(props.className)} {...props}>
-			{rootMenuItems.map((item, index) => (
-				<LinkTo
-					key={index}
-					className={cn(
-						`mx-3 flex items-center text-deepBlue-100 2xl:text-2xl ${HindSiliguri.className}`,
-						pathname === item.href && `border-b border-main-400 font-bold ${HindSiliguri600.className}`,
-					)}
-					href={item.href}
-				>
-					{item.label}
-				</LinkTo>
-			))}
+			{rootMenuItems.map((item, index) => {
+				const currentPath = `/${pathname.split("/")?.at(-1)}`;
+				const activeStyle = `border-b border-main-400 font-bold ${HindSiliguri600.className}`;
+
+				console.table({ item: item.href, currentPath, isMatched: item.href === currentPath });
+
+				return (
+					<LinkTo
+						key={index}
+						className={cn(
+							`mx-3 flex items-center text-deepBlue-100 transition-all 2xl:text-2xl ${HindSiliguri.className}`,
+							currentPath === item.href && activeStyle,
+							(currentPath === "/en" || currentPath === "/bn") && item.href === "/" && activeStyle,
+						)}
+						href={item.href}
+					>
+						{item.label}
+					</LinkTo>
+				);
+			})}
 
 			<LangSwitcher />
 

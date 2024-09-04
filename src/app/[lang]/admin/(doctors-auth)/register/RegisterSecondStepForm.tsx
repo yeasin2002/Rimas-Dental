@@ -38,7 +38,9 @@ export const RegisterSecondStepForm = ({ formReturn, setIsFirstStep, onSave, isL
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(onSubmit)}
+		className="space-y-4"
+		>
 			<div className="pb-2">
 				<div className="flex gap-x-1 py-2">
 					<FacebookLogo className="size-6" />
