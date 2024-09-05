@@ -9,7 +9,7 @@ import { useParams, useRouter } from "next/navigation";
 import { loginFormSchema } from "@/schema";
 import { loginWithAuthJs } from "@/actions/auth.actions";
 import { loginFormData } from "@/types";
-import { Email, EosLoading, InputCombo, InputComboForPassword, Lock } from "@/components";
+import { Email, EosLoading, InputCombo, InputComboForPassword, LinkTo, Lock } from "@/components";
 
 const Login = () => {
 	const router = useRouter();
@@ -46,7 +46,7 @@ const Login = () => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className="spay">
+		<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 			<InputCombo
 				register={register("email")}
 				error={errors.email?.message}

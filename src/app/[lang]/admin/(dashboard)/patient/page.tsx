@@ -27,3 +27,7 @@ const Clients = () => {
 };
 
 export default Clients;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}

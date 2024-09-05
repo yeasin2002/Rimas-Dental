@@ -137,6 +137,8 @@
 		"emailPlaceholder": "Write your email here",
 		"singup": "Sing Up ",
 		"login": "Login",
+		"ForgotPassword": "Forgot Password",
+		"ResetPassword": "Reset password",
 		"register": {
 			"title": "Register",
 			"heading": "You can's  register yourself",

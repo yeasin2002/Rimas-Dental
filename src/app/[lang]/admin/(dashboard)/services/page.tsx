@@ -33,3 +33,7 @@ const ServicesManagement = async () => {
 };
 
 export default ServicesManagement;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}

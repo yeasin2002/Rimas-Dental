@@ -47,3 +47,7 @@ const Auth = async ({ children, params }: Props) => {
 };
 
 export default Auth;
+
+export async function generateStaticParams() {
+	return [{ lang: "bn" }, { lang: "en" }];
+}
