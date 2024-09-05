@@ -39,8 +39,6 @@ export const LargeNav = ({ rootMenuItems, dashboardText, doctorSession, loginTex
 				const currentPath = `/${pathname.split("/")?.at(-1)}`;
 				const activeStyle = `border-b border-main-400 font-bold ${HindSiliguri600.className}`;
 
-				console.table({ item: item.href, currentPath, isMatched: item.href === currentPath });
-
 				return (
 					<LinkTo
 						key={index}

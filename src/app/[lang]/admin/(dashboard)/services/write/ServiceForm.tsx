@@ -41,8 +41,6 @@ const ServiceForm = ({ doctorId }: Props) => {
 	});
 
 	const onSubmit = async ({ doctorsId, ...data }: serviceFormData) => {
-		console.table({ doctorId, ...data });
-
 		setIsLoading(true);
 
 		try {

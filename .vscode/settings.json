@@ -1,5 +1,5 @@
 {
-	"css.validate": false,
+	"css.validate": true,
 	"eslint.enable": true,
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 	"files.associations": {

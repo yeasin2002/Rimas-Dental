@@ -145,6 +145,17 @@
 			"bookAppointment": "বুকিং করুণ ",
 			"bookAppointment2": "আপনার  অ্যাপয়েন্টমেন্ট ",
 			"bookAppointment3": "ডাক্তারদের সাথে  চিকিৎসা নিতে "
+		},
+		"forgot_password": {
+			"submit": "সাবমিট",
+			"heading": " আপনার অ্যাকাউন্ট অনুসন্ধান করতে আপনার ইমেল ঠিকানা  লিখুন.",
+			"otp_label": "ওটিপি লিখুন",
+			"password_label": "পাসওয়ার্ড লিখুন",
+			"confirm_password_label": "পাসওয়ার্ড নিশ্চিত করুন",
+			"otp": "ওটিপি",
+			"resend_otp": "রিসেন্ট ওটিপি",
+			"confirm": "নিশ্চিত করুন",
+			"email_label": "আপনার ইমেইল লিখুন"
 		}
 	}
 }
