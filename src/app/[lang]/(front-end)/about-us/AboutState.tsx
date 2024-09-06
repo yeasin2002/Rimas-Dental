@@ -1,7 +1,8 @@
 "use client";
 
+import { NumberTicker } from "@/components/magicui/number-ticker";
 import React from "react";
-import CountUp from "react-countup";
+
 interface Props extends React.ComponentProps<"div"> {
 	dictionary: any;
 }
@@ -40,7 +41,7 @@ export const AboutState = ({ dictionary, ...props }: Props) => {
 										<p className="capitalize text-gray-500 dark:text-gray-400 2xl:text-2xl">{items.name}</p>
 									</div>
 									<p className="text-4xl font-bold text-primary">
-										<CountUp end={items.value} duration={items.duration} />
+										<NumberTicker value={items.value} />
 									</p>
 								</div>
 							</div>

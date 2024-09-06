@@ -4,6 +4,8 @@ import doctorSupport from "@/assets/images/cembar-view.webp";
 
 import React from "react";
 import Image from "next/image";
+import { DotPattern, TypingAnimation } from "@/components/magicui";
+import { cn } from "@/utils";
 
 interface Props extends React.ComponentPropsWithoutRef<"div"> {
 	dictionary: any;
@@ -12,14 +14,15 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
 
 export const AboutHero = async ({ dictionary, dicForForm, ...props }: Props) => {
 	return (
-		<section className="w-full py-6 xl:py-32">
-			<div className="container px-4 md:px-6">
+		<section className="container w-full py-6 xl:py-32">
+			<div className="relative px-4 md:px-6">
 				<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
 					<div className="flex flex-col justify-center space-y-4">
 						<div className="space-y-2">
-							<h1 className="my-5 text-5xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none 2xl:text-7xl">
+							<h1 className="my-5 text-start text-5xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none 2xl:text-7xl">
 								{dictionary.name}
 							</h1>
+
 							<p className="max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl 2xl:text-xl">
 								{dictionary.desc1}
 								<br />
@@ -47,6 +50,7 @@ export const AboutHero = async ({ dictionary, dicForForm, ...props }: Props) => 
 						priority
 					/>
 				</div>
+				<DotPattern className={cn("[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]")} />
 			</div>
 		</section>
 	);

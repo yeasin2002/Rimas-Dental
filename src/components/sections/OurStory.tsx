@@ -6,6 +6,7 @@ import theethImg from "@/assets/icons/teeths/theeth-blue.svg";
 import bannerImg from "@/assets/images/tools.webp";
 import { cn } from "@/utils";
 import { getDictionary } from "@/Internationalization";
+import { FadeText } from "../magicui";
 
 interface Props extends React.ComponentProps<"div"> {
 	dictionary: any;
@@ -51,10 +52,15 @@ export const OurStory = ({ dictionary, ...props }: Props) => {
 				<p className={cn("my-5 text-lg text-main-500 2xl:text-2xl")}>{dictionary?.home?.our_story?.mainDesc}</p>
 
 				<div className="space-y-2 2xl:mt-4 2xl:space-y-4">
-					{facilities.map((info) => (
+					{facilities.map((info, i) => (
 						<div key={info} className="flex items-center gap-x-2">
 							<Image src={theethImg} alt="Teeth" width={30} height={30} />
-							<p className={cn("text-xl text-main-500 2xl:text-3xl")}>{info}</p>
+							<FadeText
+								className={cn("text-xl text-main-500 2xl:text-3xl")}
+								direction="up"
+								framerProps={{ show: { transition: { delay: 0.2 * i } } }}
+								text={info}
+							/>
 						</div>
 					))}
 				</div>

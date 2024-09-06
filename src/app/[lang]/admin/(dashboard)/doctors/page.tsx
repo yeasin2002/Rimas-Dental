@@ -17,8 +17,6 @@ const Doctors = async () => {
 
 export default Doctors;
 
-
-
 export async function generateStaticParams() {
 	return [{ lang: "bn" }, { lang: "en" }];
 }
