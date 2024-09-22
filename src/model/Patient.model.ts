@@ -22,23 +22,20 @@ const patientSchema = new Schema({
 	phone2: { type: String, default: null },
 	dateOfBirth: { type: Date, default: null },
 	gender: { type: String, enum: Gender, required: true },
-	address: { type: String, default: null },
+	address: { type: String, required: true },
 	reference: { type: String, default: null },
 	occupation: { type: String, required: true },
 	password: { type: String, required: true },
 
-	treatmentNotes: { type: String, required: true },
 	majorDisease: [{ type: String, required: true }],
-
 	regularBrushingTime: { type: Number, default: 1 },
-	brushingMaterials: { type: String, required: true },
 	sweetEatingLevel: {
 		type: String,
 		enum: SweetEatingLevel,
 		default: SweetEatingLevel.No,
 	},
 
-	examination: [{ type: String, required: true }],
+	examination: [{ type: String }],
 	problems: { type: String, required: true },
 
 	treatmentPlan: { type: String, default: null },

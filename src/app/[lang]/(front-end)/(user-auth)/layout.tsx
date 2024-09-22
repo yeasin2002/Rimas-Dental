@@ -37,7 +37,7 @@ const Auth = async ({ children, params }: Props) => {
 						"https://images.unsplash.com/photo-1667133295315-820bb6481730?w=500&h=500&auto=format&fit=crop&q=100&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE1fHxkZW50YWx8ZW58MHwxfDB8fHwy"
 					}
 					alt="Logo"
-					className="hidden aspect-square rounded-md object-cover md:block xl:size-full"
+					className="pointer-events-none hidden aspect-square rounded-md object-cover md:block xl:size-full"
 					width={500}
 					height={500}
 				/>

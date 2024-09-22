@@ -1,6 +1,7 @@
 import { cn } from "@/utils";
 import React from "react";
 import { type UseFormRegisterReturn } from "react-hook-form";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Props extends React.ComponentProps<"input"> {
 	icon: React.ReactNode;
@@ -40,7 +41,18 @@ export const InputCombo = ({
 				/>
 			</div>
 
-			{isShowError && <p className="inputCombo-error">{error || ""}</p>}
+			<AnimatePresence>
+				{isShowError && (
+					<motion.p
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className="inputCombo-error"
+					>
+						{error || ""}
+					</motion.p>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };
