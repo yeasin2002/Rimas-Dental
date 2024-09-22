@@ -11,6 +11,7 @@ interface Props extends React.ComponentProps<"input"> {
 	error: string | undefined;
 	wrapperClassName?: string;
 	labelName?: string;
+	isShowError?: boolean;
 }
 
 export const InputComboForPassword = ({
@@ -20,6 +21,7 @@ export const InputComboForPassword = ({
 	wrapperClassName,
 	error,
 	labelName,
+	isShowError = true,
 	...props
 }: Props) => {
 	const [isShow, setIsShow] = useState(false);
@@ -47,6 +49,8 @@ export const InputComboForPassword = ({
 					{!isShow ? <EyeOff className="text-gray-600" /> : <Eye className="text-gray-600" />}
 				</button>
 			</div>
+
+			{isShowError && <p className="inputCombo-error">{error}</p>}
 		</div>
 	);
 };

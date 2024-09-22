@@ -48,6 +48,7 @@ export const LoginForm = ({ dictionary }: Props) => {
 				error={errors.email?.message}
 				icon={<Email />}
 				placeholder={dictionary?.emailPlaceholder || "Email"}
+				labelName="Email"
 			/>
 
 			<InputComboForPassword
@@ -55,12 +56,14 @@ export const LoginForm = ({ dictionary }: Props) => {
 				error={errors.password?.message}
 				icon={<Lock />}
 				placeholder="*******"
+				labelName="Password"
 			/>
 			<InputComboForPassword
 				register={register("confirmPassword")}
 				error={errors.confirmPassword?.message}
 				icon={<Lock />}
 				placeholder="******"
+				labelName="confirm Password"
 			/>
 			<div className="flex items-center justify-between">
 				<p className="text-zinc-800">{dictionary.ForgotPassword}</p>

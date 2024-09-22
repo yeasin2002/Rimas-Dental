@@ -7,6 +7,6 @@ const Admin = async () => {
 			<DashboardAnalytics />
 		</section>
 	);
-};
+};	
 
 export default Admin;

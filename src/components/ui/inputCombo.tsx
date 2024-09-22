@@ -7,11 +7,20 @@ interface Props extends React.ComponentProps<"input"> {
 	register: UseFormRegisterReturn;
 	error: string | undefined;
 	wrapperClassName?: string;
-
 	labelName?: string;
+	isShowError?: boolean;
 }
 
-export const InputCombo = ({ icon, className, register, wrapperClassName, error, labelName, ...props }: Props) => {
+export const InputCombo = ({
+	icon,
+	className,
+	register,
+	wrapperClassName,
+	error,
+	labelName,
+	isShowError = true,
+	...props
+}: Props) => {
 	return (
 		<div>
 			{labelName && (
@@ -30,6 +39,8 @@ export const InputCombo = ({ icon, className, register, wrapperClassName, error,
 					{...props}
 				/>
 			</div>
+
+			{isShowError && <p className="inputCombo-error">{error || ""}</p>}
 		</div>
 	);
 };

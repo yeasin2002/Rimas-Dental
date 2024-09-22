@@ -26,7 +26,7 @@ const Login = () => {
 		console.log("🚀 ~ onSubmit ~ data:", data);
 
 		setIsLoading(true);
-		const toastId = toast.loading("Processing...");
+		const toastId = toast.loading("Submitting...");
 		try {
 			const loginReq = await loginWithAuthJs({
 				email: data.email,
@@ -52,6 +52,8 @@ const Login = () => {
 				error={errors.email?.message}
 				icon={<Email />}
 				placeholder="Email address"
+				labelName="Email"
+				isShowError
 			/>
 
 			<InputComboForPassword
@@ -59,12 +61,16 @@ const Login = () => {
 				error={errors.password?.message}
 				icon={<Lock />}
 				placeholder="*******"
+				labelName="Password"
+				isShowError
 			/>
 			<InputComboForPassword
 				register={register("confirmPassword")}
 				error={errors.confirmPassword?.message}
 				icon={<Lock />}
 				placeholder="******"
+				labelName="Confirm  Password"
+				isShowError
 			/>
 
 			<button

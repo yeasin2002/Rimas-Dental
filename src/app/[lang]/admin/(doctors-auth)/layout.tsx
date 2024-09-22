@@ -27,7 +27,13 @@ const Auth = async ({ children, params }: Props) => {
 				<Home className="size-6 text-gray-800" />
 			</Link>
 			<div>
-				<Image src={OT} alt="Logo" className="hidden aspect-square object-cover md:block" width={500} height={500} />
+				<Image
+					src={OT}
+					alt="Logo"
+					className="hidden aspect-square rounded-md object-cover md:block"
+					width={500}
+					height={500}
+				/>
 			</div>
 			<div>
 				<section className="dark:bg-gray-900">
