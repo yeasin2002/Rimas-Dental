@@ -24,7 +24,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 				await connectDB();
 				const user = await db.Doctors.findOne({ email: email });
 				if (!user) throw new Error("User not found");
-				if (user?.isPending) throw new Error("Wait for admin approval"); 
+				if (user?.isPending) throw new Error("Wait for admin approval");
 
 				const isMatch = await bcrypt.compare(password, user?.password);
 				if (!isMatch) throw new Error("Email or Password is not correct");

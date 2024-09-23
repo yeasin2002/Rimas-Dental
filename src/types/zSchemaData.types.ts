@@ -1,5 +1,11 @@
 import * as z from "zod";
-import { loginFormSchema, registerFormFirstStepSchema, registerFormSecondStepSchema, serviceSchema } from "@/schema";
+import {
+	loginFormSchema,
+	registerFormFirstStepSchema,
+	registerFormSecondStepSchema,
+	serviceSchema,
+	patientSchemaForDoctorToAdd,
+} from "@/schema";
 
 export type serviceFormData = z.infer<typeof serviceSchema>;
 
@@ -9,3 +15,5 @@ export type registerFormSecondStepData = z.infer<typeof registerFormSecondStepSc
 
 export type loginFormData = z.infer<typeof loginFormSchema>;
 export type registerFormData = registerFormFirstStepData & registerFormSecondStepData;
+
+export type patientSchemaForDoctorToAddData = z.infer<typeof patientSchemaForDoctorToAdd>;

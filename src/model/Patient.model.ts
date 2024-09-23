@@ -15,36 +15,33 @@ const SweetEatingLevel = Object.freeze({
 });
 
 // Patient Schema
-const patientSchema = new Schema({
-	name: { type: String, required: true },
-	email: { type: String, unique: true, required: true },
-	phone1: { type: String, required: true },
-	phone2: { type: String, default: null },
-	dateOfBirth: { type: Date, default: null },
-	gender: { type: String, enum: Gender, required: true },
-	address: { type: String, required: true },
-	reference: { type: String, default: null },
-	occupation: { type: String, required: true },
-	password: { type: String, required: true },
+const patientSchema = new Schema(
+	{
+		name: { type: String, required: true },
+		email: { type: String, unique: true, required: true },
+		phone1: { type: String, required: true },
+		phone2: { type: String, default: null },
+		dateOfBirth: { type: Date, required: true },
+		gender: { type: String, enum: Gender, required: true },
+		address: { type: String, required: true },
+		reference: { type: String, default: null },
+		occupation: { type: String, required: true },
+		password: { type: String, required: true },
 
-	majorDisease: [{ type: String, required: true }],
-	regularBrushingTime: { type: Number, default: 1 },
-	sweetEatingLevel: {
-		type: String,
-		enum: SweetEatingLevel,
-		default: SweetEatingLevel.No,
+		majorDisease: [{ type: String, default: null }],
+		regularBrushingTime: { type: Number, default: 1 },
+		sweetEatingLevel: { type: String, enum: SweetEatingLevel, default: SweetEatingLevel.No },
+
+		examination: [{ type: String }],
+		problems: [{ type: String, required: true }],
+
+		treatmentPlan: { type: String, default: null },
+		treatmentNote: { type: String, default: null },
+		drugHistory: { type: String, default: null },
+		treatmentDetails: [{ type: mongoose.Schema.Types.ObjectId, ref: "PatientSchedule" }],
+		isAddedByDoctor: { type: Boolean, default: false },
 	},
-
-	examination: [{ type: String }],
-	problems: { type: String, required: true },
-
-	treatmentPlan: { type: String, default: null },
-	treatmentNote: { type: String, default: null },
-	drugHistory: { type: String, default: null },
-	treatmentDetails: [{ type: mongoose.Schema.Types.ObjectId, ref: "PatientSchedule" }],
-
-	createdAt: { type: Date, default: Date.now },
-	updatedAt: { type: Date, default: Date.now },
-});
+	{ timestamps: true },
+);
 
 export const Patient = mongoose.models.Patient || mongoose.model("Patient", patientSchema);
